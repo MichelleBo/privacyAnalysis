@@ -1,0 +1,4 @@
+- code folder: holds source code
+- thesis folder: contains the latex sources + PDF of the final thesis
+- presentation folder: contains the sources of the presentation (e.g., latex or PPT)
+- literature folder: contains any research paper that the student needs to read or finds interesting
