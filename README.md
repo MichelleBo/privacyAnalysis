@@ -9,7 +9,7 @@ Hello! This is the README file that accompanies the Gitlab repository for your B
 - **data** folder: holds (input) data required for the project. If your input data files are larger than 100MB, create a sample data file smaller than 100MB and commit the sample instead of the full data file. Include a note explaining how the full data can be retrieved.
 - **results** folder: holds results files generated as part of the project
 - **thesis** folder: contains the latex sources + PDF of the final thesis. You can use the [basilea-latex template](https://github.com/ivangiangreco/basilea-latex) as a starting point.
-- **presentation** folder: contains the sources of the presentation (e.g., latex or PPT)
+- **presentation** folder: contains the sources of the presentation (e.g., latex or PPT). You can use the [basilea-beamer template](https://github.com/ivangiangreco/basilea-beamer) as a starting point.
 - **literature** folder: contains any research paper that the student needs to read or finds interesting
 - **notes** folder: holds minutes of meetings
 
