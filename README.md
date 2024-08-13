@@ -1,17 +1,31 @@
 # Your Project Name
 
-Hello! This is the README file that accompanies the Gitlab repository for your Bachelor or Master thesis. You'll need to update this README as you work on your thesis to reflect relevant information about your thesis.
+Hello! This is the Gitlab repository for your Bachelor or Master thesis. This README has important information to get you started. We expect that you will update this README as you work on your thesis to reflect relevant information about your thesis.
 
 [[_TOC_]]
 
 ## Organization of the repository
-- **code** folder: holds source code
-- **data** folder: holds (input) data required for the project. If your input data files are larger than 100MB, create a sample data file smaller than 100MB and commit the sample instead of the full data file. Include a note explaining how the full data can be retrieved.
+- **code** folder: for your source code
+- **data** folder: for input data required for the project as well as output data you collect. If your input data files are larger than 100MB, create a sample data file smaller than 100MB and commit the sample instead of the full data file. Include a note explaining how the full data can be retrieved.
 - **results** folder: holds results files generated as part of the project
 - **thesis** folder: contains the latex sources + PDF of the final thesis. You can use the [basilea-latex template](https://github.com/ivangiangreco/basilea-latex) as a starting point.
 - **presentation** folder: contains the sources of the presentation (e.g., latex or PPT). You can use the [basilea-beamer template](https://github.com/ivangiangreco/basilea-beamer) as a starting point.
-- **literature** folder: contains any research paper that the student needs to read or finds interesting
-- **notes** folder: holds minutes of meetings
+- **literature** folder: contains research papers that you have read for the thesis
+- **notes** folder: create one markdown file for each meeting and record the minutes of meetings. Naming convention for files: yyyymmdd-topic.md, for example 20240813-initial-meeting.md
+
+## Work environment in the PET group
+
+- We work on a first-name basis
+- You should attend our biweekly group meeting and give a short progress update each time (you will receive a calendar invite that shows time/room). This is the best opportunity to get feedback from group members other than your direct supervisor and from other BSc/MSc students.
+- We use Matrix for instant messaging (similar to Slack, Discord, but open source and better privacy/security properties). Element is probably the nicest client to use with Matrix.
+- We expect that you email a weekly report to Isabel and your direct supervisor. The report should include the following information:
+    - Title of the thesis 
+    - Start date and end date
+    - What has been done during the previous week
+    - What is the plan for the next week (short term goals)
+    - What is the plan for the next weeks (long term goals) up to the end of their thesis 
+- We expect that you commit as much time and as soon as you can.
+- We expect that you actively use this repository. You should commit at least every time you send a weekly report, but aspire to daily commits.
 
 ## Useful resources
 - [Efficient Reading of Papers in Science and Technology](https://www.cs.columbia.edu/~hgs/netbib/efficientReading.pdf)
