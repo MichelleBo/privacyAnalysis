@@ -1,0 +1,86 @@
+import os
+import pandas as pd
+import matplotlib.pyplot as plt
+import get_ip
+import ipaddress
+import argparse
+import filters
+
+# Set up argument parsing
+parser = argparse.ArgumentParser(description="Process a CSV file to identify tracker domains.")
+parser.add_argument("input_csv", help="Path to the input CSV file")
+args = parser.parse_args()
+
+# Get the input file path from the arguments
+input_csv = args.input_csv
+
+# Check if the input file exists
+if not os.path.isfile(input_csv):
+    print(f"Error: The file '{input_csv}' does not exist. Please check the file path and try again.")
+    exit(1)
+
+# Load the input CSV
+try:
+    data = pd.read_csv(input_csv)
+    print(f"Successfully loaded the file: {input_csv}")
+except Exception as e:
+    print(f"Error loading the file: {e}")
+    exit(1)
+
+def is_valid_ip(ip):
+    try:
+        ipaddress.ip_address(ip)
+        return True
+    except ValueError:
+        return False
+
+# Load or create IP owner mapping file
+geo_file_path = os.path.expanduser('~/ip_owners_with_geo.csv')
+
+# Resolve missing IPs and update the CSV
+unique_ips = pd.concat([data['Source'], data['Destination']]).unique()
+unique_ips = [ip for ip in unique_ips if filters.is_valid_ip(ip)]
+ip_owner_df = get_ip.update_ip_csv(unique_ips, geo_file_path)
+
+# Exclude local IPs from the traffic data
+ip_owner_df = ip_owner_df[~((ip_owner_df['Owner'] == 'Private') & (ip_owner_df['Hostname'] == 'Private'))]
+data = data[data['Destination'].isin(ip_owner_df['IP Address'])]
+
+# Count all IP addresses
+ip_frequencies = data['Destination'].value_counts()
+
+# Map IPs to ISP + Service for visualization
+ip_labels = []
+for ip in ip_frequencies.index:
+    ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
+    if not ip_details.empty:
+        isp = ip_details.iloc[0]['ISP']
+        service = ip_details.iloc[0]['Service']
+        if service != "Unknown":
+            label = f"{ip} ({isp}, {service})"
+        else:
+            label = f"{ip} ({isp})"
+        ip_labels.append(label)
+    else:
+        ip_labels.append(f"{ip} (Unknown)")
+
+# Create a DataFrame for plotting
+ip_plot_df = pd.DataFrame({'IP Address': ip_labels, 'Frequency': ip_frequencies.values})
+
+# Plot
+plt.figure(figsize=(12, 8))
+ip_plot_df.set_index('IP Address')['Frequency'].plot(kind='barh')  # Plot all IPs
+plt.title('Third-Party Traffic Frequency')
+plt.xlabel('Frequency')
+plt.ylabel('IP Address (ISP, Service)')
+plt.tight_layout()
+
+# Determine the directory of the input argument and create an 'images' subdirectory
+output_dir = os.path.join(os.path.dirname(input_csv), "images")
+os.makedirs(output_dir, exist_ok=True) 
+
+# Save the image
+output_file = os.path.join(output_dir, "tv_freq_third_party_traffic.png")
+plt.savefig(output_file)
+print("Plot saved to tv_freq_third_party_traffic.png")
+
