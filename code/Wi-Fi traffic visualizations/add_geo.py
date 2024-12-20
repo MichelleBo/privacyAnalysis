@@ -1,21 +1,36 @@
+# This code is only used because in the beginning geolocation was not considered in the project
+
 import os
 import pandas as pd
 import requests
 from socket import gethostbyaddr, herror
 from ipwhois import IPWhois
 
-# Known mapping of services/apps (you can expand this list)
+# Mapping services from known hostnames
 known_services = {
-    '1e100.net': 'Google (e.g., YouTube, Gmail)',
-    'fbcdn.net': 'Facebook/Meta (e.g., Instagram, WhatsApp)',
+    'instagram-p3-shv-01-zrh1.fbcdn.net': 'Facebook/Meta - Instagram',
+    'whatsapp-cdn-shv-01-zrh1.fbcdn.net':  'Facebook/Meta - WhatsApp',
+    'facebook.com': 'Facebook/Meta',
+    'whatsapp': 'Facebook/Meta - WhatsApp',
+    '1e100.net': 'Google',
+    'googleusercontent.com': 'Google Cloud',
     'akamaitechnologies.com': 'Akamai CDN',
-    'amazonaws.com': 'Amazon AWS',
-    # Add more known domains or services as needed
+    'amazonaws.com': 'Amazon AWS'
 }
 
-# Geolocation function using ip-api.com
+# Mapping isps and owners from known alt. names
+mapping_isp = {
+    'Amazo-Cf': 'Amazon-CloudFront',
+    'Amazon-Cf': 'Amazon-CloudFront',
+    'Msft': 'Microsoft Azure',
+    'Asepl-Sg': 'Alibaba-Sg',
+    'Al-3': 'Alibaba-Sg',
+    'C-212': 'Swiss Education and Research Network',
+    'Thefa-3': 'Facebook, Inc.'
+}
+
+# Geolocation look up using ip-api.com
 def get_geolocation(ip):
-    """Fetch precise geographical details for an IP address using ip-api.com."""
     url = f"http://ip-api.com/json/{ip}"
     try:
         response = requests.get(url)
@@ -31,6 +46,7 @@ def get_geolocation(ip):
             }
     except Exception as e:
         print(f"Error fetching geolocation for IP {ip}: {e}")
+        
     return {
         'Country': 'Unknown',
         'Region': 'Unknown',
@@ -40,16 +56,13 @@ def get_geolocation(ip):
         'ISP': 'Unknown',
     }
 
-# Reverse DNS and WHOIS lookup
+# Resolve IP details
 def get_ip_details(ip):
-    """Fetches ownership, service, and location details for an IP address."""
     try:
-        # Step 1: Attempt reverse DNS lookup
         hostname = gethostbyaddr(ip)[0]
     except herror:
         hostname = "Unknown"
 
-    # Step 2: Determine the owner using WHOIS
     try:
         obj = IPWhois(ip)
         results = obj.lookup_rdap()
@@ -57,7 +70,6 @@ def get_ip_details(ip):
     except Exception:
         owner = 'Unknown'
 
-    # Step 3: Map hostname to known services/apps
     service = 'Unknown'
     for key, value in known_services.items():
         if key in hostname:
@@ -66,7 +78,7 @@ def get_ip_details(ip):
 
     return hostname, owner, service
 
-# Load the existing IP owners CSV file
+# Load the existing IP owners CSV file that did not include geo location
 file_path = os.path.expanduser("~/ip_owners.csv")
 
 if not os.path.exists(file_path):
@@ -75,20 +87,16 @@ if not os.path.exists(file_path):
 
 ip_owners = pd.read_csv(file_path)
 
-# Prepare a new list to store enhanced details
+
 enhanced_ip_details = []
 
 for _, row in ip_owners.iterrows():
     ip = row['IP Address']
     print(f"Processing IP: {ip}")
     
-    # Fetch hostname, owner, and service details
-    hostname, owner, service = get_ip_details(ip)
-    
-    # Fetch geolocation details
+    hostname, owner, service = get_ip_details(ip)    
     geo = get_geolocation(ip)
     
-    # Combine all details
     enhanced_ip_details.append({
         'IP Address': ip,
         'Hostname': hostname,
@@ -102,7 +110,7 @@ for _, row in ip_owners.iterrows():
         'ISP': geo['ISP'],
     })
 
-# Convert to a DataFrame and save to a new CSV file
+# Convert to a DataFrame and save to the CSV file
 enhanced_ip_details_df = pd.DataFrame(enhanced_ip_details)
 enhanced_ip_details_df.to_csv('ip_owners_with_geo.csv', index=False)
 

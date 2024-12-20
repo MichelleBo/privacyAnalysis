@@ -8,15 +8,13 @@ import ipaddress
 import argparse
 import filters
 
-# Set up argument parsing
-parser = argparse.ArgumentParser(description="Process a CSV file to identify tracker domains.")
-parser.add_argument("input_csv", help="Path to the input CSV file")
+# Argument parsing
+parser = argparse.ArgumentParser()
+parser.add_argument("input_csv", help="Path to the CSV file for the captured traffic")
 args = parser.parse_args()
 
-# Get the input file path from the arguments
-input_csv = args.input_csv
-
 # Check if the input file exists
+input_csv = args.input_csv
 if not os.path.isfile(input_csv):
     print(f"Error: The file '{input_csv}' does not exist. Please check the file path and try again.")
     exit(1)
@@ -36,40 +34,43 @@ def is_valid_ip(ip):
     except ValueError:
         return False
 
-# Load or create IP owner mapping file
-geo_file_path = os.path.expanduser('~/ip_owners_with_geo.csv')
+# Load IP owners mapping csv file
+geo_dir = os.path.dirname(os.path.abspath(__file__))
+geo_file_path = os.path.join(geo_dir, 'ip_owners_with_geo.csv')
 
 # Resolve missing IPs and update the CSV
 unique_ips = pd.concat([data['Source'], data['Destination']]).unique()
 unique_ips = [ip for ip in unique_ips if filters.is_valid_ip(ip)]
 ip_owner_df = get_ip.update_ip_csv(unique_ips, geo_file_path)
 
-# Exclude traffic with "Unknown" ISP
-ip_owner_df = ip_owner_df[ip_owner_df['ISP'] != "Unknown"]
-data = data[data['Destination'].isin(ip_owner_df['IP Address'])]
+# Exclude traffic irrelevant to the analysis from the traffic data
+ip_owner_df['Is Relevant'] = filters.is_relevant_traffic(
+    ip_owner_df['IP Address'], ip_owner_df['ISP'], ip_owner_df['Service']
+)
+
+relevant_ips = ip_owner_df.loc[ip_owner_df['Is Relevant'], 'IP Address']
+data = data[data['Destination'].isin(relevant_ips)]
 
 # Apply all filters to the data
 data['Is Redundant'] = data.apply(filters.is_ack_packet, axis=1) | data.apply(filters.is_redundant_packet, axis=1)
-data['Is Broadcast or Multicast'] = data['Destination'].apply(filters.is_broadcast_or_multicast)
-data['Is Excluded Protocol'] = data['Protocol'].apply(filters.is_excluded_protocol)
 
 # Exclude packets based on filters
-data = data[
-    ~data['Is Redundant'] &
-    ~data['Is Broadcast or Multicast'] &
-    ~data['Is Excluded Protocol']
-]
+data = data[~data['Is Redundant']]
 
 # Map IPs to ISP + Service for visualization
-ip_labels = {}
-for _, row in ip_owner_df.iterrows():
-    ip = row['IP Address']
-    isp = row['ISP']
-    service = row['Service']
-    if service != "Unknown":
-        ip_labels[ip] = f"{ip} ({isp}, {service})"
+ip_labels = []
+for ip in ip_owner_df['IP Address']:
+    ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
+    if not ip_details.empty:
+        isp = ip_details.iloc[0]['ISP']
+        service = ip_details.iloc[0]['Service']
+        if service != "Unknown":
+            label = f"{ip} ({isp}, {service})"
+        else:
+            label = f"{ip} ({isp})"
+        ip_labels.append(label)
     else:
-        ip_labels[ip] = f"{ip} ({isp})"
+        ip_labels.append(f"{ip} (Unknown)")
         
 # Count packets
 packet_counts = data.groupby(['Time', 'Destination']).size()
@@ -82,20 +83,19 @@ color_map = {ip: color for ip, color in zip(cumulative_counts.columns, cm.rainbo
 # Plot each IP with its assigned color
 for ip in cumulative_counts.columns:
     ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
+    final_cumsum = cumulative_counts[ip].iloc[-1]
     if not ip_details.empty:
         isp = ip_details.iloc[0]['ISP']
         service = ip_details.iloc[0]['Service']
         # Format the label to exclude "Unknown" services
         if service != "Unknown":
-            label = f"{ip} ({isp}, {service})"
+            label = f"{ip} ({isp}, {service}) - {final_cumsum}"
         else:
-            label = f"{ip} ({isp})"
+            label = f"{ip} ({isp}) - {final_cumsum}"
     else:
-        label = f"{ip} (Unknown)"
+        label = f"{ip} (Unknown) - {final_cumsum}"
     plt.plot(cumulative_counts.index, cumulative_counts[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
 
-# Customize x-axis to display seconds
-plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:.2f} s"))
 
 # Plot
 plt.title('Timeline of Third-Party Traffic (Filtered)')
@@ -105,12 +105,10 @@ plt.xticks(rotation=45)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='IP Addresses', fontsize='small')
 plt.tight_layout()
 
-# Determine the directory of the input argument and create an 'images' subdirectory
+# Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
 os.makedirs(output_dir, exist_ok=True) 
-
-# Save the image
 output_file = os.path.join(output_dir, "tv_time_line_filtered_meta_traffic.png")
 plt.savefig(output_file)
-print("Plot saved to tv_time_line_filtered_meta_traffic.png")
+print("Plot saved to ", output_dir, "/tv_time_line_filtered_meta_traffic.png")
 

@@ -27,13 +27,6 @@ except Exception as e:
     print(f"Error loading the file: {e}")
     exit(1)
 
-def is_valid_ip(ip):
-    try:
-        ipaddress.ip_address(ip)
-        return True
-    except ValueError:
-        return False
-
 # Load IP owners mapping csv file
 geo_dir = os.path.dirname(os.path.abspath(__file__))
 geo_file_path = os.path.join(geo_dir, 'ip_owners_with_geo.csv')
@@ -43,13 +36,12 @@ unique_ips = pd.concat([data['Source'], data['Destination']]).unique()
 unique_ips = [ip for ip in unique_ips if filters.is_valid_ip(ip)]
 ip_owner_df = get_ip.update_ip_csv(unique_ips, geo_file_path)
 
-# Exclude traffic irrelevant to the analysis from the traffic data
-ip_owner_df['Is Relevant'] = filters.is_relevant_traffic(
-    ip_owner_df['IP Address'], ip_owner_df['ISP'], ip_owner_df['Service']
-)
 
-relevant_ips = ip_owner_df.loc[ip_owner_df['Is Relevant'], 'IP Address']
-data = data[~data['Destination'].isin(relevant_ips)]
+# Apply filters to the data
+data['Is Redundant'] = data.apply(filters.is_ack_packet, axis=1) | data.apply(filters.is_redundant_packet, axis=1)
+
+# Exclude packets based on filters
+data = data[~data['Is Redundant']]
 
 # Map IPs to ISP + Service for visualization
 ip_labels = []
@@ -90,19 +82,21 @@ for ip in cumulative_counts.columns:
         label = f"{ip} (Unknown) - {final_cumsum}"
     plt.plot(cumulative_counts.index, cumulative_counts[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
 
+# Customize x-axis to display seconds
+plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:.2f} s"))
 
 # Plot
-plt.title('Timeline of Third-Party Traffic')
+plt.title('Timeline of Third-Party Traffic (Filtered)')
 plt.xlabel('Time (seconds)')
-plt.ylabel('IP Address')
+plt.ylabel('Cumulative Number of Packets')
 plt.xticks(rotation=45)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='IP Addresses', fontsize='small')
 plt.tight_layout()
 
 # Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
-os.makedirs(output_dir, exist_ok=True)
-output_file = os.path.join(output_dir, "tv_time_line_third_party_traffic.png")
+os.makedirs(output_dir, exist_ok=True) 
+output_file = os.path.join(output_dir, "tv_time_line_filtered_all_traffic.png")
 plt.savefig(output_file)
-print("Plot saved to ", output_dir, "/tv_time_line_third_party_traffic.png")
+print("Plot saved to tv_time_line_filtered_all_traffic.png")
 

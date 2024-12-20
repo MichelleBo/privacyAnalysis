@@ -1,6 +1,12 @@
 import pandas as pd
 import ipaddress
 
+relevant_criteria = {
+    "IP Addresses": ["192.168.1.141", "192.168.1.100"],  # relevant IPs
+    "ISPs": ["Facebook, Inc.", "Thefa-3"],  # relevant ISPs
+    "Services": ["Facebook/Meta", "Instagram", "WhatsApp"],  # relevant service names
+}
+
 # Check if an IP address is valid.
 def is_valid_ip(ip):
     try:
@@ -40,4 +46,12 @@ def is_broadcast_or_multicast(ip):
 def is_excluded_protocol(protocol):
     excluded_protocols = ['ARP', 'ICMP']
     return protocol in excluded_protocols
+
+# Checks for relevant traffic criteria (Meta View and Ray-Ban glasses)
+def is_relevant_traffic(ip, isp, service):
+    is_relevant_ip = ip.isin(relevant_criteria["IP Addresses"])
+    is_relevant_isp = isp.isin(relevant_criteria["ISPs"])
+    is_relevant_service = service.str.contains('|'.join(relevant_criteria["Services"]), na=False)
+    return is_relevant_ip | is_relevant_isp | is_relevant_service
+
 

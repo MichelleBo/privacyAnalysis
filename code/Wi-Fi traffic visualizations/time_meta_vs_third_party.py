@@ -25,13 +25,6 @@ except Exception as e:
     print(f"Error loading the file: {e}")
     exit(1)
 
-def is_valid_ip(ip):
-    try:
-        ipaddress.ip_address(ip)
-        return True
-    except ValueError:
-        return False
-
 # Load IP owners mapping csv file
 geo_dir = os.path.dirname(os.path.abspath(__file__))
 geo_file_path = os.path.join(geo_dir, 'ip_owners_with_geo.csv')
@@ -41,48 +34,41 @@ unique_ips = pd.concat([data['Source'], data['Destination']]).unique()
 unique_ips = [ip for ip in unique_ips if filters.is_valid_ip(ip)]
 ip_owner_df = get_ip.update_ip_csv(unique_ips, geo_file_path)
 
+
 # Exclude traffic irrelevant to the analysis from the traffic data
 ip_owner_df['Is Relevant'] = filters.is_relevant_traffic(
     ip_owner_df['IP Address'], ip_owner_df['ISP'], ip_owner_df['Service']
 )
 
-relevant_ips = ip_owner_df.loc[ip_owner_df['Is Relevant'], 'IP Address']
-data = data[~data['Destination'].isin(relevant_ips)]
+data['Is Relevant'] = data['Destination'].map(
+    ip_owner_df.set_index('IP Address')['Is Relevant']
+)
 
-# Count all IP addresses
-ip_frequencies = data['Destination'].value_counts()
+# Categorize traffic
+data['Meta Traffic'] = data['Length'].where(data['Is Relevant'], 0).astype(float)
+data['Third Party Traffic'] = data['Length'].where(~data['Is Relevant'], 0).astype(float)
 
-# Map IPs to ISP + Service for visualization
-ip_labels = []
-for ip in ip_frequencies.index:
-    ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
-    if not ip_details.empty:
-        isp = ip_details.iloc[0]['ISP']
-        service = ip_details.iloc[0]['Service']
-        if service != "Unknown":
-            label = f"{ip} ({isp}, {service})"
-        else:
-            label = f"{ip} ({isp})"
-        ip_labels.append(label)
-    else:
-        ip_labels.append(f"{ip} (Unknown)")
 
-# Create a DataFrame for plotting
-ip_plot_df = pd.DataFrame({'IP Address': ip_labels, 'Frequency': ip_frequencies.values})
+# Group by time intervals
+data['Time Interval'] = (data['Time'] // 60).astype(int)
+traffic_volume = data.groupby('Time Interval')[['Meta Traffic', 'Third Party Traffic']].sum()
 
 # Plot
-plt.figure(figsize=(12, 8))
-ip_plot_df.set_index('IP Address')['Frequency'].plot(kind='barh') 
-plt.title('Third-Party Traffic Frequency')
-plt.xlabel('Frequency')
-plt.ylabel('IP Address (ISP, Service)')
+ax = traffic_volume.plot(kind='bar', stacked=True, figsize=(12, 6))
+
+ax.set_xticks(range(len(traffic_volume.index))) 
+ax.set_xticklabels(range(len(traffic_volume.index)))
+
+plt.title('Traffic Volume: Meta vs Other Traffic')
+plt.xlabel('Time (minutes)')
+plt.ylabel('Traffic Volume (bytes)')
+plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
-output_dir = os.path.dirname(input_csv)
-os.makedirs(output_dir, exist_ok=True) 
-output_file = os.path.join(output_dir, "tv_freq_third_party_traffic.png")
+os.makedirs(output_dir, exist_ok=True)  
+output_file = os.path.join(output_dir, "tv_time_meta_vs_third_party_traffic.png")
 plt.savefig(output_file)
-print("Plot saved to ", output_dir, "/tv_freq_third_party_traffic.png")
+print("Plot saved to ", output_dir, "/tv_time_meta_vs_third_party_traffic.png")
 

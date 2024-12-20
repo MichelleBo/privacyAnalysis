@@ -4,7 +4,7 @@ import requests
 from ipwhois import IPWhois
 from socket import gethostbyaddr, herror
 
-# Known mapping of services/apps
+# Mapping services from known hostnames
 known_services = {
     'instagram-p3-shv-01-zrh1.fbcdn.net': 'Facebook/Meta - Instagram',
     'whatsapp-cdn-shv-01-zrh1.fbcdn.net':  'Facebook/Meta - WhatsApp',
@@ -12,39 +12,54 @@ known_services = {
     'whatsapp': 'Facebook/Meta - WhatsApp',
     '1e100.net': 'Google',
     'googleusercontent.com': 'Google Cloud',
+    'akamaitechnologies.com': 'Akamai CDN',
     'amazonaws.com': 'Amazon AWS'
 }
 
-# Function to resolve IP details
+# Mapping isps and owners from known alt. names
+mapping_isp = {
+    'Amazo-Cf': 'Amazon-CloudFront',
+    'Amazon-Cf': 'Amazon-CloudFront',
+    'Msft': 'Microsoft Azure',
+    'Asepl-Sg': 'Alibaba-Sg',
+    'Al-3': 'Alibaba-Sg',
+    'C-212': 'Swiss Education and Research Network',
+    'Thefa-3': 'Facebook, Inc.'
+}
+
+# Resolve IP details
 def get_ip_details(ip):
-    """Fetch ISP, Service, and other details for an IP."""
+    # Get hostname for ip address
     try:
-        # Attempt reverse DNS lookup
         hostname = gethostbyaddr(ip)[0]
     except herror:
         hostname = "Unknown"
 
+    # Get isp and owner for ip address
     try:
-        # Use IPWhois to get ISP/Owner details
         obj = IPWhois(ip)
         results = obj.lookup_rdap()
-        isp = results.get('network', {}).get('name', 'Unknown')  # Prefer 'network' field for ISP
-        if isp == "Unknown":  # Fallback to ASN description if network name is missing
+        isp = results.get('network', {}).get('name', 'Unknown')  
+        if isp == "Unknown":  
             isp = results.get('asn_description', 'Unknown')
-        isp = isp.title()  # Format ISP name properly (e.g., 'Google LLC')
-        owner = isp  # Use ISP as the owner if no better details are available
+        isp = isp.title()  
+        owner = isp 
     except Exception:
         isp = "Unknown"
         owner = "Unknown"
 
-    # Determine the service based on the hostname
+    # The mappings
     service = "Unknown"
     for key, value in known_services.items():
         if key in hostname:
             service = value
             break
+            
+    if isp in mapping_isp:
+        isp = mapping_isp[isp]
+        owner = mapping_isp[isp]
 
-    # Geolocation lookup (optional)
+    # Geolocation lookup using ip-api.com
     url = f"http://ip-api.com/json/{ip}"
     try:
         response = requests.get(url)
@@ -53,7 +68,7 @@ def get_ip_details(ip):
             return {
                 'IP Address': ip,
                 'ISP': isp,
-                'Service': service,  # Use the determined service
+                'Service': service,
                 'Hostname': hostname,
                 'Owner': owner,
                 'Country': geo_data.get('country', 'Unknown'),
@@ -62,8 +77,8 @@ def get_ip_details(ip):
                 'Latitude': geo_data.get('lat', None),
                 'Longitude': geo_data.get('lon', None)
             }
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Error fetching geolocation for IP {ip}: {e}")
 
     return {
         'IP Address': ip,
@@ -77,16 +92,15 @@ def get_ip_details(ip):
         'Latitude': None,
         'Longitude': None
     }
-    
+ 
+ # Resolve missing IPs and update the CSV  
 def update_ip_csv(ip_list, csv_path):
-    """Resolve missing IPs and update the CSV."""
-    # Load the existing CSV or create a new DataFrame
+  
     if os.path.exists(csv_path):
         ip_owner_df = pd.read_csv(csv_path)
     else:
         ip_owner_df = pd.DataFrame(columns=['IP Address', 'Hostname', 'Owner', 'Service', 'Country', 'Region', 'City', 'Latitude', 'Longitude', 'ISP'])
 
-    # Resolve new IPs
     new_ip_details = []
     for ip in ip_list:
         if ip not in ip_owner_df['IP Address'].values:
@@ -94,7 +108,6 @@ def update_ip_csv(ip_list, csv_path):
             details = get_ip_details(ip)
             new_ip_details.append(details)
 
-    # Add new IP details to the DataFrame and save
     if new_ip_details:
         new_ip_details_df = pd.DataFrame(new_ip_details)
         ip_owner_df = pd.concat([ip_owner_df, new_ip_details_df], ignore_index=True)
@@ -104,3 +117,6 @@ def update_ip_csv(ip_list, csv_path):
         print("No new IPs to resolve.")
 
     return ip_owner_df
+    
+    
+    

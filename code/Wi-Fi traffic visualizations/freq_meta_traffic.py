@@ -1,8 +1,6 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-import numpy as np
 import get_ip
 import ipaddress
 import argparse
@@ -49,11 +47,14 @@ ip_owner_df['Is Relevant'] = filters.is_relevant_traffic(
 )
 
 relevant_ips = ip_owner_df.loc[ip_owner_df['Is Relevant'], 'IP Address']
-data = data[~data['Destination'].isin(relevant_ips)]
+data = data[data['Destination'].isin(relevant_ips)]
+
+# Count all IP addresses
+ip_frequencies = data['Destination'].value_counts()
 
 # Map IPs to ISP + Service for visualization
 ip_labels = []
-for ip in ip_owner_df['IP Address']:
+for ip in ip_frequencies.index:
     ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
     if not ip_details.empty:
         isp = ip_details.iloc[0]['ISP']
@@ -65,44 +66,23 @@ for ip in ip_owner_df['IP Address']:
         ip_labels.append(label)
     else:
         ip_labels.append(f"{ip} (Unknown)")
-        
-# Count packets
-packet_counts = data.groupby(['Time', 'Destination']).size()
-cumulative_counts = packet_counts.unstack(fill_value=0).cumsum()
 
-# Assign a unique color to each IP address
-plt.figure(figsize=(12, 8))
-color_map = {ip: color for ip, color in zip(cumulative_counts.columns, cm.rainbow(np.linspace(0, 1, len(cumulative_counts.columns))))}
-
-# Plot each IP with its assigned color
-for ip in cumulative_counts.columns:
-    ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
-    final_cumsum = cumulative_counts[ip].iloc[-1]
-    if not ip_details.empty:
-        isp = ip_details.iloc[0]['ISP']
-        service = ip_details.iloc[0]['Service']
-        # Format the label to exclude "Unknown" services
-        if service != "Unknown":
-            label = f"{ip} ({isp}, {service}) - {final_cumsum}"
-        else:
-            label = f"{ip} ({isp}) - {final_cumsum}"
-    else:
-        label = f"{ip} (Unknown) - {final_cumsum}"
-    plt.plot(cumulative_counts.index, cumulative_counts[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
-
+# Create a DataFrame for plotting
+ip_plot_df = pd.DataFrame({'IP Address': ip_labels, 'Frequency': ip_frequencies.values})
 
 # Plot
-plt.title('Timeline of Third-Party Traffic')
-plt.xlabel('Time (seconds)')
-plt.ylabel('IP Address')
-plt.xticks(rotation=45)
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='IP Addresses', fontsize='small')
+plt.figure(figsize=(12, 8))
+ip_plot_df.set_index('IP Address')['Frequency'].plot(kind='barh') 
+plt.title('Third-Party Traffic Frequency')
+plt.xlabel('Frequency')
+plt.ylabel('IP Address (ISP, Service)')
 plt.tight_layout()
 
 # Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
-os.makedirs(output_dir, exist_ok=True)
-output_file = os.path.join(output_dir, "tv_time_line_third_party_traffic.png")
+output_dir = os.path.dirname(input_csv)
+os.makedirs(output_dir, exist_ok=True) 
+output_file = os.path.join(output_dir, "tv_freq_meta_traffic.png")
 plt.savefig(output_file)
-print("Plot saved to ", output_dir, "/tv_time_line_third_party_traffic.png")
+print("Plot saved to ", output_dir, "/tv_freq_meta_traffic.png")
 

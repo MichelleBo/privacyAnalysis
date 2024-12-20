@@ -9,15 +9,13 @@ import ipaddress
 import argparse
 import filters
 
-# Set up argument parsing
-parser = argparse.ArgumentParser(description="Process a CSV file to identify tracker domains.")
-parser.add_argument("input_csv", help="Path to the input CSV file")
+# Argument parsing
+parser = argparse.ArgumentParser()
+parser.add_argument("input_csv", help="Path to the CSV file for the captured traffic")
 args = parser.parse_args()
 
-# Get the input file path from the arguments
-input_csv = args.input_csv
-
 # Check if the input file exists
+input_csv = args.input_csv
 if not os.path.isfile(input_csv):
     print(f"Error: The file '{input_csv}' does not exist. Please check the file path and try again.")
     exit(1)
@@ -107,11 +105,9 @@ plt.yscale('log')
 plt.legend(traffic_by_tracker.columns.tolist(), loc='upper left')
 plt.tight_layout()
 
-# Determine the directory of the input argument and create an 'images' subdirectory
+# Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
 os.makedirs(output_dir, exist_ok=True) 
-
-# Save the image
 output_file = os.path.join(output_dir, "tv_time_line_tracker_log_traffic.png")
 plt.savefig(output_file)
 

@@ -1,32 +1,41 @@
+# This method calls all the scripts to generate the visualization images for traffic analysis
+
 import subprocess
 import os
-
+import argparse
 
 # List of the Python scripts
 scripts = [
     "freq_all_traffic.py",
+    "freq_all_traffic_minus.py",
+    "freq_meta_traffic.py",
     "freq_third_party_traffic.py",
-    "time_third_vs_non-third_party.py",
-    "time_all_traffic.py",
-    "time_scatter_third_party_traffic.py",
-    "time_line_filtered_third_party_traffic.py",
+    "time_line_all_traffic.py",
+    "time_line_all_traffic_minus.py",
+    "time_line_filtered_all_traffic.py",
     "time_line_meta_traffic.py",
+    "time_line_meta_traffic_minus.py",
     "time_line_filtered_meta_traffic.py",
-    "time_line_trackers_traffic.py",
-    "time_line_trackers_log_traffic.py"
+    "time_line_third_party_traffic.py",
+    "time_line_third_party_traffic_minus.py",
+    "time_line_filtered_third_party_traffic.py",
+    "time_scatter_all_traffic.py",
+    "time_scatter_meta_traffic.py",
+    "time_scatter_third_party_traffic.py",
+    "time_meta_vs_third_party.py"
+    #"time_line_trackers_traffic.py",
+    #"time_line_trackers_log_traffic.py"
 ]
 
-# Directory where the scripts are located 
-scripts_dir = os.path.expanduser("~/traffic_visualizations")
+# Set up argument parsing
+parser = argparse.ArgumentParser(description="Run multiple Python scripts with user-provided arguments.")
+parser.add_argument("csv_file", help="Path the CSV file for visual analysis.")
+args = parser.parse_args()
 
-# Change working directory to the scripts folder
-os.chdir(scripts_dir)
+# Get the directory and CSV file from arguments
+scripts_dir = os.path.dirname(os.path.abspath(__file__))
+argument_csv = os.path.expanduser(args.csv_file)
 
-# The argument to pass to each script
-experiment_dir = os.path.expanduser("~/traffic_visualizations/Experiment 1")
-argument_csv = os.path.join(experiment_dir, "wifi_touch_part1.csv")
-
-# Check if the argument CSV exists
 if not os.path.isfile(argument_csv):
     print(f"Error: Argument file '{argument_csv}' does not exist. Please check the file path.")
     exit(1)
@@ -40,7 +49,7 @@ for script in scripts:
     print(f"Running script: {script}")
     try:
         # Execute the script and pass the argument
-        subprocess.run(["python3", script, argument_csv], check=True)
+        subprocess.run(["python3", script_path, argument_csv], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error while running script {script}: {e}")
 

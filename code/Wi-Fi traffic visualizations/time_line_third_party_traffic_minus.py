@@ -70,14 +70,17 @@ for ip in ip_owner_df['IP Address']:
 packet_counts = data.groupby(['Time', 'Destination']).size()
 cumulative_counts = packet_counts.unstack(fill_value=0).cumsum()
 
+top_destinations = cumulative_counts.iloc[-1].nlargest(2).index
+minus_cumulative_counts = cumulative_counts.drop(columns=top_destinations)
+
 # Assign a unique color to each IP address
 plt.figure(figsize=(12, 8))
-color_map = {ip: color for ip, color in zip(cumulative_counts.columns, cm.rainbow(np.linspace(0, 1, len(cumulative_counts.columns))))}
+color_map = {ip: color for ip, color in zip(minus_cumulative_counts.columns, cm.rainbow(np.linspace(0, 1, len(minus_cumulative_counts.columns))))}
 
 # Plot each IP with its assigned color
-for ip in cumulative_counts.columns:
+for ip in minus_cumulative_counts.columns:
     ip_details = ip_owner_df[ip_owner_df['IP Address'] == ip]
-    final_cumsum = cumulative_counts[ip].iloc[-1]
+    final_cumsum = minus_cumulative_counts[ip].iloc[-1]
     if not ip_details.empty:
         isp = ip_details.iloc[0]['ISP']
         service = ip_details.iloc[0]['Service']
@@ -88,7 +91,7 @@ for ip in cumulative_counts.columns:
             label = f"{ip} ({isp}) - {final_cumsum}"
     else:
         label = f"{ip} (Unknown) - {final_cumsum}"
-    plt.plot(cumulative_counts.index, cumulative_counts[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
+    plt.plot(minus_cumulative_counts.index, minus_cumulative_counts[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
 
 
 # Plot
@@ -102,7 +105,7 @@ plt.tight_layout()
 # Save the image
 output_dir = os.path.join(os.path.dirname(input_csv), "images")
 os.makedirs(output_dir, exist_ok=True)
-output_file = os.path.join(output_dir, "tv_time_line_third_party_traffic.png")
+output_file = os.path.join(output_dir, "tv_time_line_third_party_traffic_minus.png")
 plt.savefig(output_file)
-print("Plot saved to ", output_dir, "/tv_time_line_third_party_traffic.png")
+print("Plot saved to ", output_dir, "/tv_time_line_third_party_traffic_minus.png")
 
