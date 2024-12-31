@@ -6,10 +6,10 @@ from socket import gethostbyaddr, herror
 
 # Mapping services from known hostnames
 known_services = {
-    'instagram-p3-shv-01-zrh1.fbcdn.net': 'Facebook/Meta - Instagram',
-    'whatsapp-cdn-shv-01-zrh1.fbcdn.net':  'Facebook/Meta - WhatsApp',
+    'instagram-p3-shv-01-zrh1.fbcdn.net': 'Facebook/Meta-Instagram',
+    'whatsapp-cdn-shv-01-zrh1.fbcdn.net':  'Facebook/Meta-WhatsApp',
     'facebook.com': 'Facebook/Meta',
-    'whatsapp': 'Facebook/Meta - WhatsApp',
+    'whatsapp': 'Facebook/Meta-WhatsApp',
     '1e100.net': 'Google',
     'googleusercontent.com': 'Google Cloud',
     'akamaitechnologies.com': 'Akamai CDN',
@@ -56,8 +56,8 @@ def get_ip_details(ip):
             break
             
     if isp in mapping_isp:
-        isp = mapping_isp[isp]
         owner = mapping_isp[isp]
+        isp = mapping_isp[isp]
 
     # Geolocation lookup using ip-api.com
     url = f"http://ip-api.com/json/{ip}"
