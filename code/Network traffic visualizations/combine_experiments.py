@@ -2,6 +2,11 @@ import os
 import pandas as pd
 import argparse
 
+# Argument parsing
+parser = argparse.ArgumentParser()
+parser.add_argument("category", help="Name of the directory of which contains the csv that would be merged")
+args = parser.parse_args()
+
 # Combine multiple experiment CSVs into one file.
 def combine_experiments(experiment_dir):
     csv_files = [os.path.join(experiment_dir, f) for f in os.listdir(experiment_dir) if f.endswith(".csv")]
@@ -12,10 +17,12 @@ def combine_experiments(experiment_dir):
 
     # Combine all experiments into one DataFrame
     dataframes = []
-    for idx, file in enumerate(csv_files, 1):
+    for file in csv_files:
         print(f"Loading {file}...")
+        exp_name = os.path.splitext(os.path.basename(file))[0]
+        experiment_name = exp_name[-1]
         df = pd.read_csv(file)
-        df['ExperimentTrial'] = f"ExperimentTrial {idx}" 
+        df['ExperimentTrial'] = experiment_name
         dataframes.append(df)
 
     # Combine into a single DataFrame
@@ -28,7 +35,8 @@ def combine_experiments(experiment_dir):
 
 if __name__ == "__main__":
     cur_dir = os.path.dirname(os.path.abspath(__file__))
-    experiment_path = os.path.join(cur_dir, "Voice Commands")
+    category = args.category
+    experiment_path = os.path.join(cur_dir, category)
 
     # Run the combine_experiments function
     combine_experiments(experiment_path)

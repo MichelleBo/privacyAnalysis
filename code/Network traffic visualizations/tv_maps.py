@@ -64,8 +64,8 @@ fig.update_layout(
     ),
     legend=dict(
         title="Traffic Type",
-        x=0.87,  
-        y=0.7,  
+        x=0.9,  
+        y=0.85,  
         xanchor='left',  
         yanchor='top',   
         bgcolor='rgba(255, 255, 255, 0.8)', 
