@@ -1,0 +1,58 @@
+# tv_filtered_multiple_trials - Pie Chart for third party traffic
+threshold = 0.0
+
+# tv_multiple_trials - Pie Chart for third party traffic keeping outliers
+threshold = 0.02
+positions = [
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0),
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (0.8, 1.0), 
+    (1.0, 1.0),
+]
+
+
+# tv_multiple_trials - Pie Chart for third party traffic
+threshold = 0.019
+positions = [
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 0.9), 
+    (1.1, 0.93), 
+    (0.5, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0)
+]
+
+
+# tv_multiple_trials - Pie Chart for third party traffic keeping outliers
+threshold = 0.019
+positions = [
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 1.0), 
+    (1.0, 0.9), 
+    (1.0, 0.93), 
+    (0.2, 1.0), 
+    (0.5, 1.0), 
+    (1.0, 0.93), 
+    (1.0, 0.95)
+]
+
+
+# tv_multiple_trials - Pie Chart for each specific trial
+positions = [
+    (1.0, 1.0), 
+    (1.25, 1.25), 
+    (1.13, 1.15), 
+    (1.1, 1.1), 
+    (1.0, 0.98), 
+    (1.0, 1.0)
+]
