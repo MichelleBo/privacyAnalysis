@@ -1,0 +1,7 @@
+### Pie Chart for the types of parties ###
+positions = [
+    (1.0, 1.0), 
+    (1.25, 1.25), 
+    (1.13, 1.15), 
+    (1.0, 1.0)
+]

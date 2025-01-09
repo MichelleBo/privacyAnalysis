@@ -1,0 +1,729 @@
+No.,Time,Source,Destination,Protocol,Length,Lower Address Part,Info,ExperimentTrial
+1,0.0,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:  -73), Packet Type: Unknown",1
+2,9.0351882,,,BT BR/EDR RF,22,0x00cbb00a,"Transport: Any (BR 1Mbps), RF Channel: 63 (SP:  -89), Packet Type: Unknown",1
+3,57.9042085,,,BT BR/EDR RF,22,0x00000000,"Transport: Any (BR 1Mbps), RF Channel: 62 (SP:  -30, NP:  -55), Packet Type: Unknown",1
+4,58.8530705,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:  -76), Packet Type: Unknown",1
+5,58.8831885,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+6,58.8855887,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+7,58.895593,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+8,58.9031952,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+9,58.9055963,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+10,59.0420512,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -69), Packet Type: Unknown",1
+11,59.0520513,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -72), Packet Type: Unknown",1
+12,59.0708458,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -66), Packet Type: Unknown",1
+13,59.2216922,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -39, NP:  -55), Packet Type: Unknown",1
+14,59.2879381,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+15,59.2979427,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+16,59.3079453,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+17,59.4869698,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:    0, NP:  -55), Packet Type: Unknown",1
+18,59.6129416,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -82), Packet Type: Unknown",1
+19,59.6868396,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:    0, NP:  -55), Packet Type: Unknown",1
+20,59.7168447,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:    0, NP:  -55), Packet Type: Unknown",1
+21,59.8521613,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:    0, NP:  -55), Packet Type: Unknown",1
+22,59.8895012,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -63), Packet Type: Unknown",1
+23,59.9095016,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -63), Packet Type: Unknown",1
+24,60.0006405,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -75), Packet Type: Unknown",1
+25,60.011039,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+26,60.0242428,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+27,60.0643778,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:    0, NP:  -55), Packet Type: Unknown",1
+28,60.1186028,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+29,60.1286089,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -73), Packet Type: Unknown",1
+30,60.1442173,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+31,60.1587314,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:    0, NP:  -55), Packet Type: Unknown",1
+32,60.168728,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -69), Packet Type: Unknown",1
+33,60.2088683,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:  -79), Packet Type: Unknown",1
+34,60.2272792,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",1
+35,60.2803237,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+36,60.3601599,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:    0, NP:  -55), Packet Type: Unknown",1
+37,60.3994862,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 24 (SP:  -72), Packet Type: Unknown",1
+38,60.4853274,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  9 (SP:  -59), Packet Type: Unknown",1
+39,60.5522352,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 41 (SP:  -72), Packet Type: Unknown",1
+40,60.5603574,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:    0, NP:  -55), Packet Type: Unknown",1
+41,60.6401857,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 58 (SP:    0, NP:  -55), Packet Type: Unknown",1
+42,61.0870959,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -63), Packet Type: Unknown",1
+43,61.1208169,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:    0, NP:  -55), Packet Type: Unknown",1
+44,61.3190605,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 49 (SP:  -76), Packet Type: Unknown",1
+45,61.4108725,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:  -73), Packet Type: Unknown",1
+46,61.5208138,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:    0, NP:  -55), Packet Type: Unknown",1
+47,61.8850996,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -46, NP:  -55), Packet Type: Unknown",1
+48,61.9003063,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -76), Packet Type: Unknown",1
+49,61.9007063,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -75), Packet Type: Unknown",1
+50,61.9188222,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 55 (SP:  -73), Packet Type: Unknown",1
+51,61.9208251,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 55 (SP:    0, NP:  -55), Packet Type: Unknown",1
+52,61.9601449,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+53,62.0006792,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",1
+54,62.1202903,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:    0, NP:  -55), Packet Type: Unknown",1
+55,62.1206903,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:    0, NP:  -55), Packet Type: Unknown",1
+56,63.0852974,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -80), Packet Type: Unknown",1
+57,63.280303,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+58,63.2807033,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+59,63.4801227,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+60,63.4809223,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+61,63.7208533,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:    0, NP:  -55), Packet Type: Unknown",1
+62,63.9603612,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+63,64.4406838,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+64,64.9202352,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",1
+65,65.2600257,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -57), Packet Type: Unknown",1
+66,65.2608273,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -68), Packet Type: Unknown",1
+67,66.2034267,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -74), Packet Type: Unknown",1
+68,67.0006478,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",1
+69,67.1314088,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+70,67.3200253,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+71,68.5108409,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -83), Packet Type: Unknown",1
+72,68.8800295,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+73,68.8808312,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+74,126.7048137,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+75,218.482043,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  9 (SP:    0, NP:  -55), Packet Type: Unknown",1
+76,218.5226023,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 41 (SP:  -36, NP:  -55), Packet Type: Unknown",1
+77,218.7712912,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+78,219.401295,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",1
+79,219.8811808,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+80,219.8831802,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+81,220.3999577,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+82,220.4007549,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+83,222.2763979,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -71), Packet Type: Unknown",1
+84,223.7850933,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 46 (SP:  -70), Packet Type: Unknown",1
+85,225.8817304,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+86,225.9113349,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+87,228.6454393,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -68), Packet Type: Unknown",1
+88,228.9170125,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:  -81), Packet Type: Unknown",1
+89,228.9944637,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:  -75), Packet Type: Unknown",1
+90,229.0880094,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -72), Packet Type: Unknown",1
+91,230.3965927,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:  -74), Packet Type: Unknown",1
+92,230.7698513,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+93,233.1224203,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:    0, NP:  -55), Packet Type: Unknown",1
+94,233.1244229,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:    0, NP:  -55), Packet Type: Unknown",1
+95,233.5180843,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:    0, NP:  -55), Packet Type: Unknown",1
+96,234.823599,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+97,234.8256012,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+98,235.1936163,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+99,235.3999785,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -73), Packet Type: Unknown",1
+100,235.7056174,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -72), Packet Type: Unknown",1
+101,236.2842599,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -73), Packet Type: Unknown",1
+102,236.9354809,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 67 (SP:  -75), Packet Type: Unknown",1
+103,237.2818219,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+104,239.0424809,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -77), Packet Type: Unknown",1
+105,239.5535534,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -75), Packet Type: Unknown",1
+106,239.5543527,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -72), Packet Type: Unknown",1
+107,242.3304388,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -40, NP:  -55), Packet Type: Unknown",1
+108,242.806246,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:  -71), Packet Type: Unknown",1
+109,242.9723912,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:  -73), Packet Type: Unknown",1
+110,243.201111,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:    0, NP:  -55), Packet Type: Unknown",1
+111,243.3612055,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+112,243.4799983,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",1
+113,243.8723417,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:    0, NP:  -55), Packet Type: Unknown",1
+114,246.7499465,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+115,247.4236449,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",1
+116,249.5629956,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 67 (SP:  -75), Packet Type: Unknown",1
+117,249.682962,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+118,249.8923849,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+119,251.3686019,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",1
+120,251.8440546,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+121,254.9034674,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:  -44, NP:  -55), Packet Type: Unknown",1
+122,255.0010284,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+123,255.3223884,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -72), Packet Type: Unknown",1
+124,255.6533275,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:  -81), Packet Type: Unknown",1
+125,255.6553267,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:  -79), Packet Type: Unknown",1
+126,257.2034204,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -72), Packet Type: Unknown",1
+127,257.2054202,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -70), Packet Type: Unknown",1
+128,257.3477841,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",1
+129,259.0398545,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 67 (SP:  -75), Packet Type: Unknown",1
+130,259.50402,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 24 (SP:  -72), Packet Type: Unknown",1
+131,261.5021913,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+132,261.5041912,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+133,262.0639674,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:  -72), Packet Type: Unknown",1
+134,262.0820929,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:  -80), Packet Type: Unknown",1
+135,263.4289863,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -70), Packet Type: Unknown",1
+136,264.0028389,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",1
+137,265.1422375,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:    0, NP:  -55), Packet Type: Unknown",1
+138,265.8191309,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 24 (SP:  -53, NP:  -55), Packet Type: Unknown",1
+139,266.2858685,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:    0, NP:  -55), Packet Type: Unknown",1
+140,267.7872643,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",1
+141,267.7888647,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",1
+142,269.3496952,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+143,269.3500949,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+144,269.6594995,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",1
+145,269.8577433,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+146,269.8982825,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 49 (SP:  -81), Packet Type: Unknown",1
+147,271.6040333,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -75), Packet Type: Unknown",1
+148,273.8288455,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -72), Packet Type: Unknown",1
+149,273.8509583,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:  -80), Packet Type: Unknown",1
+150,274.8300377,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:    0, NP:  -55), Packet Type: Unknown",1
+151,275.9819073,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",1
+152,276.5646298,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -81), Packet Type: Unknown",1
+153,277.4501134,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -72), Packet Type: Unknown",1
+154,277.4994446,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 46 (SP:  -81), Packet Type: Unknown",1
+155,278.2032635,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -74), Packet Type: Unknown",1
+156,278.4451459,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 24 (SP:  -80), Packet Type: Unknown",1
+157,279.6263813,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+158,280.0007887,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+159,280.1415304,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -65), Packet Type: Unknown",1
+160,280.2093307,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -72), Packet Type: Unknown",1
+161,280.2113299,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -72), Packet Type: Unknown",1
+162,280.4869679,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+163,280.4877678,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+164,280.8371369,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -69), Packet Type: Unknown",1
+165,281.2826805,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+166,281.2994788,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+167,281.3014783,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+168,281.4868881,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+169,281.4888878,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+170,281.5100869,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -74), Packet Type: Unknown",1
+171,282.0056135,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -77), Packet Type: Unknown",1
+172,282.0356071,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -76), Packet Type: Unknown",1
+173,282.5756917,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+174,282.5788929,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+175,283.1795028,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+176,283.1815014,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+177,283.3693137,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:    0, NP:  -55), Packet Type: Unknown",1
+178,283.7593196,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+179,283.7613186,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+180,283.7813254,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+181,285.0112471,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 58 (SP:  -78), Packet Type: Unknown",1
+182,285.0405726,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",1
+183,285.6676713,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+184,286.0592818,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -67), Packet Type: Unknown",1
+185,286.0612826,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -67), Packet Type: Unknown",1
+186,286.6082229,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+187,286.9207668,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",1
+188,287.8011623,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -73), Packet Type: Unknown",1
+189,289.8005501,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",1
+190,290.1888345,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:  -77), Packet Type: Unknown",1
+191,290.7955033,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+192,290.7963045,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+193,291.2807522,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:    0, NP:  -55), Packet Type: Unknown",1
+194,292.069215,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+195,293.8612109,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -73), Packet Type: Unknown",1
+196,295.1210814,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -63), Packet Type: Unknown",1
+197,296.2067927,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -70), Packet Type: Unknown",1
+198,296.2075937,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -70), Packet Type: Unknown",1
+199,296.3223672,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:    0, NP:  -55), Packet Type: Unknown",1
+200,296.8804865,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",1
+201,296.882486,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",1
+202,297.9293207,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -80), Packet Type: Unknown",1
+203,298.7607076,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",1
+204,299.5967638,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -71), Packet Type: Unknown",1
+205,299.709171,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:    0, NP:  -55), Packet Type: Unknown",1
+206,299.7111708,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:    0, NP:  -55), Packet Type: Unknown",1
+207,300.2493193,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+208,300.2513219,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+209,300.7605866,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:    0, NP:  -55), Packet Type: Unknown",1
+210,300.9691517,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+211,300.9835541,,,BT BR/EDR RF,22,0x003819f9,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -85), Packet Type: Unknown",1
+212,301.1869552,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+213,301.1885568,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+214,302.6423778,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:    0, NP:  -55), Packet Type: Unknown",1
+215,303.4697698,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -72), Packet Type: Unknown",1
+216,303.6362583,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+217,303.920488,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:    0, NP:  -55), Packet Type: Unknown",1
+218,304.9447582,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -71), Packet Type: Unknown",1
+219,304.9924835,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -74), Packet Type: Unknown",1
+220,306.7716063,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+221,307.4693107,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",1
+222,307.4806172,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+223,308.0940967,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -73), Packet Type: Unknown",1
+224,308.9092532,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -83), Packet Type: Unknown",1
+225,308.911253,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -81), Packet Type: Unknown",1
+226,309.6222984,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 67 (SP:  -76), Packet Type: Unknown",1
+227,310.2555624,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:    0, NP:  -55), Packet Type: Unknown",1
+228,311.0003448,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+229,311.0035447,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+230,311.2812326,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -75), Packet Type: Unknown",1
+231,312.9545498,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -82), Packet Type: Unknown",1
+232,313.5753433,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+233,314.385497,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+234,314.4790451,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -77), Packet Type: Unknown",1
+235,315.1768135,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -70), Packet Type: Unknown",1
+236,315.1772141,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -70), Packet Type: Unknown",1
+237,315.3910335,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -71), Packet Type: Unknown",1
+238,316.5879041,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -72), Packet Type: Unknown",1
+239,316.6397447,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:  -72), Packet Type: Unknown",1
+240,316.7605013,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+241,316.7621005,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+242,317.2428465,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -73), Packet Type: Unknown",1
+243,317.5205249,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+244,318.1748443,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -70), Packet Type: Unknown",1
+245,319.0759602,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -75), Packet Type: Unknown",1
+246,319.240217,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+247,421.2659721,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+248,421.2675723,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:    0, NP:  -55), Packet Type: Unknown",1
+249,421.5038891,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:  -78), Packet Type: Unknown",1
+250,422.3388657,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",1
+251,422.3576604,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",1
+252,423.3372181,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+253,423.429053,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -72), Packet Type: Unknown",1
+254,424.0959851,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -76), Packet Type: Unknown",1
+255,424.0975841,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -73), Packet Type: Unknown",1
+256,424.1457069,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:  -81), Packet Type: Unknown",1
+257,425.452143,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 49 (SP:  -70), Packet Type: Unknown",1
+258,425.4658617,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+259,425.6556617,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+260,425.6576619,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+261,426.377052,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",1
+262,426.9375718,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:  -80), Packet Type: Unknown",1
+263,427.1370068,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",1
+264,427.8556921,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -73), Packet Type: Unknown",1
+265,428.2756979,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+266,429.3645214,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:    0, NP:  -55), Packet Type: Unknown",1
+267,429.3665211,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:    0, NP:  -55), Packet Type: Unknown",1
+268,429.5571195,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",1
+269,430.4158041,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -78), Packet Type: Unknown",1
+270,430.5076455,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -81), Packet Type: Unknown",1
+271,431.2518368,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -72), Packet Type: Unknown",1
+272,431.5757203,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -75), Packet Type: Unknown",1
+273,431.5777233,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -72), Packet Type: Unknown",1
+274,431.6968982,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+275,431.7000968,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+276,431.8332786,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:  -35, NP:  -55), Packet Type: Unknown",1
+277,432.2256656,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:  -72), Packet Type: Unknown",1
+278,432.2276659,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:  -70), Packet Type: Unknown",1
+279,433.457086,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",1
+280,433.4586856,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",1
+281,433.5758639,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -76), Packet Type: Unknown",1
+282,434.5769282,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+283,435.0568816,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:    0, NP:  -55), Packet Type: Unknown",1
+284,435.3858135,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:    0, NP:  -55), Packet Type: Unknown",1
+285,435.4556619,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -77), Packet Type: Unknown",1
+286,435.4576631,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -54, NP:  -55), Packet Type: Unknown",1
+287,436.6674102,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -74), Packet Type: Unknown",1
+288,436.8170619,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+289,436.8174619,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+290,437.8938435,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:  -74), Packet Type: Unknown",1
+291,443.1767763,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:    0, NP:  -55), Packet Type: Unknown",1
+292,444.9718229,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+293,445.2568406,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",1
+294,446.5319694,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -74), Packet Type: Unknown",1
+295,446.6969831,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  9 (SP:    0, NP:  -55), Packet Type: Unknown",1
+296,450.2813505,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:  -67), Packet Type: Unknown",1
+297,452.6530771,,,BT BR/EDR RF,22,0x0002c7ce,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -82), Packet Type: Unknown",1
+298,488.681008,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:  -73), Packet Type: Unknown",1
+299,533.1179681,,,BT BR/EDR RF,22,0x004cc394,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:  -81), Packet Type: Unknown",1
+300,558.28147,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -74), Packet Type: Unknown",1
+301,570.7615923,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -63), Packet Type: Unknown",1
+302,575.081634,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+303,605.3288009,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -81), Packet Type: Unknown",1
+304,632.9263841,,,BT BR/EDR RF,22,0x00d7dfbf,"Transport: Any (BR 1Mbps), RF Channel: 54 (SP:  -69), Packet Type: Unknown",1
+305,639.5970957,,,BT BR/EDR RF,22,0x000342da,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -81), Packet Type: Unknown",1
+306,663.4027183,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",1
+307,716.0975045,,,BT BR/EDR RF,22,0x008b2bfb,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -38, NP:  -55), Packet Type: Unknown",1
+308,737.938303,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",1
+309,738.498459,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+310,738.6184529,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:    0, NP:  -55), Packet Type: Unknown",1
+311,739.0277199,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -73), Packet Type: Unknown",1
+312,739.2191241,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:  -76), Packet Type: Unknown",1
+313,739.7788603,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:  -44, NP:  -55), Packet Type: Unknown",1
+314,740.1800668,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -75), Packet Type: Unknown",1
+315,740.9095027,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",1
+316,742.3376613,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+317,742.3384617,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+318,743.3540271,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -77), Packet Type: Unknown",1
+319,744.817799,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+320,744.8927076,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -79), Packet Type: Unknown",1
+321,744.9377461,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:    0, NP:  -55), Packet Type: Unknown",1
+322,745.13754,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+323,745.1383391,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+324,745.858152,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 46 (SP:    0, NP:  -55), Packet Type: Unknown",1
+325,746.3451949,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -73), Packet Type: Unknown",1
+326,746.6963124,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -63), Packet Type: Unknown",1
+327,747.1777842,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+328,747.1781849,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+329,868.5544804,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+330,868.5732859,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+331,868.589683,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:  -77), Packet Type: Unknown",1
+332,868.6671366,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -75), Packet Type: Unknown",1
+333,868.7551325,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+334,868.7559309,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+335,868.8751196,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:    0, NP:  -55), Packet Type: Unknown",1
+336,868.9946916,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:    0, NP:  -55), Packet Type: Unknown",1
+337,868.995092,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:    0, NP:  -55), Packet Type: Unknown",1
+338,869.3546344,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:    0, NP:  -55), Packet Type: Unknown",1
+339,869.594561,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",1
+340,869.6776209,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -80), Packet Type: Unknown",1
+341,869.9552552,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:    0, NP:  -55), Packet Type: Unknown",1
+342,870.1803276,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:    0, NP:  -55), Packet Type: Unknown",1
+343,870.2337829,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -77), Packet Type: Unknown",1
+344,870.4344336,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+345,870.4652344,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",1
+346,870.5544026,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",1
+347,870.5552037,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",1
+348,871.0346454,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",1
+349,871.050244,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",1
+350,871.2745451,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:    0, NP:  -55), Packet Type: Unknown",1
+351,871.3418646,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",1
+352,871.3426607,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",1
+353,871.439419,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -70), Packet Type: Unknown",1
+354,871.6344746,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+355,871.6352755,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+356,871.9056337,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:  -82), Packet Type: Unknown",1
+357,871.9802699,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:    0, NP:  -55), Packet Type: Unknown",1
+358,872.235122,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+359,872.3169485,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:  -70), Packet Type: Unknown",1
+360,872.354665,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",1
+361,872.355065,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",1
+362,872.3862531,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",1
+363,872.5243736,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -70), Packet Type: Unknown",1
+364,872.5946109,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+365,872.5950126,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",1
+366,872.7145645,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",1
+367,872.7377741,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",1
+368,872.9552775,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 46 (SP:    0, NP:  -55), Packet Type: Unknown",1
+369,873.2334109,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:  -73), Packet Type: Unknown",1
+370,873.3144886,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:    0, NP:  -55), Packet Type: Unknown",1
+371,873.3152909,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:    0, NP:  -55), Packet Type: Unknown",1
+372,873.345709,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:  -81), Packet Type: Unknown",1
+373,873.4420727,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -72), Packet Type: Unknown",1
+374,873.6070011,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -70), Packet Type: Unknown",1
+375,873.7943967,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+376,873.7951974,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+377,873.8099925,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+378,873.9820929,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 56 (SP:  -72), Packet Type: Unknown",1
+379,874.0343349,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 41 (SP:    0, NP:  -55), Packet Type: Unknown",1
+380,874.1333955,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -70), Packet Type: Unknown",1
+381,874.2746587,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+382,874.2750587,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+383,874.2838561,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",1
+384,874.3946377,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:    0, NP:  -55), Packet Type: Unknown",1
+385,874.433151,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -81), Packet Type: Unknown",1
+386,874.6349865,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:    0, NP:  -55), Packet Type: Unknown",1
+387,874.6943364,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -78), Packet Type: Unknown",1
+388,874.8749805,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",1
+389,874.9949518,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:    0, NP:  -55), Packet Type: Unknown",1
+390,875.2945974,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -78), Packet Type: Unknown",1
+391,875.4013725,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+392,875.4305797,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",1
+393,875.4744115,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+394,875.4752116,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",1
+395,875.7152068,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",1
+396,875.7308076,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",1
+397,875.9406305,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -58), Packet Type: Unknown",1
+398,875.9414317,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -58), Packet Type: Unknown",1
+399,875.9551392,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",1
+400,876.2218661,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:  -72), Packet Type: Unknown",1
+401,876.315011,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 48 (SP:    0, NP:  -55), Packet Type: Unknown",1
+402,877.0621197,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:  -72), Packet Type: Unknown",1
+403,877.2808352,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -59), Packet Type: Unknown",1
+404,877.7944544,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:    0, NP:  -55), Packet Type: Unknown",1
+405,877.953367,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+406,877.9537656,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",1
+407,878.2346212,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+408,878.2350204,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",1
+409,878.2482348,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:  -77), Packet Type: Unknown",1
+410,878.721291,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",1
+411,879.253661,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -70), Packet Type: Unknown",1
+412,879.8343905,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+413,879.8351916,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+414,880.5132737,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:  -67), Packet Type: Unknown",1
+415,882.9945165,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+416,882.9949162,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:    0, NP:  -55), Packet Type: Unknown",1
+417,884.3969053,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:  -73), Packet Type: Unknown",1
+418,884.5943334,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:    0, NP:  -55), Packet Type: Unknown",1
+419,884.5951322,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:    0, NP:  -55), Packet Type: Unknown",1
+420,885.199369,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -81), Packet Type: Unknown",1
+421,885.8357282,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  1 (SP:  -77), Packet Type: Unknown",1
+422,886.4343501,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+423,886.4351521,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:    0, NP:  -55), Packet Type: Unknown",1
+424,887.1537465,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:  -70), Packet Type: Unknown",1
+425,887.2981485,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:    0, NP:  -55), Packet Type: Unknown",1
+426,888.103048,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 55 (SP:  -74), Packet Type: Unknown",1
+427,888.1038483,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 55 (SP:  -73), Packet Type: Unknown",1
+428,888.2980584,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:  -81), Packet Type: Unknown",1
+1,0.0,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -74), Packet Type: Unknown",2
+2,18.3097472,,,BT BR/EDR RF,22,0x001c8bd4,"Transport: Any (BR 1Mbps), RF Channel: 58 (SP:  -90), Packet Type: Unknown",2
+3,18.4798448,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -73), Packet Type: Unknown",2
+4,20.1591453,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -81), Packet Type: Unknown",2
+5,28.7987417,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -81), Packet Type: Unknown",2
+6,53.4368281,,,BT BR/EDR RF,22,0x0030246e,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:  -85), Packet Type: Unknown",2
+7,56.4550124,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 60 (SP:  -72), Packet Type: Unknown",2
+8,56.5023381,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:    0, NP:  -55), Packet Type: Unknown",2
+9,56.6090908,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:  -68), Packet Type: Unknown",2
+10,56.8286304,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 64 (SP:    0, NP:  -55), Packet Type: Unknown",2
+11,56.8586338,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 64 (SP:    0, NP:  -55), Packet Type: Unknown",2
+12,56.9300843,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 49 (SP:  -81), Packet Type: Unknown",2
+13,56.9553978,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:  -60), Packet Type: Unknown",2
+14,57.0115196,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:  -81), Packet Type: Unknown",2
+15,57.0139195,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",2
+16,57.0416421,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -64), Packet Type: Unknown",2
+17,57.0616425,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -64), Packet Type: Unknown",2
+18,57.0825822,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:  -75), Packet Type: Unknown",2
+19,57.1648281,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:  -75), Packet Type: Unknown",2
+20,57.2510669,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -72), Packet Type: Unknown",2
+21,57.2924112,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -74), Packet Type: Unknown",2
+22,57.3024108,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -72), Packet Type: Unknown",2
+23,57.4003581,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:  -79), Packet Type: Unknown",2
+24,57.4464658,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:    0, NP:  -55), Packet Type: Unknown",2
+25,57.4488663,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:    0, NP:  -55), Packet Type: Unknown",2
+26,57.4588651,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:    0, NP:  -55), Packet Type: Unknown",2
+27,57.6286701,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",2
+28,57.6386744,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",2
+29,57.6462701,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",2
+30,57.6486744,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 72 (SP:    0, NP:  -55), Packet Type: Unknown",2
+31,57.752624,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -75), Packet Type: Unknown",2
+32,57.7826427,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -76), Packet Type: Unknown",2
+33,57.7915691,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",2
+34,57.811585,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",2
+35,57.834104,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:  -73), Packet Type: Unknown",2
+36,57.8441021,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:  -71), Packet Type: Unknown",2
+37,58.0037714,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:    0, NP:  -55), Packet Type: Unknown",2
+38,58.0374792,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:    0, NP:  -55), Packet Type: Unknown",2
+39,58.0680006,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -71), Packet Type: Unknown",2
+40,58.0748066,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:    0, NP:  -55), Packet Type: Unknown",2
+41,58.1036153,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -72), Packet Type: Unknown",2
+42,58.117325,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 61 (SP:    0, NP:  -55), Packet Type: Unknown",2
+43,58.1506528,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -77), Packet Type: Unknown",2
+44,58.1542519,,,BT BR/EDR RF,22,0x00347a8c,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -70), Packet Type: Unknown",2
+45,58.2301214,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:  -57), Packet Type: Unknown",2
+46,58.2601333,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:  -70), Packet Type: Unknown",2
+47,58.2645332,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:  -38, NP:  -55), Packet Type: Unknown",2
+48,58.3407648,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 63 (SP:    0, NP:  -55), Packet Type: Unknown",2
+49,58.353292,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -36, NP:  -55), Packet Type: Unknown",2
+50,58.3544921,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -36, NP:  -55), Packet Type: Unknown",2
+51,58.7408074,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 67 (SP:  -74), Packet Type: Unknown",2
+52,58.8363726,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -75), Packet Type: Unknown",2
+53,60.223853,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -39, NP:  -55), Packet Type: Unknown",2
+54,60.3888324,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -77), Packet Type: Unknown",2
+55,60.5764988,,,BT BR/EDR RF,22,0x001fb86a,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:  -85), Packet Type: Unknown",2
+56,60.6038297,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -80), Packet Type: Unknown",2
+57,60.6162316,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -72), Packet Type: Unknown",2
+58,70.8210261,,,BT BR/EDR RF,22,0x0049bf80,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -90), Packet Type: Unknown",2
+59,72.7369793,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 49 (SP:  -60), Packet Type: Unknown",2
+60,95.9984101,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -72), Packet Type: Unknown",2
+61,99.1371932,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:  -75), Packet Type: Unknown",2
+62,99.6163002,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 65 (SP:  -75), Packet Type: Unknown",2
+63,99.617101,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 65 (SP:  -75), Packet Type: Unknown",2
+64,138.0166524,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 54 (SP:  -69), Packet Type: Unknown",2
+65,162.0169253,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:  -50, NP:  -55), Packet Type: Unknown",2
+66,170.1573881,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -75), Packet Type: Unknown",2
+67,198.977814,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -70), Packet Type: Unknown",2
+68,210.4974869,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:  -75), Packet Type: Unknown",2
+69,212.6364176,,,BT BR/EDR RF,22,0x0029cfc6,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -79), Packet Type: Unknown",2
+70,219.9310916,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -72), Packet Type: Unknown",2
+71,219.9330904,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -72), Packet Type: Unknown",2
+72,222.8592838,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 65 (SP:  -78), Packet Type: Unknown",2
+73,223.0888303,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -70), Packet Type: Unknown",2
+74,223.0904318,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -70), Packet Type: Unknown",2
+75,223.8580041,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:  -79), Packet Type: Unknown",2
+76,224.0594228,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:  -78), Packet Type: Unknown",2
+77,224.1574221,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",2
+78,226.6606644,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 24 (SP:  -70), Packet Type: Unknown",2
+79,228.4991582,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:  -79), Packet Type: Unknown",2
+80,228.9380994,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:  -70), Packet Type: Unknown",2
+81,230.3537066,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:  -82), Packet Type: Unknown",2
+82,230.4010398,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",2
+83,232.7960485,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 54 (SP:  -73), Packet Type: Unknown",2
+84,234.8192867,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:  -79), Packet Type: Unknown",2
+85,237.0185193,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",2
+86,237.020519,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:    0, NP:  -55), Packet Type: Unknown",2
+87,237.2773908,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:  -63), Packet Type: Unknown",2
+88,240.7589915,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -62), Packet Type: Unknown",2
+89,241.7808908,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:  -70), Packet Type: Unknown",2
+90,242.2471845,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",2
+91,242.3667216,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:  -71), Packet Type: Unknown",2
+92,242.8260396,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",2
+93,242.8497542,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",2
+94,242.9890444,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",2
+95,244.7922606,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:    0, NP:  -55), Packet Type: Unknown",2
+96,244.8439865,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 48 (SP:  -70), Packet Type: Unknown",2
+97,248.2209562,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:  -72), Packet Type: Unknown",2
+98,249.1522953,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",2
+99,249.2910521,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -71), Packet Type: Unknown",2
+100,249.2926532,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -53, NP:  -55), Packet Type: Unknown",2
+101,251.6109731,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",2
+102,251.7028402,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -81), Packet Type: Unknown",2
+103,253.210992,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -73), Packet Type: Unknown",2
+104,254.3902416,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 33 (SP:    0, NP:  -55), Packet Type: Unknown",2
+105,254.6839607,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 20 (SP:  -60), Packet Type: Unknown",2
+106,255.8639992,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -71), Packet Type: Unknown",2
+107,259.5770444,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 53 (SP:  -77), Packet Type: Unknown",2
+108,259.8133927,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:  -72), Packet Type: Unknown",2
+109,260.469089,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 78 (SP:  -79), Packet Type: Unknown",2
+110,262.906492,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",2
+111,264.4306333,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -73), Packet Type: Unknown",2
+112,264.5368891,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:  -75), Packet Type: Unknown",2
+113,264.8526992,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:  -77), Packet Type: Unknown",2
+114,265.7282526,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",2
+115,265.7302528,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",2
+116,267.1919866,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -70), Packet Type: Unknown",2
+117,268.9827006,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 68 (SP:  -78), Packet Type: Unknown",2
+118,269.1070766,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -28, NP:  -55), Packet Type: Unknown",2
+119,270.4207118,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -72), Packet Type: Unknown",2
+120,270.4227142,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -71), Packet Type: Unknown",2
+121,271.4668112,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",2
+122,272.1661983,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:    0, NP:  -55), Packet Type: Unknown",2
+123,273.7006161,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:  -75), Packet Type: Unknown",2
+124,273.7095321,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -77), Packet Type: Unknown",2
+125,273.7295235,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",2
+126,273.8583022,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:  -71), Packet Type: Unknown",2
+127,273.8599022,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:  -71), Packet Type: Unknown",2
+128,276.0182658,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -72), Packet Type: Unknown",2
+129,276.0186673,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -72), Packet Type: Unknown",2
+130,277.1806244,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:  -75), Packet Type: Unknown",2
+131,277.1814258,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:  -75), Packet Type: Unknown",2
+132,277.7556944,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",2
+133,278.3407141,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:  -55), Packet Type: Unknown",2
+134,279.0893408,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",2
+135,279.0913404,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 27 (SP:    0, NP:  -55), Packet Type: Unknown",2
+136,281.2632241,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -70), Packet Type: Unknown",2
+137,282.1431956,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -72), Packet Type: Unknown",2
+138,283.0293069,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -73), Packet Type: Unknown",2
+139,283.3330363,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",2
+140,284.6561822,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:  -64), Packet Type: Unknown",2
+141,287.1666537,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:    0, NP:  -55), Packet Type: Unknown",2
+142,287.1686529,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:    0, NP:  -55), Packet Type: Unknown",2
+143,287.4335371,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -70), Packet Type: Unknown",2
+144,288.1461522,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -78), Packet Type: Unknown",2
+145,288.9762894,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:  -70), Packet Type: Unknown",2
+146,289.6262736,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -78), Packet Type: Unknown",2
+147,291.6948243,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",2
+148,292.3917784,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:  -72), Packet Type: Unknown",2
+149,293.4116524,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -70), Packet Type: Unknown",2
+150,293.412453,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -70), Packet Type: Unknown",2
+151,295.3618932,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:    0, NP:  -55), Packet Type: Unknown",2
+152,295.8306157,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:  -72), Packet Type: Unknown",2
+153,298.3330902,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:    0, NP:  -55), Packet Type: Unknown",2
+154,299.054137,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -74), Packet Type: Unknown",2
+155,299.1247943,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:  -64), Packet Type: Unknown",2
+156,300.4059748,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:  -72), Packet Type: Unknown",2
+157,301.1643281,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 74 (SP:    0, NP:  -55), Packet Type: Unknown",2
+158,301.3467854,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -79), Packet Type: Unknown",2
+159,301.3918022,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -38, NP:  -55), Packet Type: Unknown",2
+160,302.1128841,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 52 (SP:  -65), Packet Type: Unknown",2
+161,302.2348129,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -74), Packet Type: Unknown",2
+162,303.5141411,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 66 (SP:  -76), Packet Type: Unknown",2
+163,303.6730513,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -80), Packet Type: Unknown",2
+164,304.0790904,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",2
+165,304.08229,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",2
+166,304.550981,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -75), Packet Type: Unknown",2
+167,304.7791677,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:    0, NP:  -55), Packet Type: Unknown",2
+168,305.1524022,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 35 (SP:  -80), Packet Type: Unknown",2
+169,306.1067287,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 60 (SP:  -82), Packet Type: Unknown",2
+170,306.2003092,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",2
+171,306.455535,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 32 (SP:  -79), Packet Type: Unknown",2
+172,306.4559362,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 32 (SP:  -79), Packet Type: Unknown",2
+173,306.8540547,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -74), Packet Type: Unknown",2
+174,306.8548553,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:  -72), Packet Type: Unknown",2
+175,307.6191028,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:  -81), Packet Type: Unknown",2
+176,309.3128654,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:    0, NP:  -55), Packet Type: Unknown",2
+177,309.5259622,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 47 (SP:  -73), Packet Type: Unknown",2
+178,310.2253077,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 38 (SP:    0, NP:  -55), Packet Type: Unknown",2
+179,311.193919,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 48 (SP:  -72), Packet Type: Unknown",2
+180,311.1959182,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 48 (SP:  -69), Packet Type: Unknown",2
+181,311.6902152,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -74), Packet Type: Unknown",2
+182,312.2828442,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 43 (SP:    0, NP:  -55), Packet Type: Unknown",2
+183,312.3109617,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 75 (SP:    0, NP:  -55), Packet Type: Unknown",2
+184,312.35589,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:  -70), Packet Type: Unknown",2
+185,314.6102993,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -78), Packet Type: Unknown",2
+186,315.2692038,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:    0, NP:  -55), Packet Type: Unknown",2
+187,315.6303047,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -69), Packet Type: Unknown",2
+188,316.0748346,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",2
+189,316.7245358,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",2
+190,316.8147812,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 25 (SP:  -74), Packet Type: Unknown",2
+191,317.1397803,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 44 (SP:  -70), Packet Type: Unknown",2
+192,318.3602492,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  9 (SP:    0, NP:  -55), Packet Type: Unknown",2
+193,318.5808806,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:  -73), Packet Type: Unknown",2
+194,318.8641177,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 77 (SP:    0, NP:  -55), Packet Type: Unknown",2
+195,319.4877067,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:    0, NP:  -55), Packet Type: Unknown",2
+196,319.489707,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 36 (SP:    0, NP:  -55), Packet Type: Unknown",2
+197,320.3639357,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -72), Packet Type: Unknown",2
+198,320.3659377,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -71), Packet Type: Unknown",2
+199,320.5545911,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 31 (SP:  -71), Packet Type: Unknown",2
+200,323.6652551,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 46 (SP:  -69), Packet Type: Unknown",2
+201,327.2439941,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",2
+202,431.3794506,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -70), Packet Type: Unknown",2
+203,433.214498,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:  -71), Packet Type: Unknown",2
+204,435.326774,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:  -77), Packet Type: Unknown",2
+205,435.805515,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 39 (SP:  -28, NP:  -55), Packet Type: Unknown",2
+206,436.9049209,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 34 (SP:    0, NP:  -55), Packet Type: Unknown",2
+207,437.3855684,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -45, NP:  -55), Packet Type: Unknown",2
+208,438.2455084,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -70), Packet Type: Unknown",2
+209,438.2463092,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -70), Packet Type: Unknown",2
+210,439.9535498,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 17 (SP:  -70), Packet Type: Unknown",2
+211,440.6604907,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 40 (SP:    0, NP:  -55), Packet Type: Unknown",2
+212,441.1205932,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:  -75), Packet Type: Unknown",2
+213,442.616666,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 28 (SP:    0, NP:  -55), Packet Type: Unknown",2
+214,444.2954002,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -70), Packet Type: Unknown",2
+215,445.0593708,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",2
+216,445.0597711,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",2
+217,449.9834133,,,BT BR/EDR RF,22,0x00f70af8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -74), Packet Type: Unknown",2
+218,459.1845442,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:  -77), Packet Type: Unknown",2
+219,476.9452357,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 71 (SP:  -75), Packet Type: Unknown",2
+220,498.5446908,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:  -72), Packet Type: Unknown",2
+221,507.1847097,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -72), Packet Type: Unknown",2
+222,510.5459146,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",2
+223,514.3879919,,,BT BR/EDR RF,22,0x00dcd3c2,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -52, NP:  -55), Packet Type: Unknown",2
+224,538.385153,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -72), Packet Type: Unknown",2
+225,538.3855544,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -72), Packet Type: Unknown",2
+226,565.745139,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",2
+227,565.7459367,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 11 (SP:    0, NP:  -55), Packet Type: Unknown",2
+228,579.6654506,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",2
+229,579.6658498,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:    0, NP:  -55), Packet Type: Unknown",2
+230,607.0254959,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 13 (SP:  -70), Packet Type: Unknown",2
+231,648.7860344,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",2
+232,648.7864327,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",2
+233,692.4667712,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 30 (SP:    0, NP:  -55), Packet Type: Unknown",2
+234,700.4902178,,,BT BR/EDR RF,22,0x0001731b,"Transport: Any (BR 1Mbps), RF Channel: 63 (SP:  -85), Packet Type: Unknown",2
+235,735.9944957,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  7 (SP:  -63), Packet Type: Unknown",2
+236,736.5265848,,,BT BR/EDR RF,22,0x007f8049,"Transport: Any (BR 1Mbps), RF Channel: 60 (SP:  -84), Packet Type: Unknown",2
+237,736.787687,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -50, NP:  -55), Packet Type: Unknown",2
+238,736.7884879,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:  -50, NP:  -55), Packet Type: Unknown",2
+239,737.6026088,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:  -36, NP:  -55), Packet Type: Unknown",2
+240,737.8996363,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:    0, NP:  -55), Packet Type: Unknown",2
+241,738.4825807,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -70), Packet Type: Unknown",2
+242,739.4833423,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -47, NP:  -55), Packet Type: Unknown",2
+243,740.9816134,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 57 (SP:  -81), Packet Type: Unknown",2
+244,744.3577207,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 59 (SP:  -76), Packet Type: Unknown",2
+245,746.8593878,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -73), Packet Type: Unknown",2
+246,746.9500179,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -54, NP:  -55), Packet Type: Unknown",2
+247,746.9508193,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:  -54, NP:  -55), Packet Type: Unknown",2
+248,751.9777558,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  9 (SP:  -73), Packet Type: Unknown",2
+249,868.4264674,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 29 (SP:  -72), Packet Type: Unknown",2
+250,868.5263115,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -62), Packet Type: Unknown",2
+251,868.7133496,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 16 (SP:  -70), Packet Type: Unknown",2
+252,868.8618899,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 65 (SP:  -81), Packet Type: Unknown",2
+253,868.9757542,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 50 (SP:  -73), Packet Type: Unknown",2
+254,869.0118807,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:    0, NP:  -55), Packet Type: Unknown",2
+255,869.2012776,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  5 (SP:    0, NP:  -55), Packet Type: Unknown",2
+256,869.2671238,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -74), Packet Type: Unknown",2
+257,869.2683264,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 69 (SP:  -74), Packet Type: Unknown",2
+258,869.3268613,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",2
+259,869.3276621,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 22 (SP:    0, NP:  -55), Packet Type: Unknown",2
+260,869.5743894,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 56 (SP:  -72), Packet Type: Unknown",2
+261,870.2725162,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  0 (SP:  -73), Packet Type: Unknown",2
+262,870.3707601,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 64 (SP:  -74), Packet Type: Unknown",2
+263,870.5951163,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:    0, NP:  -55), Packet Type: Unknown",2
+264,870.6544526,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:  -74), Packet Type: Unknown",2
+265,870.6777567,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  4 (SP:    0, NP:  -55), Packet Type: Unknown",2
+266,870.8125485,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:    0, NP:  -55), Packet Type: Unknown",2
+267,870.850666,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 53 (SP:  -74), Packet Type: Unknown",2
+268,870.9919471,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 23 (SP:    0, NP:  -55), Packet Type: Unknown",2
+269,871.0757769,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  8 (SP:  -70), Packet Type: Unknown",2
+270,871.4890156,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 12 (SP:    0, NP:  -55), Packet Type: Unknown",2
+271,871.5556678,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 76 (SP:  -74), Packet Type: Unknown",2
+272,871.8357038,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 63 (SP:  -74), Packet Type: Unknown",2
+273,872.852063,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 73 (SP:  -81), Packet Type: Unknown",2
+274,873.3095326,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 62 (SP:  -81), Packet Type: Unknown",2
+275,873.3556766,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",2
+276,873.3564778,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",2
+277,873.6557178,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",2
+278,873.6565183,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  2 (SP:    0, NP:  -55), Packet Type: Unknown",2
+279,873.7520773,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 19 (SP:  -68), Packet Type: Unknown",2
+280,873.9782862,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 21 (SP:  -72), Packet Type: Unknown",2
+281,874.0581309,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",2
+282,874.058931,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  6 (SP:    0, NP:  -55), Packet Type: Unknown",2
+283,874.1055855,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -74), Packet Type: Unknown",2
+284,874.1344019,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -73), Packet Type: Unknown",2
+285,874.8430666,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 14 (SP:  -70), Packet Type: Unknown",2
+286,874.9844318,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 63 (SP:  -39, NP:  -55), Packet Type: Unknown",2
+287,875.2420207,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 18 (SP:  -71), Packet Type: Unknown",2
+288,877.2757735,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -73), Packet Type: Unknown",2
+289,877.2969684,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 70 (SP:  -81), Packet Type: Unknown",2
+290,877.6007745,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 10 (SP:  -71), Packet Type: Unknown",2
+291,881.6344899,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -77), Packet Type: Unknown",2
+292,881.6368901,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel:  3 (SP:  -38, NP:  -55), Packet Type: Unknown",2
+293,881.878017,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 37 (SP:  -78), Packet Type: Unknown",2
+294,882.8057065,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 62 (SP:  -81), Packet Type: Unknown",2
+295,882.8538486,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 15 (SP:    0, NP:  -55), Packet Type: Unknown",2
+296,885.5057793,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 26 (SP:  -71), Packet Type: Unknown",2
+297,885.5743166,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 58 (SP:  -73), Packet Type: Unknown",2
+298,885.8575308,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 45 (SP:  -67), Packet Type: Unknown",2
+299,886.4557632,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 51 (SP:  -57), Packet Type: Unknown",2
+300,890.274833,,,BT BR/EDR RF,22,0x002ff7a8,"Transport: Any (BR 1Mbps), RF Channel: 42 (SP:  -81), Packet Type: Unknown",2
