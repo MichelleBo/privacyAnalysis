@@ -8,7 +8,7 @@ relevant_criteria = {
 }
 
 criteria = {
-    "First Party": ["Private", "Facebook/Meta", "Thefa-3"], 
+    "First Party": ["Private", "Facebook/Meta", "Thefa-3", "Facebook, Inc.", "Facebook"], 
     "Support Party": ["Facebook/Meta-Instagram", "Facebook/Meta-WhatsApp"]
 }
 
@@ -82,10 +82,19 @@ def classify_traffic_by_service(service):
 
 # Checks if the traffic is encrypted based on protocol
 def is_encrypted_traffic(protocol):
-    encrypted_protocols = {'HTTPS', 'TLS', 'QUIC', 'SSL'}
+    encrypted_protocols = {'HTTPS', 'TLS', 'SSL', 'QUIC', 'SSH', 'IPSEC', 'SFTP', 'SMTPS', 'IMAPS', 'POP3S', 'TCP', 'UDP'}
     return any(enc in protocol.upper() for enc in encrypted_protocols)
     
+# Checks if the traffic is TCP
+def is_tcp_traffic(protocol):
+    protocols = {'TCP'}
+    return any(enc in protocol.upper() for enc in protocols)
 
+# Checks if the traffic is UDP
+def is_udp_traffic(protocol):
+    protocols = {'UDP'}
+    return any(enc in protocol.upper() for enc in protocols)
+    
 # Checks whether a given protocol is redundant based on research goals 
 def is_redundant_traffic(protocol, info):
     redundant_protocols = {
@@ -93,22 +102,17 @@ def is_redundant_traffic(protocol, info):
         'SSDP',  # Simple Service Discovery Protocol, used for service discovery - local service discovery
         'ARP',   # Address Resolution Protocol, used to resolve MAC addresses - local network communication
         'ICMPv6',  # Internet Control Message Protocol for IPv6, diagnostic or admin traffic
-        'NTP',   # Network Time Protocol, used for time synchronization between devices
-        'STUN',  # Session Traversal Utilities for NAT, used for administrative signaling - peer-to-peer communication
         'DHCP'   # Dynamic Host Configuration Protocol, used for IP address assignment to devices - network configuration
     }
     
     redundant_keywords = {
-    """
-    'ACK', 'Keep-Alive', 'Syn', 'Fin', 'RST', 'Window Update', 
+    'Window Update', 
     'Standard query', 'Standard query response', 
-    'PTR', 'AAAA', 'A', 'NS', 
+    'PTR', 'AAAA',
     'Multicast', 'Broadcast', 'SSDP', 'mDNS', 
     'Binding Request', 'Time Request', 'Time Reply', 
     'Echo Request', 'Echo Reply', 'Destination Unreachable', 
     'Who has', 'Tell', 
-    'Retransmission', 'Duplicate ACK', 'Out-of-Order', 'Spurious Retransmission'
-    """
     }
     
     if protocol.upper() in redundant_protocols:

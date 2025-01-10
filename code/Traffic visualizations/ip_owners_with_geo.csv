@@ -1,18 +1,18 @@
 IP Address,ISP,Service,Hostname,Owner,Country,Region,City,Latitude,Longitude
 192.168.1.141,RedMi-Phone,Private,Private,Private,Unknown,Unknown,Unknown,,
-34.158.1.133,Google-2,Google Cloud,133.1.158.34.bc.googleusercontent.com,Googl-2,United States,California,Mountain View,37.422,-122.084
-35.186.224.44,Google-Cloud,Google Cloud,44.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
-192.168.1.100,ALFA-Hotspot,Private,Private,Private,Unknown,Unknown,Unknown,,
+34.158.1.133,Google-Cloud,Spotify,133.1.158.34.bc.googleusercontent.com,Google-Cloud,United States,California,Mountain View,37.422,-122.084
+35.186.224.44,Google-Cloud,Spotify,44.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
+192.168.1.100,ALFA network adapter,Private,Private,Private,Unknown,Unknown,Unknown,,
 157.240.17.3,"Facebook, Inc.",Facebook/Meta,edge-dgw-shv-01-zrh1.facebook.com,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
 157.240.17.17,"Facebook, Inc.",Facebook/Meta,edge-star-shv-01-zrh1.facebook.com,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
 157.240.17.63,"Facebook, Inc.",Facebook/Meta-Instagram,instagram-p3-shv-01-zrh1.fbcdn.net,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
-35.186.224.24,Google-Cloud,Google Cloud,24.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
+35.186.224.24,Google-Cloud,Spotify,24.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
 8.219.73.104,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82
 157.240.17.61,"Facebook, Inc.",Facebook/Meta-WhatsApp,whatsapp-chatd-edge-shv-01-zrh1.facebook.com,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
 8.222.155.65,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82
 172.217.168.14,Google,Google,zrh11s03-in-f14.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 172.217.168.67,Google,Google,zrh04s15-in-f3.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
-35.186.224.28,Google-Cloud,Google Cloud,28.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
+35.186.224.28,Google-Cloud,Spotify,28.224.186.35.bc.googleusercontent.com,Google-Cloud,United States,Missouri,Kansas City,39.0997,-94.5785
 157.240.17.35,"Facebook, Inc.",Facebook/Meta,edge-star-mini-shv-01-zrh1.facebook.com,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
 216.58.215.234,Google,Google,zrh11s02-in-f10.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 13.224.103.120,Amazon-CloudFront,Unknown,server-13-224-103-120.zrh50.r.cloudfront.net,Amazon-CloudFront,Ireland,Leinster,Dublin,53.3498,-6.26031
@@ -29,11 +29,11 @@ IP Address,ISP,Service,Hostname,Owner,Country,Region,City,Latitude,Longitude
 172.217.168.35,Google,Google,zrh04s14-in-f3.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 3.165.190.73,Amazon-CloudFront,Unknown,server-3-165-190-73.zrh55.r.cloudfront.net,Amazon-CloudFront,Ireland,Leinster,Dublin,53.3498,-6.26031
 8.219.247.14,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82
-216.239.36.223,Google,Unknown,Unknown,Google,United States,California,Mountain View,37.422,-122.084
+216.239.36.223,Google,Google,Unknown,Google,United States,California,Mountain View,37.422,-122.084
 217.147.223.78,Nexellent-Net-1,Unknown,bart.nexellent.net,Nexellent-Net-1,Switzerland,Zurich,Opfikon,47.4322,8.558
 142.250.203.110,Google,Google,zrh04s16-in-f14.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 224.0.0.251,Unknown,IP-Multicast,mdns.mcast.net,Unknown,Unknown,Unknown,Unknown,,
-192.168.1.255,POCO-X5-5G,Private,Private,Private,Unknown,Unknown,Unknown,,
+192.168.1.255,Meta glasses,Private,Private,Private,Unknown,Unknown,Unknown,,
 239.255.255.250,Unknown,IP-Multicast,Unknown,Unknown,Unknown,Unknown,Unknown,,
 20.33.39.104,Microsoft Azure,Unknown,Unknown,Microsoft Azure,Netherlands,North Holland,Amsterdam,52.3667,4.9
 8.222.234.13,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82
@@ -49,14 +49,14 @@ ff02::fb,Unknown,Unknown,ip6-multicast-DNS,Unknown,,,,0,0
 fe80::cc6b:9aff:fe21:fb7c,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,,
 10.42.0.34,Private-Phone,Private,Private,Private,Unknown,Unknown,Unknown,,
 10.42.0.1,Private-Network,Private,Private,Private,Unknown,Unknown,Unknown,,
-216.239.38.223,Google,Unknown,Unknown,Google,United States,California,Mountain View,37.422,-122.084
+216.239.38.223,Google,Google,Unknown,Google,United States,California,Mountain View,37.422,-122.084
 13.224.103.78,Amazon-CloudFront,Unknown,server-13-224-103-78.zrh50.r.cloudfront.net,Amazon-CloudFront,Ireland,Leinster,Dublin,53.3498,-6.26031
 142.250.153.188,Google,Google,ea-in-f188.1e100.net,Google,United States,California,Mountain View,37.4225,-122.085
 8.222.231.58,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82
 fe80::884d:a92c:8cd5:5439,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,,
 216.58.215.246,Google,Google,zrh11s02-in-f22.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 142.250.203.100,Google,Google,zrh04s16-in-f4.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
-216.239.32.223,Google,Unknown,Unknown,Google,United States,California,Mountain View,37.422,-122.084
+216.239.32.223,Google,Google,Unknown,Google,United States,California,Mountain View,37.422,-122.084
 172.217.168.42,Google,Google,zrh04s14-in-f10.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 0.0.0.0,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,,
 ::,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,,
@@ -101,7 +101,7 @@ fe80::f359:98d5:9dd:78a2,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown
 195.186.4.101,Dns-Infra,Unknown,bwntp2pool.bluewin.ch,Dns-Infra,Switzerland,Bern,Bern,46.948,7.44745
 212.51.144.46,Heuer-Ch-Net,Unknown,ntp02.maillink.ch,Heuer-Ch-Net,Switzerland,Zurich,Zurich,47.3503,8.5561
 fe80::187c:53ff:fe16:27dc,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,,
-34.80.0.147,Googl-2,Google Cloud,147.0.80.34.bc.googleusercontent.com,Googl-2,Taiwan,Taiwan,Taipei,25.0329,121.5654
+34.80.0.147,Google-Cloud,Google-Cloud,147.0.80.34.bc.googleusercontent.com,Google-Cloud,Taiwan,Taiwan,Taipei,25.0329,121.5654
 142.250.145.188,Google,Google,eb-in-f188.1e100.net,Google,United States,California,Mountain View,37.4225,-122.085
 81.6.2.165,Nete-G-Ch-Net,Unknown,165-2-6-81.static.dsl-net.ch,Nete-G-Ch-Net,Switzerland,Zurich,Wallisellen,47.4143,8.5933
 193.134.29.12,Chktzg01,Unknown,Unknown,Chktzg01,Switzerland,Zug,Zug,47.1738,8.51049
@@ -115,7 +115,7 @@ fe80::187c:53ff:fe16:27dc,Unknown,Unknown,Unknown,Unknown,Unknown,Unknown,Unknow
 54.194.107.68,Amazo-Zdub5,Amazon AWS,ec2-54-194-107-68.eu-west-1.compute.amazonaws.com,Amazo-Zdub5,Ireland,Leinster,Dublin,53.3498,-6.26031
 3.165.198.94,Amazon-CloudFront,Unknown,server-3-165-198-94.zrh55.r.cloudfront.net,Amazon-CloudFront,Switzerland,Zurich,Zurich,47.3769,8.54169
 fe80::d76f:66bb:5471:f0fb,Unknown,Unknown,michelle-Alienware-m16-R2,Unknown,Unknown,Unknown,Unknown,,
-216.239.34.223,Google,Unknown,Unknown,Google,United States,California,Mountain View,37.422,-122.084
+216.239.34.223,Google,Google,Unknown,Google,United States,California,Mountain View,37.422,-122.084
 18.165.183.108,Amazon-CloudFront,Unknown,server-18-165-183-108.zrh55.r.cloudfront.net,Amazon-CloudFront,Switzerland,Zurich,Zurich,47.3769,8.54169
 3.165.190.93,Amazon-CloudFront,Unknown,server-3-165-190-93.zrh55.r.cloudfront.net,Amazon-CloudFront,Switzerland,Zurich,Zurich,47.3769,8.54169
 108.177.119.188,Google,Google,ei-in-f188.1e100.net,Google,United States,California,Mountain View,37.4225,-122.085
@@ -140,3 +140,23 @@ fe80::d76f:66bb:5471:f0fb,Unknown,Unknown,michelle-Alienware-m16-R2,Unknown,Unkn
 84.72.108.37,Cablecommain-Net,Unknown,84-72-108-37.dclient.hispeed.ch,Cablecommain-Net,Switzerland,Zurich,Seuzach Dorf,47.54,8.7363
 157.240.0.62,"Facebook, Inc.",Facebook/Meta,edgeray-shv-02-fra3.facebook.com,"Facebook, Inc.",Germany,Hesse,Frankfurt am Main,50.1187,8.6842
 20.189.173.14,Microsoft Azure,Unknown,Unknown,Microsoft Azure,United States,California,San Francisco,37.783,-122.417
+216.58.215.228,Google,Google,zrh11s02-in-f4.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
+216.239.32.36,Google,Google,Unknown,Google,United States,California,Mountain View,37.422,-122.084
+157.240.17.16,"Facebook, Inc.",Facebook/Meta,edge-secure-shv-01-zrh1.facebook.com,"Facebook, Inc.",Switzerland,Zurich,Zurich,47.3682,8.5671
+195.141.190.190,Sunrise-Backbone,Unknown,time.sunrise.net,Sunrise-Backbone,Switzerland,Zurich,Zurich,47.3319,8.5116
+195.186.1.100,Dns-Infra,Unknown,bwntpo.bluewin.ch,Dns-Infra,Switzerland,Bern,Bern,46.948,7.44745
+81.94.123.17,As34288-Ng-Ha-Int,Unknown,ntp1.as34288.net,As34288-Ng-Ha-Int,Switzerland,Zug,Zug,47.1739,8.52062
+216.58.215.229,Google,Google,zrh11s02-in-f5.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
+3.165.190.64,Amazon-CloudFront,Unknown,server-3-165-190-64.zrh55.r.cloudfront.net,Amazon-CloudFront,Switzerland,Zurich,Zurich,47.3769,8.54169
+3.165.190.58,Amazon-CloudFront,Unknown,server-3-165-190-58.zrh55.r.cloudfront.net,Amazon-CloudFront,Switzerland,Zurich,Zurich,47.3769,8.54169
+104.18.41.243,Cloudflarenet,Unknown,Unknown,Cloudflarenet,Canada,Ontario,Toronto,43.6532,-79.3832
+184.24.196.56,Aibv,Akamai CDN,a184-24-196-56.deploy.static.akamaitechnologies.com,Aibv,Switzerland,Zurich,Glattbrugg,47.4348,8.5629
+104.79.29.207,Akamai,Akamai CDN,a104-79-29-207.deploy.static.akamaitechnologies.com,Akamai,Switzerland,Zurich,Glattbrugg,47.4348,8.5629
+162.159.200.123,Cloudflarenet,Unknown,time.cloudflare.com,Cloudflarenet,Canada,Ontario,Toronto,43.6532,-79.3832
+51.81.57.55,Sd-Vin-V118B00-Maggie-Infra-002,Unknown,roughtime.int08h.com,Sd-Vin-V118B00-Maggie-Infra-002,United States,Virginia,Reston,38.958,-77.3592
+172.217.168.3,Google,Google,zrh11s03-in-f3.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
+216.58.215.238,Google,Google,zrh11s02-in-f14.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
+130.60.204.10,Ch-Uzh-Ipv4-16,Unknown,ntppublic.uzh.ch,Ch-Uzh-Ipv4-16,Switzerland,Zurich,Zurich,47.3503,8.5561
+4.152.45.219,Microsoft Azure,Unknown,Unknown,Microsoft Azure,United States,Virginia,Boydton,36.677696,-78.37471
+74.125.133.81,Google,Google,wo-in-f81.1e100.net,Google,United States,California,Mountain View,37.4225,-122.085
+162.159.200.1,Cloudflarenet,Unknown,time.cloudflare.com,Cloudflarenet,Canada,Ontario,Toronto,43.6532,-79.3832

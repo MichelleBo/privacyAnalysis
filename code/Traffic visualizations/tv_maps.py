@@ -4,6 +4,7 @@ import folium
 import argparse
 import plotly.express as px
 import filters
+import numpy as np
 
 # Argument parsing
 parser = argparse.ArgumentParser()
@@ -35,9 +36,11 @@ unique_ips = [ip for ip in unique_ips if filters.is_valid_ip(ip)]
 filtered_ip_owner_df = ip_owner_df[ip_owner_df['IP Address'].isin(unique_ips)]
 filtered_ip_owner_df = filtered_ip_owner_df.dropna(subset=['Latitude', 'Longitude'])
 
+filtered_ip_owner_df['Latitude'] += np.random.uniform(-0.01, 0.01, size=len(filtered_ip_owner_df))
+filtered_ip_owner_df['Longitude'] += np.random.uniform(-0.01, 0.01, size=len(filtered_ip_owner_df))
+
 # Check for traffic type
 filtered_ip_owner_df['Traffic Type'] = filtered_ip_owner_df['Service'].apply(filters.classify_traffic_by_service)
-
 # Create the scatter geo plot
 fig = px.scatter_geo(
     filtered_ip_owner_df,
@@ -49,31 +52,41 @@ fig = px.scatter_geo(
     hover_data={
         'IP Address': True,
         'ISP': True,
-        'Service': True
+        'Service': True,
+        'Country': True,
+        'Region': True,
+        'City': True
     }
-)
+) 
 
 # Adjust the layout
 fig.update_layout(
     geo=dict(
-        showland=True,
-        landcolor="lightgray",
+        showland=True, 
+        showocean=True,  
+        oceancolor="lightblue",      
         showcoastlines=True,
-        coastlinecolor="gray",
-        projection_type="natural earth"
+        coastlinecolor="black",       
+        showframe=False, 
+        projection_type="natural earth",
+        showcountries=True,   
+        countrycolor="gray", 
+        countrywidth=1,
+        showlakes=True,   
+        lakecolor="lightblue",    
     ),
     legend=dict(
         title="Traffic Type",
-        x=0.9,  
-        y=0.85,  
+        x=0.87,  
+        y=0.7,  
         xanchor='left',  
         yanchor='top',   
         bgcolor='rgba(255, 255, 255, 0.8)', 
         bordercolor='black', 
-        borderwidth=1  
+        borderwidth=1 
     )
 )
-fig.update_traces(marker=dict(size=10, opacity=0.8))
+fig.update_traces(marker=dict(size=17))
 
 # Save the html file
 output_dir = os.path.join(os.path.dirname(input_csv), "images")

@@ -24,7 +24,10 @@ mapping_isp = {
     'Asepl-Sg': 'Alibaba-Sg',
     'Al-3': 'Alibaba-Sg',
     'C-212': 'Swiss Education and Research Network',
-    'Thefa-3': 'Facebook, Inc.'
+    'Thefa-3': 'Facebook, Inc.',
+    'Google-2': 'Google',
+    'Googl-2': 'Google',
+    'Google Cloud': 'Google-Cloud',
 }
 
 # Resolve IP details
