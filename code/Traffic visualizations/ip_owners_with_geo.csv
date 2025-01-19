@@ -33,7 +33,7 @@ IP Address,ISP,Service,Hostname,Owner,Country,Region,City,Latitude,Longitude
 217.147.223.78,Nexellent-Net-1,Unknown,bart.nexellent.net,Nexellent-Net-1,Switzerland,Zurich,Opfikon,47.4322,8.558
 142.250.203.110,Google,Google,zrh04s16-in-f14.1e100.net,Google,Switzerland,Zurich,Zurich,47.3769,8.54169
 224.0.0.251,Unknown,IP-Multicast,mdns.mcast.net,Unknown,Unknown,Unknown,Unknown,,
-192.168.1.255,Meta glasses,Private,Private,Private,Unknown,Unknown,Unknown,,
+192.168.1.255,Broadcsat,Private,Private,Private,Unknown,Unknown,Unknown,,
 239.255.255.250,Unknown,IP-Multicast,Unknown,Unknown,Unknown,Unknown,Unknown,,
 20.33.39.104,Microsoft Azure,Unknown,Unknown,Microsoft Azure,Netherlands,North Holland,Amsterdam,52.3667,4.9
 8.222.234.13,Alibaba-Sg,Unknown,Unknown,Alibaba-Sg,Singapore,North West,Singapore,1.35208,103.82

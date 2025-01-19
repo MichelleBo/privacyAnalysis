@@ -48,13 +48,23 @@ os.makedirs(output_dir, exist_ok=True)
 
 #####################     Shows traffic volume for the types of parties     #####################
 # Classify traffic for the analysis
-ip_owner_df['Traffic Type'] = ip_owner_df['Service'].apply(filters.classify_traffic_by_service)
-data['Traffic Type'] = data['Destination'].map(ip_owner_df.set_index('IP Address')['Traffic Type'])
+data['Service'] = data['Destination'].map(ip_owner_df.set_index('IP Address')['Service'])
 
+data['Traffic Type'] = data.apply(lambda row: filters.classify_traffic_by_service(row['Service'], row['Protocol']), axis=1)
 
 data['First Party Traffic'] = data['Length'].where(data['Traffic Type'] == 'First Party', 0).astype(float)
 data['Support Party Traffic'] = data['Length'].where(data['Traffic Type'] == 'Support Party', 0).astype(float)
 data['Third Party Traffic'] = data['Length'].where(data['Traffic Type'] == 'Third Party', 0).astype(float)
+
+fp_volume = data['First Party Traffic'].sum() / 5
+sp_volume = data['Support Party Traffic'].sum() / 5
+tp_volume = data['Third Party Traffic'].sum() / 5
+tt_volume = fp_volume + sp_volume + tp_volume
+print(f"First Party: {fp_volume / 1048576} MB with {fp_volume / tt_volume * 100}%")
+print(f"Support Party: {sp_volume / 1024} KB with {sp_volume / tt_volume * 100}%")
+print(f"Third Party: {tp_volume / 1024} KB with {tp_volume / tt_volume * 100}%")
+
+
 
 # Group by time intervals
 data_10 = data.copy()
@@ -67,6 +77,78 @@ else:
 
 time_intervals = data['Time Interval'].unique()
 x_positions = np.arange(len(time_intervals))
+
+#print(f"Google: {data[(data['Traffic Type'] == 'Third Party') & (data['Service'] == 'Google')]['Length'].sum() / 1024} KB")
+#print(f"Spotify: {data[(data['Traffic Type'] == 'Third Party') & (data['Service'] == 'Spotify')]['Length'].sum() / 1024} KB")
+
+
+
+### Bar Plot for all traffic by protocol ###
+readability_colors = {
+    'Unreadable': 'blue',
+    'Partially Readable': 'orange',
+    'Readable': 'green',
+    'Unknown': 'gray'
+}
+
+data['Readability'] = data.apply(lambda row: filters.check_readability(row['Protocol'], row['Info']), axis=1)
+
+partially_readable_third_party = data[(data['Traffic Type'] == 'Third Party') & (data['Readability'] == 'Partially Readable')]
+print(partially_readable_third_party[['Destination', 'Protocol', 'Info', 'Length']])
+
+"""
+refined_readability_bytes = data.groupby(['Protocol', 'Readability'])['Length'].sum().reset_index()
+    
+pivot_data = refined_readability_bytes.pivot(index='Protocol', columns='Readability', values='Length').fillna(0)
+
+
+pivot_data = pivot_data[[col for col in readability_colors if col in pivot_data.columns]]
+colors = [readability_colors[col] for col in pivot_data.columns]
+
+pivot_data.plot(kind='bar', stacked=True, figsize=(12, 8))
+plt.yscale('log')
+plt.title('Traffic Volume for All Traffic by Protocol and Readability',  fontsize=18)
+plt.xlabel('Protocol',  fontsize=16)
+plt.ylabel('Total Bytes',  fontsize=16)
+plt.tick_params(axis='x', labelsize=14, rotation=45)
+plt.tick_params(axis='y', labelsize=14)
+plt.legend(title='Readability', loc='upper left',  fontsize=14, title_fontsize=14)
+plt.tight_layout()
+
+output_file = os.path.join(output_dir, f"bar_log_all_protocol_traffic.png")
+plt.savefig(output_file)
+print(f"Bar plot for all traffic saved to {output_file}")
+plt.close()
+
+
+### Bar Plot for different party type traffic by protocol ###
+for traffic_type in ['First Party', 'Support Party', 'Third Party']:
+    party_data = data[data['Traffic Type'] == traffic_type]
+    if party_data['Length'].sum() == 0:
+        continue
+    party_data.loc[:, 'Readability'] = party_data.apply(lambda row: filters.check_readability(row['Protocol'], row['Info']), axis=1)
+
+    refined_readability_bytes = party_data.groupby(['Protocol', 'Readability'])['Length'].sum().reset_index()
+        
+    pivot_data = refined_readability_bytes.pivot(index='Protocol', columns='Readability', values='Length').fillna(0)
+
+    pivot_data = pivot_data[[col for col in readability_colors if col in pivot_data.columns]]
+    colors = [readability_colors[col] for col in pivot_data.columns]
+    
+    pivot_data.plot(kind='bar', stacked=True, figsize=(12, 8))
+    plt.yscale('log')
+    plt.title(f'Traffic Volume for {traffic_type} by Protocol and Readability',  fontsize=18)
+    plt.xlabel('Protocol',  fontsize=16)
+    plt.ylabel('Total Bytes',  fontsize=16)
+    plt.tick_params(axis='x', labelsize=14, rotation=45)
+    plt.tick_params(axis='y', labelsize=14)
+    plt.legend(title='Readability', loc='upper left',  fontsize=14, title_fontsize=14)
+    plt.tight_layout()
+    
+    output_file = os.path.join(output_dir, f"bar_log_{traffic_type.lower().replace(' ', '_')}_protocol_traffic.png")
+    plt.savefig(output_file)
+    print(f"Bar plot for all traffic saved to {output_file}")
+    plt.close()
 
 
 ### Scatter Plot for all traffic ###
@@ -139,117 +221,6 @@ print(f"Combined traffic plot saved to {output_file}")
 plt.close()
 
 
-### Pie Chart for experiment ###
-first_party_traffic_count = data['First Party Traffic'].sum()
-support_party_traffic_count = data['Support Party Traffic'].sum()
-third_party_traffic_count = data['Third Party Traffic'].sum()
-
-labels = ['First Party Traffic', 'Support Party Traffic', 'Third Party Traffic']
-sizes = [first_party_traffic_count, support_party_traffic_count, third_party_traffic_count]
-
-plt.figure(figsize=(8, 8))
-plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-plt.title('Proportion of Encrypted vs Unencrypted Traffic')
-plt.tight_layout()
-
-output_file = os.path.join(output_dir, "pie_encrypted_vs_unencrypted_pie_chart.png")
-plt.savefig(output_file)
-print(f"Pie chart saved to {output_file}")
-plt.close()
-
-
-### Pie Chart for third party traffic ###
-third_party_data = data[data['Traffic Type'] == 'Third Party']
-third_party_ip_traffic = third_party_data.groupby('Destination')['Length'].sum()
-third_party_ip_traffic = third_party_ip_traffic.reset_index()
-third_party_ip_traffic['ISP'] = third_party_ip_traffic['Destination'].map(ip_owner_df.set_index('IP Address')['ISP'])
-third_party_ip_traffic['Service'] = third_party_ip_traffic['Destination'].map(ip_owner_df.set_index('IP Address')['Service'])
-
-third_party_ip_traffic = third_party_ip_traffic.sort_values('Length', ascending=False)
-# Define a threshold according to the need of the analysis
-threshold = 0.019 * third_party_ip_traffic['Length'].sum()  
-major_ips = third_party_ip_traffic[third_party_ip_traffic['Length'] >= threshold]
-other_traffic = third_party_ip_traffic[third_party_ip_traffic['Length'] < threshold]['Length'].sum()
-
-major_ips = major_ips.copy()
-if other_traffic > 0:
-    major_ips = pd.concat([major_ips, pd.DataFrame([{'Destination': 'Other', 'Length': other_traffic, 'ISP': '', 'Service': ''}])])
-
-labels = [f"{row['Destination']}\n({row['ISP']}, {row['Service']})" if row['Service'] else f"{row['Destination']}\n({row['ISP']})" if row['Destination'] != "Other" else "Other" for _, row in major_ips.iterrows()]
-sizes = major_ips['Length'].values
-
-num_colors = len(major_ips)
-if num_colors <= 20:
-    color_palette = plt.cm.tab20.colors[:num_colors]
-else:
-    cmap = plt.cm.get_cmap('hsv', num_colors)
-    color_palette = [cmap(i) for i in range(num_colors)]
-
-plt.figure(figsize=(10, 10))
-wedges, autotexts, _ = plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, textprops={'fontsize': 10}, colors=color_palette)
-  
-
-# This needs to be changed according to the need of the experiments
-"""
-positions = [
-    (1.0, 1.0), 
-    (1.0, 1.0), 
-    (1.0, 0.9), 
-    (1.1, 0.93), 
-    (0.5, 1.0), 
-    (1.0, 1.0), 
-    (1.0, 1.0)
-]
-
-for autotext, position in zip(autotexts, positions):
-    x, y = autotext.get_position()
-    autotext.set_position((x * position[0], y * position[1])) 
-"""
-plt.title('Proportion of Traffic by Third-Party IP Addresses')
-plt.tight_layout()
-
-output_file = os.path.join(output_dir, "pie_third_party_ip_traffic.png")
-plt.savefig(output_file)
-print(f"Pie chart saved to {output_file}")
-plt.close()
-
-
-### Line Plot for the types of parties ###
-for traffic_type in ['First Party', 'Support Party', 'Third Party']:
-    plt.figure(figsize=(12, 8))
-
-    traffic_data = data[data['Traffic Type'] == traffic_type]
-    if traffic_data.empty:
-        print(f"No data available for traffic type: {traffic_type}. Skipping...")
-        continue
-
-    packets = traffic_data.groupby(['Time Interval', 'Destination'])['Length'].sum().unstack(fill_value=0)
-    for column in packets.columns:
-        plt.plot(packets.index, packets[column], label=f"Destination: {column}", linewidth=2, alpha=0.7)
-
-
-    if not "8hCapture.csv" in input_csv:
-        for i in range (0, 6):
-            place = i * 2 + 1
-            plt.axvline(x=place, color='cyan', linestyle='--', linewidth=1)
-    
-    if "8hCapture.csv" in input_csv:
-        plt.xticks(x_positions, labels=[f"{x * 0.25:.1f}" for x in x_positions], rotation=45)
-    else:
-        plt.xticks(x_positions, labels=[f"{x * 0.5:.1f}" for x in x_positions], rotation=45)
-
-    plt.title(f'Traffic Volume for {traffic_type}')
-    plt.xlabel("Time Interval (hours)")
-    plt.ylabel("Traffic Volume (bytes)")
-    plt.legend(loc='upper right', fontsize='small', title='Experiments', ncol=2)
-    plt.tight_layout()
-
-    output_file = os.path.join(output_dir, f"line_{traffic_type.replace(' ', '_').lower()}_traffic.png")
-    plt.savefig(output_file)
-    print(f"Line plot for {traffic_type} saved to {output_file}")
-    plt.close()
-
-
 ### Line Plot for ip addresses for each party type in one graph ###
 plt.figure(figsize=(16, 8))
 
@@ -281,16 +252,18 @@ if not "8hCapture.csv" in input_csv:
         place = i * 2 + 1
         plt.axvline(x=place, color='cyan', linestyle='--', linewidth=1)
 
-plt.title(f'Traffic Volume for All Traffic')
-plt.xlabel("Time Interval (hours)")
-plt.ylabel("Traffic Volume (bytes)")
+plt.title("Traffic Volume for All Traffic", fontsize=18)
+plt.xlabel("Time Interval (hours)", fontsize=16)
+plt.ylabel("Traffic Volume (bytes)", fontsize=16)
+plt.tick_params(axis='x', labelsize=14, rotation=45)
+plt.tick_params(axis='y', labelsize=14)
 
 if "8hCapture.csv" in input_csv:
     plt.xticks(x_positions, labels=[f"{x * 0.25:.1f}" for x in x_positions], rotation=45)
 else:
     plt.xticks(x_positions, labels=[f"{x * 0.5:.1f}" for x in x_positions], rotation=45)
 
-plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='IP Addresses', fontsize='small')
+plt.legend(bbox_to_anchor=(1.01, 1), loc='upper left', fontsize=14)
 plt.tight_layout()
 output_file = os.path.join(output_dir, f"line_all_ip_address_traffic.png")
 plt.savefig(output_file)
@@ -298,9 +271,10 @@ print(f"Line plot for all traffic saved to {output_file}")
 plt.close()
 
 
+
 ### Line Plot for ip addresses for each party type ###
-for traffic_type in ['First Party', 'Support Party', 'Third Party']:
-    plt.figure(figsize=(16, 8))
+for traffic_type in ['First Party', 'Third Party']:
+    plt.figure(figsize=(14, 9))
     
     traffic_data = data[data['Traffic Type'] == traffic_type]
     if traffic_data.empty:
@@ -308,8 +282,9 @@ for traffic_type in ['First Party', 'Support Party', 'Third Party']:
         continue
         
     packets = traffic_data.groupby(['Time Interval', 'Destination'])['Length'].sum().unstack(fill_value=0)
-    ip_addresses = packets.columns
-    cumulative_counts = packets.cumsum()
+    filtered_packets = packets.loc[:, packets.sum() > 1000]
+    ip_addresses = filtered_packets.columns
+    cumulative_counts = filtered_packets.cumsum()
     
     color_map = {ip: color for ip, color in zip(ip_addresses, cm.rainbow(np.linspace(0, 1, len(ip_addresses))))}
 
@@ -325,11 +300,13 @@ for traffic_type in ['First Party', 'Support Party', 'Third Party']:
                 label = f"{ip} ({isp}) - {final_cumsum}B"
         else:
             label = f"{ip} - {final_cumsum}B"
-        plt.plot(packets.index, packets[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
+        plt.plot(filtered_packets.index, filtered_packets[ip], label=label, color=color_map[ip], linewidth=2, alpha=0.7)
 
-    plt.title(f'Timeline of {traffic_type} Traffic')
-    plt.xlabel("Time (hours)")
-    plt.ylabel("Traffic Volume (bytes)")
+    plt.title(f'Timeline of {traffic_type} Traffic', fontsize=18)
+    plt.xlabel("Time (hours)", fontsize=16)
+    plt.ylabel("Traffic Volume (bytes)", fontsize=16)
+    plt.tick_params(axis='x', labelsize=14, rotation=45)
+    plt.tick_params(axis='y', labelsize=14)
 
     # Add for solo vertical lines
     if not "8hCapture.csv" in input_csv:
@@ -342,7 +319,7 @@ for traffic_type in ['First Party', 'Support Party', 'Third Party']:
     else:
         plt.xticks(x_positions, labels=[f"{x * 0.5:.1f}" for x in x_positions], rotation=45)
     
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', title='IP Addresses', fontsize='small')
+    plt.legend(loc='upper right', fontsize=12)
     plt.tight_layout()
 
     output_file = os.path.join(output_dir, f"line_combined_{traffic_type.lower().replace(' ', '_')}_traffic.png")
@@ -351,10 +328,52 @@ for traffic_type in ['First Party', 'Support Party', 'Third Party']:
     plt.close()
 
 
-### Bar Plot for experiment ###
+
+### Log Bar Plot for traffic type ###
 first_party_traffic = data.groupby('Time Interval')['First Party Traffic'].sum()
 support_party_traffic = data.groupby('Time Interval')['Support Party Traffic'].sum()
 third_party_traffic = data.groupby('Time Interval')['Third Party Traffic'].sum()
+
+max_value = (first_party_traffic + support_party_traffic + third_party_traffic).max()
+
+bar_width = 0.6
+time_intervals = first_party_traffic.index.get_level_values('Time Interval').unique()
+x_positions = np.arange(len(time_intervals))
+
+plt.figure(figsize=(12, 8))
+plt.bar(x_positions, first_party_traffic.values, bar_width, label="First Party Traffic")
+plt.bar(x_positions, support_party_traffic.values, bar_width, bottom=first_party_traffic.values, label="Support Party Traffic", color="cyan")
+plt.bar(x_positions, third_party_traffic.values, bar_width, bottom=(first_party_traffic.values + support_party_traffic.values), label="Third Party Traffic", color="orange")
+
+plt.yscale('log')
+plt.title("(Log) Traffic Volume: First vs Support vs Third Party Traffic", fontsize=18)
+plt.xlabel("Time Interval (hours)", fontsize=16)
+plt.ylabel("Traffic Volume (bytes)", fontsize=16)
+plt.ylim(0, max_value * 1.1)
+plt.tick_params(axis='x', labelsize=14, rotation=45)
+plt.tick_params(axis='y', labelsize=14)
+
+if "8hCapture.csv" in input_csv:
+    plt.xticks(x_positions, labels=[f"{x * 0.25:.1f}" for x in x_positions], rotation=45)
+else:
+    plt.xticks(x_positions, labels=[f"{x * 0.5:.1f}" for x in x_positions], rotation=45)
+    
+plt.legend(loc="upper right", fontsize=14)
+plt.tight_layout()
+ 
+output_file = os.path.join(output_dir, "bar_log_different_party_traffic.png")
+plt.savefig(output_file)
+print(f"Bar plot saved to {output_file}")
+plt.close()
+
+
+
+### Bar Plot for traffic type ###
+first_party_traffic = data.groupby('Time Interval')['First Party Traffic'].sum()
+support_party_traffic = data.groupby('Time Interval')['Support Party Traffic'].sum()
+third_party_traffic = data.groupby('Time Interval')['Third Party Traffic'].sum()
+
+max_value = (first_party_traffic + support_party_traffic + third_party_traffic).max()
 
 bar_width = 0.6
 time_intervals = first_party_traffic.index.get_level_values('Time Interval').unique()
@@ -366,16 +385,19 @@ plt.bar(x_positions, support_party_traffic.values, bar_width, bottom=first_party
 plt.bar(x_positions, third_party_traffic.values, bar_width, bottom=(first_party_traffic.values + support_party_traffic.values), label="Third Party Traffic", color="orange")
 
 
-plt.title("Traffic Volume: First vs Support vs Third Party Traffic")
-plt.xlabel("Time Interval (hours)")
-plt.ylabel("Traffic Volume (bytes)")
+plt.title("Traffic Volume: First vs Support vs Third Party Traffic", fontsize=18)
+plt.xlabel("Time Interval (hours)", fontsize=16)
+plt.ylabel("Traffic Volume (bytes)", fontsize=16)
+plt.ylim(0, max_value * 1.1)
+plt.tick_params(axis='x', labelsize=14, rotation=45)
+plt.tick_params(axis='y', labelsize=14)
 
 if "8hCapture.csv" in input_csv:
     plt.xticks(x_positions, labels=[f"{x * 0.25:.1f}" for x in x_positions], rotation=45)
 else:
     plt.xticks(x_positions, labels=[f"{x * 0.5:.1f}" for x in x_positions], rotation=45)
     
-plt.legend(loc="upper right")
+plt.legend(loc="upper left", fontsize=14)
 plt.tight_layout()
  
 output_file = os.path.join(output_dir, "bar_different_party_traffic.png")
@@ -420,86 +442,6 @@ plt.savefig(output_file)
 print(f"Bar plot saved to {output_file}")
 plt.close()
 
-
-### Pie Chart for experiment ###
-encrypted_traffic_count = data.loc[data['Is Encrypted'], 'Length'].sum()
-unencrypted_traffic_count = data.loc[~data['Is Encrypted'], 'Length'].sum()
-
-labels = ['Encrypted Traffic', 'Unencrypted Traffic']
-sizes = [encrypted_traffic_count, unencrypted_traffic_count]
-
-plt.figure(figsize=(8, 8))
-plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-plt.title('Proportion of Encrypted vs Unencrypted Traffic')
-plt.tight_layout()
-
-output_file = os.path.join(output_dir, "pie_combined_encrypted_vs_unencrypted_traffic.png")
-plt.savefig(output_file)
-print(f"Pie chart saved to {output_file}")
-plt.close()
-
-
-### Pie Chart for the types of parties ###
-traffic_by_category_encryption = data.groupby(['Traffic Type', 'Is Encrypted'])['Length'].sum()
-
-for category in ['First Party', 'Support Party', 'Third Party']:
-    if category in traffic_by_category_encryption.index.get_level_values('Traffic Type'):
-        encrypted_count = traffic_by_category_encryption.get((category, True), 0)
-        unencrypted_count = traffic_by_category_encryption.get((category, False), 0)
-        
-        if encrypted_count == 0 and unencrypted_count == 0:
-            print(f"Skipping {category} as it has no data.")
-            continue
-
-        labels = ['Encrypted', 'Unencrypted']
-        sizes = [encrypted_count, unencrypted_count]
-
-        plt.figure(figsize=(8, 8))
-        plt.pie(sizes, autopct='%1.1f%%', startangle=140)
-        plt.title(f'{category} Traffic: Encrypted vs Unencrypted')
-        plt.tight_layout()
-
-        output_file = os.path.join(output_dir, f"pie_{category.replace(' ', '_')}_traffic.png")
-        plt.savefig(output_file)
-        print(f"Pie chart for {category} saved to {output_file}")
-        plt.close()
-
-
-### Pie Chart for the types of parties ###
-traffic_distribution = data.groupby('Traffic Category')['Length'].sum()
-labels = traffic_distribution.index.tolist()
-sizes = traffic_distribution.values
-plt.figure(figsize=(10, 10))
-
-wedges, texts, autotexts = plt.pie(
-    sizes,
-    labels=None,
-    autopct='%1.1f%%',
-    startangle=140
-)
-
-# This needs to be changed according to the need of the experiments
-
-positions = [
-    (1.0, 1.0), 
-    (1.25, 1.25), 
-    (1.13, 1.15), 
-    (1.0, 1.0)
-]
-
-for autotext, position in zip(autotexts, positions):
-    x, y = autotext.get_position()
-    autotext.set_position((x * position[0], y * position[1])) 
-
-plt.legend(wedges, labels, loc="best", fontsize=10)
-
-plt.title('Traffic Distribution by Party and Encryption Status')
-plt.tight_layout()
-
-output_file = os.path.join(output_dir, "pie_encrypted_vs_unencrypted_traffic.png")
-plt.savefig(output_file)
-print(f"Combined pie chart saved to {output_file}")
-plt.close()
-
+"""
 
 

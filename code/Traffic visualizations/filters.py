@@ -68,17 +68,7 @@ def is_relevant_traffic(ip, isp, service):
     is_relevant_isp = isp.isin(relevant_criteria["ISPs"])
     is_relevant_service = service.str.contains('|'.join(relevant_criteria["Services"]), na=False)
     return is_relevant_ip | is_relevant_isp | is_relevant_service
-"""
 
-# Classifies traffic based on services
-def classify_traffic_by_service(service):
-    if service in criteria["First Party"]:
-        return "First Party"
-    elif service in criteria["Support Party"]:
-        return "Support Party"
-    else:
-        return "Third Party"
-        
 
 # Checks if the traffic is encrypted based on protocol
 def is_encrypted_traffic(protocol):
@@ -94,7 +84,7 @@ def is_tcp_traffic(protocol):
 def is_udp_traffic(protocol):
     protocols = {'UDP'}
     return any(enc in protocol.upper() for enc in protocols)
-    
+
 # Checks whether a given protocol is redundant based on research goals 
 def is_redundant_traffic(protocol, info):
     redundant_protocols = {
@@ -109,7 +99,7 @@ def is_redundant_traffic(protocol, info):
     'Window Update', 
     'Standard query', 'Standard query response', 
     'PTR', 'AAAA',
-    'Multicast', 'Broadcast', 'SSDP', 'mDNS', 
+    'Multicast', 'Broadcast', 'SSDP', 'MDNS', 
     'Binding Request', 'Time Request', 'Time Reply', 
     'Echo Request', 'Echo Reply', 'Destination Unreachable', 
     'Who has', 'Tell', 
@@ -122,4 +112,38 @@ def is_redundant_traffic(protocol, info):
         return True
 
     return False
+"""
+
+# Groups traffic types based on services
+def classify_traffic_by_service(service, protocol):
+    if service in criteria["First Party"] or protocol in ['MDNS', 'SSDP', 'ARP', 'DCHP', 'NTP', 'IGMPv3']:
+        return "First Party"
+    elif service in criteria["Support Party"]:
+        return "Support Party"
+    else:
+        return "Third Party"
+
+# Groups traffic readability based on protocol + info       
+def check_readability(protocol, info):
+    if protocol in ['TCP', 'TLSv1.2', 'TLSv1.3']:
+        if 'Client Hello (SNI=' in str(info):   
+            return 'Partially Readable'
+    if protocol in ['TLSv1.2', 'TLSv1.3']:
+        if 'Certificate' == str(info):
+            return 'Partially Readable'
+    if protocol in ['DHCP']:
+        if 'Request' in str(info):
+            return 'Partially Readable'
+    if protocol in ['DNS', 'MDNS', 'UDP', 'TLSv1']:
+        return 'Partially Readable'
+    elif protocol in ['TLSv1.2', 'TLSv1.3', 'SSL', 'ICMPv6', 'NTP', 'QUIC', 'TCP', 'IGMPv3', 'DHCP', 'STUN', 'ICMP']:
+        return 'Unreadable'
+    elif protocol in ['HTTP', 'SSDP']:
+        return 'Readable'
+    else:
+        return 'Unknown'
+
+
+
+
 

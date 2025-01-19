@@ -64,6 +64,7 @@ fig.update_layout(
     geo=dict(
         showland=True, 
         showocean=True,  
+        #landcolor="lightblue",
         oceancolor="lightblue",      
         showcoastlines=True,
         coastlinecolor="black",       
