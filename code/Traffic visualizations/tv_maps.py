@@ -40,7 +40,16 @@ filtered_ip_owner_df['Latitude'] += np.random.uniform(-0.01, 0.01, size=len(filt
 filtered_ip_owner_df['Longitude'] += np.random.uniform(-0.01, 0.01, size=len(filtered_ip_owner_df))
 
 # Check for traffic type
-filtered_ip_owner_df['Traffic Type'] = filtered_ip_owner_df['Service'].apply(filters.classify_traffic_by_service)
+#filtered_ip_owner_df['Traffic Type'] = filtered_ip_owner_df['Service'].apply(filters.classify_traffic_by_service)
+
+unique_dest_protocol = data.drop_duplicates(subset='Destination', keep='first').set_index('Destination')['Protocol']
+
+filtered_ip_owner_df['Protocol'] = data['Destination'].map(unique_dest_protocol)
+filtered_ip_owner_df['Protocol'].fillna('Unknown', inplace=True)
+filtered_ip_owner_df['Traffic Type'] = filtered_ip_owner_df.apply(lambda row: filters.classify_traffic_by_service(row['Service'], row['Protocol']), axis=1)
+filtered_ip_owner_df = filtered_ip_owner_df[filtered_ip_owner_df['Traffic Type'] != 'Private']
+
+
 # Create the scatter geo plot
 fig = px.scatter_geo(
     filtered_ip_owner_df,

@@ -84,7 +84,7 @@ time_intervals = traffic_by_experiment.index.get_level_values('Time Interval').u
 x_positions = np.arange(len(time_intervals))
 
 
-
+"""
 ### Line Plot for all traffic ###
 experiments = traffic_by_experiment_copy.index.get_level_values('ExperimentTrial').unique()
 
@@ -616,5 +616,5 @@ plt.savefig(output_file)
 print(f"Pie chart saved to {output_file}")
 plt.close()
 
-
+"""
 

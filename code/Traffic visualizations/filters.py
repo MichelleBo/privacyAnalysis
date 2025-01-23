@@ -8,7 +8,7 @@ relevant_criteria = {
 }
 
 criteria = {
-    "First Party": ["Private", "Facebook/Meta", "Thefa-3", "Facebook, Inc.", "Facebook"], 
+    "First Party": ["Facebook/Meta", "Thefa-3", "Facebook, Inc.", "Facebook"], 
     "Support Party": ["Facebook/Meta-Instagram", "Facebook/Meta-WhatsApp"]
 }
 
@@ -116,7 +116,9 @@ def is_redundant_traffic(protocol, info):
 
 # Groups traffic types based on services
 def classify_traffic_by_service(service, protocol):
-    if service in criteria["First Party"] or protocol in ['MDNS', 'SSDP', 'ARP', 'DCHP', 'NTP', 'IGMPv3']:
+    if service in ['Private'] or protocol in ['MDNS', 'SSDP', 'ARP', 'DCHP', 'IGMPv3']:
+        return "Private"
+    elif service in criteria["First Party"]:
         return "First Party"
     elif service in criteria["Support Party"]:
         return "Support Party"
@@ -129,7 +131,7 @@ def check_readability(protocol, info):
         if 'Client Hello (SNI=' in str(info):   
             return 'Partially Readable'
     if protocol in ['TLSv1.2', 'TLSv1.3']:
-        if 'Certificate' == str(info):
+        if 'Certificate' == str(info) or 'Server Hello' in str(info):
             return 'Partially Readable'
     if protocol in ['DHCP']:
         if 'Request' in str(info):

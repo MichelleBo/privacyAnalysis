@@ -67,11 +67,9 @@ max_t = (int(data['Time_Seconds'].max()) + 1)
 x_positions = range(min_t, max_t, 60)
 
 """
-data['Time Interval'] = (data['Time'] // 30).astype(int)
-
-filtered_data = data[data['Lower Address Part'].isin(lap_addresses)]
-
-experiment_trials = filtered_data['ExperimentTrial'].unique()
+#data['Time Interval'] = (data['Time'] // 30).astype(int)
+#filtered_data = data[data['Lower Address Part'].isin(lap_addresses)]
+#experiment_trials = filtered_data['ExperimentTrial'].unique()
 
 
 
@@ -79,28 +77,8 @@ experiment_trials = filtered_data['ExperimentTrial'].unique()
 
 #####################     Shows traffic volume     #####################
 
-# Create a function to visualize signal strength trends for specific LAPs
-fig, axes = plt.subplots(len(experiment_trials), 1, figsize=(12, 8), sharex=True)
-
-for i, trial in enumerate(experiment_trials):
-    trial_data = filtered_data[filtered_data['ExperimentTrial'] == trial]
-
-    for lap in lap_addresses:
-        lap_data = trial_data[trial_data['Lower Address Part'] == lap]
-        # Count packets over time (or use `lap_data['Time']` directly for raw data)
-        traffic_counts = lap_data.groupby('Time').size()
-        axes[i].plot(traffic_counts.index, traffic_counts.values, label=f'LAP: {lap}')
-
-    axes[i].set_title(f'Experiment Trial: {trial}')
-    axes[i].set_xlabel('Time (seconds)')
-    axes[i].set_ylabel('Packet Count')
-    axes[i].legend()
-plt.tight_layout()
-
 """
-
-
-### Line Plot for the packet count for glasses and phone ###
+### Bar Graph for the packet count for glasses and phone ###
 packet_count_by_second = data.groupby(['Time_Seconds', 'Lower Address Part']).size().reset_index(name='Count')
 
 average_packet_glasses = packet_count_by_second[packet_count_by_second['Lower Address Part'] == lap_glasses].groupby('Time_Seconds')['Count'].mean()
@@ -113,21 +91,25 @@ plt.figure(figsize=(12, 6))
 plt.bar(average_packet_glasses.index, average_packet_glasses, label='Glasses (LAP: 0x00347a8c)', alpha=0.7, zorder=2)
 plt.bar(average_packet_phone.index, average_packet_phone, label='Phone (LAP: 0x002ff7a8)', alpha=0.7, zorder=1)
 
-plt.title('Average Traffic Volume per Second for Glasses and Phone')
-plt.xlabel('Time (seconds)')
-plt.ylabel('Packet Count per Second')
+plt.title('Average Packet Count for Glasses and Phone', fontsize=20)
+plt.xlabel('Time (minutes)', fontsize=18)
+plt.ylabel('Packet Count per Second', fontsize=18)
 plt.xticks(x_positions, labels=[f"{x // 60 :.1f}" for x in x_positions], rotation=45)
-plt.legend()
+plt.tick_params(axis='x', labelsize=16, rotation=45)
+plt.tick_params(axis='y', labelsize=16)
+plt.legend(loc='upper right', fontsize=16)
 plt.tight_layout()
 
-output_file = os.path.join(output_dir, "avg_packet_count_traffic.png")
-plt.savefig(output_file)
-print(f"Line plot for traffic count saved to {output_file}")
+output_file = os.path.join(output_dir, "avg_packet_count_traffic.pdf")
+plt.savefig(output_file, format='pdf')
+print(f"Bar graph for traffic count saved to {output_file}")
 plt.close()
-
+"""
 
 ### Line Plot for the packet count for all addresses ###
-average_packet_all = packet_count_by_second.groupby(['Time_Seconds', 'Lower Address Part'])['Count'].mean().reset_index()
+packet_count_by_second_2 = data.groupby(['Time_Seconds', 'Lower Address Part']).size().reset_index(name='Count')
+
+average_packet_all = packet_count_by_second_2.groupby(['Time_Seconds', 'Lower Address Part'])['Count'].mean().reset_index()
 unique_addresses = average_packet_all['Lower Address Part'].unique()
 
 color_map = cm.get_cmap('tab20', len(unique_addresses))  
@@ -142,15 +124,17 @@ for i, address in enumerate(unique_addresses):
             color=color_map(i), 
             alpha=0.7)
 
-plt.title('Average Traffic Volume per Second for Glasses and Phone')
-plt.xlabel('Time (seconds)')
-plt.ylabel('Packet Count per Second')
+plt.title('Average Packet Count for All Addresses', fontsize=20)
+plt.xlabel('Time (minutes)', fontsize=18)
+plt.ylabel('Packet Count per Second', fontsize=18)
 plt.xticks(x_positions, labels=[f"{x // 60 :.1f}" for x in x_positions], rotation=45)
-plt.legend()
+plt.tick_params(axis='x', labelsize=16, rotation=45)
+plt.tick_params(axis='y', labelsize=16)
+plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=16)
 plt.tight_layout()
 
-output_file = os.path.join(output_dir, "avg_packet_count_all_traffic.png")
-plt.savefig(output_file)
+output_file = os.path.join(output_dir, "avg_packet_count_all_traffic.pdf")
+plt.savefig(output_file, format='pdf')
 print(f"Line plot for traffic count saved to {output_file}")
 plt.close()
 
@@ -196,7 +180,7 @@ for i, address in enumerate(unique_addresses):
              markersize=4)
 
 plt.title('Average SP Over Time for All Addresses')
-plt.xlabel('Time (seconds)')
+plt.xlabel('Time (minutes)')
 plt.ylabel('SP (Signal Power)')
 plt.xticks(x_positions, labels=[f"{x // 60 :.1f}" for x in x_positions], rotation=45)
 plt.legend(loc='upper left', bbox_to_anchor=(1, 1)) 
@@ -209,11 +193,14 @@ plt.close()
 
 
 ### Line Plot for the signal power (SP) for all addresses after 30 seconds ###
+average_sp_all_2 = data.groupby(['Time_Seconds', 'Lower Address Part'])['SP'].mean().reset_index()
+unique_addresses = average_sp_all_2['Lower Address Part'].unique()
+
 first_30_seconds_data = data[data['Time_Seconds'] < 30]  
 addresses_in_first_30_seconds = first_30_seconds_data['Lower Address Part'].unique() 
 
 remaining_addresses = [addr for addr in unique_addresses if addr not in addresses_in_first_30_seconds]
-average_sp_remaining = average_sp_all[average_sp_all['Lower Address Part'].isin(remaining_addresses)]
+average_sp_remaining = average_sp_all_2[average_sp_all_2['Lower Address Part'].isin(remaining_addresses)]
 
 colors = cm.get_cmap('tab20', len(remaining_addresses))
 
@@ -229,16 +216,20 @@ for i, address in enumerate(remaining_addresses):
              marker='o', 
              markersize=4)
 
-plt.title('Average SP Over Time for All Addresses')
-plt.xlabel('Time (seconds)')
-plt.ylabel('SP (Signal Power)')
+plt.title('Average SP Over Time for Remaining Addresses',  fontsize=20)
+plt.xlabel('Time (minutes)', fontsize=18)
+plt.ylabel('SP (Signal Power)', fontsize=18)
 plt.xticks(x_positions, labels=[f"{x // 60 :.1f}" for x in x_positions], rotation=45)
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1)) 
+plt.tick_params(axis='x', labelsize=16, rotation=45)
+plt.tick_params(axis='y', labelsize=16)
+plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), fontsize=16) 
 plt.tight_layout()
 
-output_file = os.path.join(output_dir, "avg_sp_all_after_30_traffic.png")
-plt.savefig(output_file)
+output_file = os.path.join(output_dir, "avg_sp_all_after_30_traffic.pdf")
+plt.savefig(output_file, format='pdf')
 print(f"Line plot for traffic sp saved to {output_file}")
 plt.close()
+
+"""
 
 
