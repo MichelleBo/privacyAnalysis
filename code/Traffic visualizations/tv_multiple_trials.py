@@ -238,7 +238,7 @@ plt.savefig(output_file, format='pdf')
 print(f"Scatter plot for all traffic saved to {output_file}")
 plt.close()
 
-
+"""
 
 ### Line Plot for packet distribution ###
 packet_size_distribution = data['Length'].value_counts().sort_index()
@@ -247,7 +247,7 @@ plt.figure(figsize=(12, 6))
 plt.plot(packet_size_distribution.index, packet_size_distribution.values)
 plt.title('Packet Size Distribution', fontsize=20)
 plt.xlabel('Packet Size (Bytes)', fontsize=18)
-plt.ylabel('Number of Packets', fontsize=18)
+plt.ylabel('Packet Count', fontsize=18)
 plt.tick_params(axis='x', labelsize=16, rotation=45)
 plt.tick_params(axis='y', labelsize=16)
 plt.tight_layout()
@@ -255,7 +255,7 @@ output_file = os.path.join(output_dir, f"packet_distribution.pdf")
 plt.savefig(output_file, format='pdf')
 print(f"Line plot for packet distribution saved to {output_file}")
 plt.close()
-
+"""
 
 ### Line Plot for all traffic by trial ###
 experiments = traffic_by_experiment_copy.index.get_level_values('ExperimentTrial').unique()
@@ -343,7 +343,7 @@ for traffic_type in ['First Party', 'Support Party', 'Third Party']:
     print(f"Line plot saved to {output_file}")
     plt.close()
 
-"""
+
 ### Line Plot for ip addresses for each party type keeping outlier ###
 for traffic_type in ['Private', 'First Party', 'Support Party', 'Third Party']:
     
@@ -396,7 +396,7 @@ for traffic_type in ['Private', 'First Party', 'Support Party', 'Third Party']:
     print(f"Line plot saved to {output_file}")
     plt.close()
 
-"""
+
 ### Line Plot (Log) for ip addresses for each party type keeping outlier ###
 for traffic_type in ['First Party', 'Support Party', 'Third Party']:
     plt.figure(figsize=(12, 8))
