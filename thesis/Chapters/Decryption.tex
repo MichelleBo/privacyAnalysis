@@ -1,0 +1,112 @@
+\chapter{Decryption}
+\label{chap:decryption}
+
+Attempts were made to determine whether any personal data or raw sensor readings could potentially be leaked through network traffic between the Ray-Ban Meta glasses and the paired phone and the limitations encountered. This chapter also mentions the decryption attempts made in Bluetooth communications and the limitations encountered.
+
+
+\section{Decryption Attempts}
+The decryption attempts centered around intercepting and decrypting network traffic on a Xiaomi POCO X5 5G. However, there were many challenges throughout the decryption process. The following subsections detail the methods explored and problems encountered before and after rooting the phone.
+
+\subsection*{Before Rooted Phone}
+The initial setup included installing mitmproxy and setting up the phone's Wi-fi proxy setting to route the traffic through mitmproxy. Initially, the phone was not rooted, but that did not affect the installation of the mitmproxy certificate as a user-trusted certificate on the phone. The outcome of the intercepted traffic showed that HTTP traffic was successfully intercepted. However, additional security checks, such as certificate pinning, were implemented on the app to prevent proxies such as mitmproxy from intercepting the traffic. This was evident in the proxy from the TLS handshake errors received, meaning that the certificate pinning implemented in the app was preventing the user-installed certificate from being trusted.
+
+Different approaches were explored when attempting to bypass the certificate pinning, including modifying the APK and using runtime debugging and hooking frameworks. These efforts either tried to disable the certificate pinning checks by modifying the APK or dynamically bypassing them during app execution. However, there were multiple problems during the process, including errors caused by attempts to access or modify SELinux policies, which control system permissions and require root access to change. Additionally, recompiling errors, which were related to resource compilation and malformed XML files, occurred while repacking the APK. In order to address these problems, rooting the phone was determined to be the most logical next step.
+
+\subsection*{After Rooted Phone}
+The rooting process began with unlocking the phone bootloader. This further required a Xiaomi account and a physical SIM card with mobile data. After obtaining the SIM card and beginning to unlock the bootloader, it was found that Xiaomi had security measures that mandated a seven-day waiting period after initiating the unlock process, and interruptions such as logging out of the Xiaomi account would reset the timer. A Windows machine was required to unlock the device because the official Xiaomi USB drivers are only natively compatible with the Windows operating system. Following the mandatory waiting period, initial attempts to root the phone using Team Win Recovery Project (TWRP), a common method for rooting phones, were unsuccessful due to the dynamic partition scheme of the phone and the lack of a traditional recovery partition, which is mostly the case for the newer phone models. Errors such as "Unable to mount /data" and partition encryption issues made it impossible to proceed with TWRP further. Therefore, the Magisk tool was used to patch the boot image file directly as a workaround. This method removed the need for TWRP and allowed the phone to be successfully rooted.
+
+Once the phone was rooted, the focus shifted back to decrypting the network traffic, with the previous attempts being replicated with the rooted phone. However, rooting the phone should have allowed the installation of the mitmproxy certificate as a system-trusted certificate, for example, by using Magisk or directly trying to write it as such in the system partition. They proved to be unsuccessful, as the certificate did not appear as system-trusted, which is likely due to protections on the system partition to prevent injections or modifications. Therefore, the rest of the process continued with the certificate as a user-installed and trusted certificate.
+
+Efforts to modify the APK remained unsuccessful, mainly due to errors when compiling the resources. The most common error was an invalid resource directory name for a directory that did not exist. An attempt was made to avoid the decompilation of the resource entirely by using the `–no-res' flag. However, the app still did not rebuild properly. Different packaging tools were considered for the failed build process. However, errors related to resource compilation and malformed XML files remained.
+
+The other approach was to dynamically bypass SSL pinning when intercepting the traffic through mitmproxy. Rooting the phone solved the initial problems when dynamically bypassing the pinning. Objection was used to disable SSL pinning. The steps included pushing and starting the Frida server on the phone, then connecting Objection to the running app and disabling SSL pinning using their built-in command. Objection confirmed in the terminal that SSL pinning was disabled for implementations such as TrustManagers. However, the Meta View app continued to reject the proxy's certificate, resulting in TLS handshake errors for domains like graph.facebook.com. This suggests that the app is likely using custom certificate pinning implementations or additional verifications.
+
+A custom Frida script was written to try to hook into implementations to practice the certificate pinning. The decompiled APK, taken from the app analysis, was used to identify the custom methods. The app had multiple certificate validation methods, including checkServerTrusted and TrustManager. It was found that Meta regularly changes the names of the classes, which required consistent updates on the code that bypasses methods in explicitly mentioned classes. In the end, some endpoints, like ar.graph.meta.com, were successfully bypassed by injecting the script into these targeted methods. However, most endpoints remained unsuccessfully bypassed. From the successfully bypassed endpoints, no personal or sensitive data was exposed. The decryption process displayed strong security and network traffic protection, reflecting its safety against MitM proxies for users. The bypass is shown in the Frida script in Figure \ref{fig:terminalFrida}, where the custom code was successfully hooked into the relevant classes and overloaded their security methods. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/DA_frida.png}
+    \caption{Screenshot of the terminal output when running Frida, showing that Frida found the targeted classes and bypassed checkServerTrusted methods within the class.}
+    \label{fig:terminalFrida}
+\end{figure}
+
+The bypass is confirmed in Figure \ref{fig:terminalMitmproxy}, which shows a snippet of the terminal output when running the custom Frida script. The figure shows that there were no TLS handshake errors when running ar.graph.meta.com nor scontent.xx.fbcdn.net, meaning they were, indeed, successfully bypassed. The TLS handshake fails in the figure, which shows an example of the rejection of the proxy's certificate for googleapis, providing an example that although the certificate pinning for some endpoints was bypassed, most were not.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/DA_mitmproxy.png}
+    \caption{Screenshot of the terminal output when running mitmproxy, showing that endpoints like ar.graph.meta.com did not receive a TLS handshake error, while endpoints like pa.googleapes.com did, meaning that not all certificate pinning was bypassed.}
+    \label{fig:terminalMitmproxy}
+\end{figure}
+
+\subsection*{Decryption Efforts on Bluetooth}
+Apart from the possible transmission of sensitive user data over Bluetooth, the Ray-Ban Meta glasses use Bluetooth during the initial pairing, which includes exchanging encryption keys and authentication credentials to establish a secure connection over the network. Therefore, another idea was to try to decrypt Bluetooth traffic to obtain these keys. However, in the Bluetooth captures, no information, including keys, could be identified in the captures due to the keys transmitted being encrypted. The setup for BLE pairing uses Elliptic Curve Diffie-Hellman (ECDH) for key generations, and the keys needed to decrypt the BLE traffic included the Link Key, the identity resolving key, and the signature resolving keys. However, to be able to read the data, keys like the Link Keys or Long-Term Keys need to be extracted during the pairing process. The rooted phone has the ability to log all Bluetooth traffic. Therefore, this log file was pulled to try and find the necessary keys for decryption. The keys found on the file included all the necessary keys. However, although these keys were found, applying the keys to the captures for decryption was unsuccessful.  
+
+\section{Decryption Analysis}
+A couple of domains were successfully bypassed in mitmproxy using custom Frida scripts. The full list of domains can be found in \ref{tab:domain_mitmproxy}. There were a few endpoints that were less relevant to the privacy concerns of the glasses, for instance, the Android connectivity checks, http://clients3.google.com/generate 204, which are simply to confirm internet access. The traffic captured traffic that is relevant to the glasses falls into the following three categories: Reliability Event Logging, Meta Media services, and Federated Learning.
+
+\subsection*{Reliability Event Logging}
+
+There were multiple POST requests to https://www.facebook.com/mobile/reliability\_event\_ log\_upload/. The data, as seen in Figure \ref{fig:DA_event_req}, were typically sent as multipart/form-data, which allows multiple fields and binary chunks to be included in one request body. These requests most likely are part of a mechanism that regularly sends diagnostic, crash logs, or usage data from the app back to Meta servers. The purpose of these requests is to upload events about app usage or crashes to Meta servers for debugging or performance statistics. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/DA_event_req.png}
+    \caption{An example request for a packet to the endpoint https://www.facebook.com/mobile/reliability\_event\_ log\_upload/.}
+    \label{fig:DA_event_req}
+\end{figure}
+
+Although they are primarily used for debugging, these logs can contain usage patterns, such as how frequently a user opens certain features or the device states that lead to the errors. The brackets for the following information show what was written in an example flow in the capture. For instance, data fields, including the device\_id, device\_brand, user\_id, and has\_wearable\_device\_paired(=True), could tie the companion app's crash or usage logs back to a specific user. Data such as exit\_info\_reason (= 10) and exit\_info\_subreason (= FORCE STOP) confirm that the app was forcibly closed, while fields like attempt\_count revealed repeated attempts to launch or execute an action. Other fields, such as previous\_build\_id, report\_build\_id, device\_brand (= POCO), or consent\_choice, can also reveal information about the crashes, environment details, and user preferences. Although the logs do not contain direct raw data, the repeated references allow Meta's servers to correlate sessions with the application usage, potentially accumulating a timeline of user activity profiling.
+
+
+\subsection*{Meta Media Services}
+The decrypted traffic reveals instances in which the companion app is requesting and displaying official resources from Meta's servers, primarily through the endpoint lookaside.facebook.com/ras/v2?id=. The examination of these GET requests shows images or application/octet-stream responses. The response type application/octet-stream combined with the size of these responses (an instance showed to be 9.35 MB), suggests that the downloaded file could be a video or a high-resolution image. Figure \ref{fig:DA_person} shows an example of an exposed image. It is a PNG image preview from a response that was triggered from one of the available in-app guides on how to use the glasses on the home page.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.61\textwidth]{Figures/DA_person.png}
+    \caption{Response to a lookaside.facebook.com/ras/v2?id= request for one of the images in the in-app guides.}
+    \label{fig:DA_person}
+\end{figure}
+
+%\begin{figure}[H]
+%    \centering
+%    \begin{minipage}{0.49\textwidth}
+%        \includegraphics[width=\textwidth]{Figures/DA_person.png}
+%    \end{minipage}
+%    \begin{minipage}{0.48\textwidth}
+%        \includegraphics[width=\textwidth]{Figures/DA_glasses.png}
+%    \end{minipage}
+%    \caption{Responses to lookaside requests for images.}
+%    \label{fig:images_revealed}
+%\end{figure}
+Whereas Figure \ref{fig:DA_glasses} shows a full response to asking for the image of the glasses. The GET request shows how the app uses lookaside.facebook.com to retrieve an image resource. The request for the flow in the figure only had one parameter, id=AQADK1nKSW9, which is likely a unique resource identifier on Meta's servers. The response, as shown in the figure, displays the header, which contains the content type, length, and other information. The body of the response contains the actual PNG image, which is a picture of the Ray-Ban Meta glasses. Below that is the metadata, in the form of XMP tags, of which the XMP data located in the XML.com.adobe.smp tag and information in EXIF data, under the EXIF namespace, can be found. These revealed the date of when the image was created (2023-12-19T11:22:26) and last modified (2024-03-01T09:50:20), the image resolutions (2598 x 1632 px), and the software used to create or edit the image (Adobe Photoshop 25.4). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/DA_glasses.png}
+    \caption{Response to a lookaside.facebook.com/ras/v2?id= requests for the image of the Ray-Ban Meta glasses.}
+    \label{fig:DA_glasses}
+\end{figure}
+
+However, it is unclear whether the companion app relies on similar mechanisms for images captured by the user, as they were not part of the decrypted traffic. The traffic captures only reveal the retrieval of standard resources. It was noted that the size and ID of these images were shown to be the same after repeated captures, suggesting a certain mapping between an ID and their respective media in the servers. For example, the image in Figure \ref{fig:DA_glasses} has an ID of AQADK1nKSW9 and a size of 85.8 KB. This means that, in theory, if images created by the user were also using the same mechanism, anyone aware of the relevant IDs could request the corresponding media. However, it is important to keep in mind that there was no direct evidence in these captures that personal images are shared in the same way. The presence of metadata, such as timestamps, editor tags, and file properties, can expose sensitive information such as the creation dates, camera or image information, or geological location details. Together, although seeing an official product image is relatively harmless, these aspects would pose a significant privacy concern if user photos are stored in a similar manner, as then the data would include camera details and the location of a user's device.
+
+
+\subsection*{Federated Learning}
+Throughout the traffic capture, there were multiple sub-endpoints to ar.graph.meta.com, including fl\_acs\_checkin and fl\_acs\_report. In the request body, the clientAssignment block has attributes, such as taskAssignment and clientRoundId, which suggest that the app is participating in some form of federated learning. In general, Federal learning is a user-friendly concept that allows the phone to perform computations or data processing tasks locally in multiple generations or rounds without sending raw data to a server, hence a privacy-preserving local ML. Then, the client communicates the partial result to a central server, where the server then aggregates the partial result to refine a global model.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/DA_federated_req.png}
+    \caption{An example request for a packet to the endpoint ar.graph.meta.com/fl\_acs\_download.}
+    \label{fig:DA_federated_req}
+\end{figure}
+
+Specifically looking into a POST request of ar.graph.meta.com/federated\_learning/fl\_ac s\_download as an example, Figure \ref{fig:DA_federated_req}, the query parameters include task ID, client round ID (=3873906), generation number (=1048313), and sequence number (=8406). These parameters indicate that the companion app is well into the training or update cycle, whereas the shardID (=0) implies that if the model is split into multiple segments, then this is dealing with shard number 0. The chunkInfo also provides the offset (=21606), which indicates where the next piece of data would begin. The server's response to this includes two main components, a client\_exception and a response string. The response includes another chunk, which includes the offset as seen in the request, indicating that the chunk is recognized, but the size (=0) shows that there is no new payload at that time. There was a trace block that enumerated several stages, including 100, 110, 200, and 210, with their corresponding timestamps, such as 1736938938240614. Each stage likely denotes a step in the server's internal pipeline, which could be validating the client request.
+
+Essentially, this flow shows that the companion app is telling the server that it is on round number 3873906 for generation number 1048313, dealing with a training or data-shard assignment of task ID 4931, and currently retrieving a chunk at offset 21606. The server then replied that, for now, there is no chunk data to download, as the size is zero. This suggests that the app could either be waiting for further instructions or supply the server with local updates from the user's device computations.
+
+Federated learning is often considered more protective of user privacy, especially in comparison to sending raw user data, as the raw data theoretically never leaves the device as it transfers model updates. However, from the capture, there appears to be a cyclical process of uploading partial results, reporting progress, and then checking in with the central server. These repeated calls raise questions about exactly what data is traveling to Meta's servers, as they could be aggregated to produce a detailed timeline of when and how the device is used or what local data it may be processing. The example flow shows that the device is an active participant in a large-scale iterative process. And although the content in this instance is presumably an empty chunk, future requests could carry partial model or personal user information. Furthermore, some federated learning implementations could unintentionally gather partial personal user data or aggregate user statistics, which, if combined with other fields, allow the server to identify each individual app's progress in their tasks, and the server would be able to link an activity to a specific user aiding in user profiling.
+
+
+

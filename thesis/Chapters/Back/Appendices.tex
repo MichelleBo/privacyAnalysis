@@ -1,0 +1,204 @@
+\chapter{Appendices}
+Detailed experimental setup, scripts, or tools used.
+Raw data samples or logs (if permissible).
+
+%% App Analysis - Native Permissions 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l|l|l}
+    \toprule
+       & \textbf{Malware} & \textbf{Common} \\
+    \midrule
+      \textbf{Dangerous}  & Access to Fine location & Access Background location\\
+       & Access to Coarse location & \\
+       & Get Accounts & \\
+       & Read to External Storage & \\
+       & Write to External Storage  & \\
+       & Receive SMS & \\
+       & Read SMS & \\
+       & Send SMS & \\
+       & Read Call log & \\
+       & Read Contacts & \\
+       & Read Phone State & \\
+    \midrule
+      \textbf{Normal} & Access Network State & Change Network State\\
+       & Access Wi-Fi State & Change Wi-Fi State\\
+        & Internet & Bluetooth\\
+        & Wake Lock & Bluetooth Admin\\
+        & Receive Boot Completed & Modify Audio Settings\\
+        & & Foreground Service\\
+        & & Receive\\
+    \bottomrule
+  \end{tabular}
+  \caption{Summary of abused permissions}
+  \label{tab:summaryPermissions}
+\end{table}
+
+
+%% App Analysis - Native Libraries 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|L{0.18\textwidth}|L{0.21\textwidth}|L{0.12\textwidth}|L{0.25\textwidth}|L{0.09\textwidth}|}
+    \hline
+       \textbf{Shared Object} & \textbf{What is it} & \textbf{Origin} & \textbf{Purpose} & \textbf{Party} \\ \hline
+       libbreakpad & A crash-reporting library & Google & Used for collecting crash data and debugging issues & Third-Party \\ \hline
+       libandroidx. graphics.path & Related to the Android Jetpack `androidx.graphics` package & Android Jetpack & Used for rendering graphics & Platform-Provided \\ \hline
+       libforce\_dlopen & Dynamic linking library & In-house (Meta / Facebook) & Loads the dynamic shared object and handles runtime linking & First-Party \\ \hline
+       libbreakpad\_ cpp\_helper & A crash-reporting library & Google & Helper for collecting crash data and debugging issues & Third-Party \\ \hline
+       libandroid\_ aware\_dlopen & Dynamic linking library & In-house (Meta / Facebook) & Handles dynamic linking & First-Party \\ \hline
+       liblinkerutils & Dynamic linking utility library & In-house (Meta / Facebook) & Assists with dynamic linking & First-Party \\ \hline
+       libsigmux & Signal multiplexing library & In-house (Meta / Facebook) & Manages execution flow and signal handling & First-Party \\ \hline
+       libfbunwindstack & Related to stack unwinding for crash analysis and debugging & In-house (Meta / Facebook) & Provides stack unwinding for debugging and crash reporting & First-Party \\ \hline
+       libsigx & Related to signal handling & In-house (Meta / Facebook) & Handles signal-related functionality & First-Party \\ \hline
+       libdistract & Runtime instrumentation library & In-house (Meta / Facebook) & Implements instrumentation features such as function hooking and memory management & First-Party \\ \hline
+       libc++\_shared & Standard shared library & Android & Provides C++ runtime support & Platform-Provided \\ \hline
+       libsuperpack-jni & JNI-based compression utility & In-house (Meta / Facebook) & Used to reduce the size of APKs and optimize storage & First-Party \\ \hline
+       libunwindstack\_ binary & Stack unwinding library & In-house (Meta / Facebook) & Supports stack tracing for debugging purposes & First-Party \\ \hline
+  \end{tabular}
+  \caption{Classification of native libraries in the Meta View app}
+  \label{tab:sharedObjectsNativeLibraries}
+\end{table}
+
+%% App Analysis - Manifest components
+\begin{table}[H]
+    \centering
+  \begin{tabular}{|L{0.3\textwidth}|L{0.23\textwidth}|L{0.27\textwidth}|L{0.09\textwidth}|}
+    \hline
+       \multicolumn{4}{|c|}{\textbf{Type}} \\ \hline
+           Component Name & Purpose & Protection & Party \\ \hline
+       \multicolumn{4}{|c|}{\textbf{Broadcast Receivers}} \\ \hline
+       com.facebook.stella. util.timechange. TimeChangeReceiver & Listens for system time change events & None & First-Party \\ \hline
+       androidx.work.impl.diag- nostics.DiagnosticsReceiver & Handles diagnostic logging & android.permission. DUMP & Platform-Provided \\ \hline
+       androidx.profileinstaller. ProfileInstallReceiver & Installs optimized runtime profiles & android.permission. DUMP & Platform-Provided \\ \hline
+       com.google.firebase.iid. FirebaseInstanceIdReceiver & Handles Firebase push notifications & com.google.android. c2dm.permission.SEND & Third-Party \\ \hline
+       \multicolumn{4}{|c|}{\textbf{Services}} \\ \hline
+       com.facebook. analytics2.logger. GooglePlayUploadService & Uploads analytics data to Facebook servers & com.google.android. gms.permission. BIND\_NETWORK\_ TASK\_SERVICE & First-Party \\ \hline
+       androidx.work.impl. background.systemjob. SystemJobService & Schedules background tasks via JobScheduler & android.permission. BIND\_JOB\_SERVICE & First-Party \\ \hline
+       com.facebook.pushlite. PushLiteGCMJobService & Handles lightweight push notifications via Google Cloud Messaging & com.google.android. gms.permission. BIND\_NETWORK\_ TASK\_SERVICE & Third-Party \\ \hline
+       com.meta.wearable. acdc.service.ACDCService & Provides services for the Meta View app & None & First-Party \\ \hline
+       com.facebook.assistant. stella.ipc.instagram.service. InstagramIpcDirectMessagingServiceServer & Handles Instagram direct messaging services & None & Support-Party \\ \hline
+       com.facebook.stella. assistant.services. StellaMessengerIpcIntentService & Handles messaging services for the Meta Assistant & None & Support-Party \\ \hline
+       com.facebook.stella. assistant.services. StellaInstagramIpcIntentService & Handles Instagram-related messaging intents & None & Support-Party \\ \hline
+       com.facebook.stella. assistant.services. StellaWhatsAppCallbackService & Handles callbacks for WhatsApp integration & com.whatsapp. permission. BROADCAST & Support-Party \\ \hline
+       com.meta.wearable. applinks.AppLinkService & Handles app linking functionality & None & First-Party \\ \hline
+       com.meta. wearable.applinks. InsecureAppLinkService & Handles unsecured app linking functionality & None & First-Party \\ \hline
+       com.facebook.wearable. assistant.ipc. MwaTunnelService & Facilitates tunneling for Meta Wearable Assistant services & None & First-Party \\ \hline
+       com.facebook.wearable .companion.notification. MWANotificationListenerService & Listens for wearable notifications & android.permission. BIND\_ NOTIFICATION\_ LISTENER\_ SERVICE & First-Party \\ \hline    
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+    \centering
+  \begin{tabular}{|L{0.3\textwidth}|L{0.23\textwidth}|L{0.27\textwidth}|L{0.09\textwidth}|}
+    \hline
+       com.google.android. gms.auth.api.signin. RevocationBoundService & Handles Google account sign-in revocation notifications & com.google.android. gms.auth.api.signin. permission. REVOCATION\_ NOTIFICATION & Third-Party \\ \hline 
+       \multicolumn{4}{|c|}{\textbf{Activities and Activity Aliases}} \\ \hline
+       libraries.fxmetalogin. webauth. MetaWebAuthenticationActivity & Handles Meta login authentication via the web & None & First-Party \\ \hline
+       com.spotify.sdk.android. auth.browser. RedirectUriReceiverActivity & Manages Open Authorization redirects for Spotify authentication & None & Third-Party \\ \hline
+       com.facebook. secure.packagefinder. PackageFinderActivity & Finds secure packages for Meta services & None & First-Party \\ \hline
+  \end{tabular}
+  \caption{Analysis of Manifest Components in the Meta View App}
+  \label{tab:manifest_analysis}
+\end{table}
+
+
+%% Methodology and Experiment 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Contex}}                                       \\ \hline
+        Action                          & What does it do                           \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Media Capture}} \\ \hline
+        Short click capture button      & Take a photo or to stop a video recording \\ \hline
+        Long click capture button       & Start video recording                     \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Music Playback}}  \\ \hline
+        Tap (and hold) on the touchpad  & Play music                                \\ \hline
+        Swipe forward on the touchpad   & Increase volume                           \\ \hline
+        Swipe backwards on the touchpad & Decrease volume                           \\ \hline
+        Double tap on the touchpad      & Skip music                                \\ \hline
+        Tap on the touchpad             & If music is playing to pause it           \\ \hline
+    \end{tabular}
+    \caption{List of all the touch commands performed on the glasses in the experiments}
+    \label{tab:touch_commands}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Context}                & \textbf{Action}                                      \\ \hline
+        \multirow{4}{*}{General}        & "Hey Meta, how is the weather in [place] today?"     \\ \cline{2-2} 
+                                        & "Hey Meta, what time is it?"                         \\ \cline{2-2} 
+                                        & "Hey Meta, what date is today?"                      \\ \cline{2-2} 
+                                        & "Hey Meta, what is the battery percentage?"          \\ \hline
+        \multirow{5}{*}{Music Playback} & "Hey Meta, play music."                              \\ \cline{2-2} 
+                                        & "Hey Meta, increase the volume."                     \\ \cline{2-2} 
+                                        & "Hey Meta, lower the volume."                        \\ \cline{2-2}
+                                        & "Hey Meta, skip track."                              \\ \cline{2-2}
+                                        & "Hey Meta, pause music."                             \\ \hline
+        \multirow{3}{*}{Timer}          & "Hey Meta, set a timer for 3 minutes."               \\ \cline{2-2} 
+                                        & "Hey Meta, how much time is left in my timer?"       \\ \cline{2-2} 
+                                        & "Hey Meta, cancel my timer for 3 minutes."           \\ \hline
+        \multirow{3}{*}{Media Capture}  & "Hey Meta, take a photo."                            \\ \cline{2-2} 
+                                        & "Hey Meta, take a video."                            \\ \cline{2-2} 
+                                        & "Hey Meta, stop recording."                          \\ \hline
+        \multirow{3}{*}{Messaging}      & "Hey Meta, send a message to [name]."                \\ \cline{2-2} 
+                                        & "Hey Meta, send a voice message to [name]."          \\ \cline{2-2} 
+                                        & "Hey Meta, read my messages."                        \\ \hline
+        \multirow{1}{*}{Phone Call}     & "Hey Meta, decline the call."                        \\ \hline
+                                        
+                                        
+    \end{tabular}
+    \caption{List of all the voice commands performed on the glasses for the voice command experiments}
+    \label{tab:voice_commands}
+\end{table}
+
+%\begin{table}[H]
+%    \centering
+%    \begin{tabular}{|l|l|}
+%        \hline
+%        \textbf{Context}         & Media transfer \\ \hline
+%        \textbf{Action}          & Press the button Import \\ \hline
+%        \textbf{What does it do} & Transfers media captured from the glassess to the phone \\ \hline
+%    \end{tabular}
+%    \caption{List of all the commands performed on the phone for both touch and voice command experiments}
+%    \label{tab:touch_voice_commands}
+%\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Domains} \\ \hline
+        http://clients3.google.com/generate\_204         \\ \hline
+        http://findapi.micloud.xiaomi.net/mic/find/v3/anonymous/time?ckey=... \\ \hline
+        https://lookaside.facebook.com/ras/v2/id=... \\ \hline
+        https://lookaside.bfsbx.com/elementpath/media?media\_id=... \\ \hline
+        https://b-www.facebook.com/mobile/reliability\_event\_log\_upload/ \\ \hline
+        https://accounts.google.com/ListAccounts?gpsia=1\&source=ChromiunBrowser\&json=standard \\ \hline
+        https://clients4.google.com/chrome-sync/command/?client=Google+Chrome\&client\_id=... \\ \hline
+        https://peoplestack-pa.googleapis.com/peoplestack.PeopleStackAutocompleteService/Autocomplete \\ \hline
+        https://taskassist-pa.googleapis.com/v2/taskassist:compose?alt=photo \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_match?acs\_config\_id=... \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_checkin?acs\_config\_id=... \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_download?acs\_config\_id=... \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_report?acs\_config\_id=... \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_upload?acs\_config\_id=... \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_config \\ \hline
+        https://ar.graph.meta.com/federated\_learning/fl\_acs\_auth \\ \hline
+        https://scontent.xx.fbcdn.net/m1/v/t39.22532-6/... \\ \hline
+        https://static.xx.fbcdn.net/m1/rsrc.php/v4... \\ \hline
+        https://about.facebook.com/ray-ban-stories-privacy/ \\ \hline
+        https://www.facebook.com/tr/?id=... \\ \hline
+        https://www.meta.com/smart-glasses/privacy/... \\ \hline
+        https://www.meta.com/ajax/bootloader-endpoint/... \\ \hline
+        https://www.meta.com/ajax/bulk-route-definitions \\ \hline
+        https://www.meta.com/api/graphql \\ \hline
+        https://www.meta.com/a/fl?\_a=1\&\_ccgEXELLENT\&\_comet\_req=18\&\_hs=... \\ \hline
+        https://connect.facebook.net/signals/config/... \\ \hline
+    \end{tabular}
+    \caption{List of the domains found in mitmproxy}
+    \label{tab:domain_mitmproxy}
+\end{table}
+
+

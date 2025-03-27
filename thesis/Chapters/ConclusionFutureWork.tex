@@ -1,0 +1,35 @@
+\chapter{Conclusion and Future Work}
+\label{chap:conclusionFutureWork}
+
+%Summarize the key insights and their significance.
+%Highlight limitations of the study and areas for future research.
+%
+%(?)
+%Suggestions for improving privacy in AR glasses and companion apps.
+%
+%Policy or design changes for developers and manufacturers.
+
+\section*{Conclusion}
+The analyses presented in this thesis demonstrate that the Ray-Ban Meta glasses can reveal substantial user and bystander information, even when transmissions are protected through encryption protocols such as TLS or QUIC. The network analysis revealed that repeated domain lookups, distinctive packet sizes, and recognizable traffic volume patterns allow for inference of application usages and user activity, such as certain voice commands or media transfers. A possible countermeasure could be to obfuscate traffic volume by padding the packets. This would hide the user's usage patterns as the sizes of the packets being transmitted are similar to one another. However, if implemented, it raises other potential concerns, including the efficiency of the transmission, trust from the user, and transparency of the Meta servers regarding the transmitted content.
+
+Similarly, the Bluetooth analysis reveals potential identifiers, including the manufacturer, in advertisements or user interactions, such as music playback. An advertiser that is able to monitor the network and Bluetooth communications may be able to infer user actions and gather information for user profiling. Furthermore, the potential abilities of the glasses to directly process information locally could lead to the possibility of data is collection and retention, raising concerns about user and bystander privacy due to the possibly sensitive nature of the messages transmitted.
+
+The companion app inspection shows that the glasses rely heavily on first-party infrastructure, such as data synchronization. These dependencies potentially enable the aggregation of location data, communication patterns, and media captures over a long period, not only to Meta but also to adversaries. This aggregation risk exists not only for users but also for bystanders. By continuously capturing audio or video in public environments, AR glasses can unintentionally record individuals who have neither been made aware of the device's data collection capabilities nor provided informed consent. 
+
+These findings are further reinforced by the partial success in the bypassed traffic, which also shows that determined adversaries could obtain certain encrypted content. Exposed data flow, such as usage metrics, including device IDs and session states, that are sent to Meta's servers could be aggregated to infer user behavior. Other requests revealed the app's method of fetching image resources, raising concerns about how images captured by the user may be handled as it could also affect bystander privacy. Although encryption protects most transmission, the data being collected and retained in the more secure encrypted endpoints remains a question. Moreover, combined with the questionable practices mentioned in the network traffic, these findings reflect the limited transparency and ambiguous data retention policies available to users and bystanders. 
+
+
+Implemented designs, such as the phone-unlock requirement for certain AI features, enhance security, but they degrade the promised hands-free experience. Other mitigations, such as more visible recording indicators for different environments or continuous checks for no obstructions in the LED indicator, may improve public awareness. However, it does not fully address the deeper ethical concerns surrounding bystander privacy and the obligations of device manufacturers.
+
+In conclusion, the Ray-Ban Meta illustrates that while AR wearables offer convenience to daily functions, they pose privacy challenges that require further exploration. This thesis shows that the metadata capurted in the traffic is able to reveal user activity and behaviors even when payloads remain encrypted and hidden. Therefore, with the continuous expansion of AR technologies, these findings demonstrate the crucial need for regulatory guidelines, privacy measures, and transparency to protect users and the broader community affected by data collection.
+
+
+\section*{Future Work}
+Future work could continue in several directions. The analysis did not fully decrypt network traffic, particularly when facing the app's certificate-pinning techniques. Future efforts could use more sophisticated certificate-pinning bypass methods or directly collaborate with Meta to better understand how data are collected, how long they are retained, and to whom they are shared. 
+
+Additional research could apply similar static and dynamic analysis methods to other AR devices, such as the Apple Vision Pro or Microsoft HoloLens. Comparative studies could identify common design patterns, vulnerabilities, or privacy features across multiple manufacturers, which may pinpoint better practices or device-specific shortcomings that require further solutions.
+
+Bridging the gap between convenience and security while also ensuring the ethical treatment of non-users is a challenge that future AR devices should address. Future work might focus on filtering and transforming the data captured by AR devices so that unique personal identifiers are removed or masked to protect user privacy while sacrificing the least user convenience. For user privacy, the research could focus on traffic padding that reduces the identifiability of user activities or stronger privacy controls, such as providing explicit acknowledgments when cameras or microphones are activated through small audio cues or vibrations. For bystander privacy, the research could create methods to alert individuals nearby when AR glasses begin to take photos or record videos or implement opt-out features for bystanders, including blurring images to preserve bystander privacy in video captures. 
+
+Although research exists that introduces solutions to some privacy concerns, with the development of more AI-centered features on the Ray-Ban Meta, such as object recognition or translation, more efforts could be made to introduce privacy-centered guidelines for AR wearables that protect both users and bystanders. 
+

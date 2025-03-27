@@ -1,0 +1,103 @@
+\chapter{Device Overview}
+\label{chap:deviceOverview}
+This chapter provides an overview of the Meta Ray-Ban glasses, detailing their hardware and software specifications and network capabilities. A preliminary review of the device's hardware and software specifications was conducted using official documentation, such as that from Meta \cite{MetaWayfarerGlasses} or from Ray-Ban \cite{RayBanWayfarer}, online resources, and hands-on usage of the glasses. 
+The purpose is to gain practical insight into their functionalities, such as media capture and voice assistant interactions. This informed the design of experiments introduced in Chapter \ref{chap:methodologyExperiment}, which focused on evaluating the privacy and security of the glasses.
+
+\section{Hardware Specifications}
+This section details the key hardware features of the glasses, including its camera system, audio capabilities, controls, and more. These components enable core functionalities such as media capture, audio playback, and voice interaction.
+
+\subsection*{Camera and LEDs}
+This subsection covers the integrated high-resolution camera with visual indicators in the Meta Ray-Ban glasses, which supports media capture while providing feedback on the device's status.
+
+The glasses feature an ultra-wide 12 MP camera, capable of capturing high-resolution photos (3024 x 4032 px) and videos in 1080p. Located in the upper left corner of the front frame, as shown in Figure \ref{fig:DO_front}, the camera supports taking photos and recording videos, which is one of the core features of the glasses. The maximum length of the video is adjustable depending on user preference, with the length ranging from 15 seconds to 3 minutes. The captured media can be uploaded to the phone via the Meta View app for storage or sharing. The camera also supports live streaming to social media platforms such as Instagram, with a maximum stream duration of 30 minutes per stream.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/DO_front.png}
+    \caption{Front view of the Meta glasses}
+    \label{fig:DO_front}
+\end{figure}
+
+A white indicator LED in the upper right corner of the front frame of the glasses lights up during photo or video capture. Its sole purpose is to inform bystanders so that they are aware of when a photo is being taken or when there is an active recording. If covered, the glasses will not allow the user to initiate any capture, emitting an audio alert to the wearer to remove the obstacle that covers the indicator LED before trying to capture. The glasses also have a second notification LED in the inner right corner (Figure \ref{fig:DO_right_inner}), giving the user visual feedback on various device statuses, including power, pairing, battery level, and more, using different colors and blinking patterns.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/DO_right_inner.png}
+    \caption{Right inner view of the Meta glasses}
+    \label{fig:DO_right_inner}
+\end{figure}
+
+\subsection*{Interaction Features}
+This subsection looks at the key interaction capabilities of the Meta Ray-Ban glasses, including audio playback, intuitive controls, and sensor-driven functionalities with responsive design.
+
+The glasses feature integrated speakers at the temples, as seen in Figure \ref{fig:DO_right_outer}. These speakers support platforms like Spotify for streaming audio. A five-microphone array, which improves audio quality and reduce white noise. Combined, they support interactions, including talking to the AI assistant, audio capture during video recordings, and hands-free communication on platforms such as WhatsApp or Messenger.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/DO_right_outer.png}
+    \caption{Right outer view of the Meta glasses}
+    \label{fig:DO_right_outer}
+\end{figure}
+
+
+The touch features of the glasses, seen in Figure \ref{fig:DO_right_outer}, include a touchpad on the outer side of the right arm. This allows the wearer to control functionalities such as music playback through gestures such as swiping or tapping. When these gestures are performed, there will be a slight vibration and audio feedback, which is part of the responsive design of the glasses. A capture button on the top right arm allows the wearer to take photos by short-clicking the button or video recordings with a long press on the button. Furthermore, a power toggle on the inner corner of the left arm (Figure \ref{fig:DO_left_inner}) allows users to power the device on and off, with a visible red dot on the toggle indicating the off state. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Figures/DO_left_inner.png}
+    \caption{Left inner view of the Meta glasses}
+    \label{fig:DO_left_inner}
+\end{figure}
+    
+The glasses are equipped with sensors positioned along the inner arms that detect when they are being worn or removed. These sensors enable features such as automatically pausing music when the glasses are taken off. Small vibrations and audio feedback notify the wearer when the glasses are being worn.
+
+\subsection*{Performance and Power}
+This subsection describes the glasses' processing power, storage capabilities, and power management features, which ensure and enhance usability for tasks such as media capture, voice interactions, and real-time data processing.
+
+The core of the glasses is the Qualcomm Snapdragon AR1 Gen 1 processor, which manages the sensors, handles image processing, and provides AI capabilities. It also has 32 GB of built-in storage, allowing the glasses to save photos and videos locally without requiring immediate synchronization with the companion app. In order to support these capabilities, the glasses have an accompanying charging case. The case charges the glasses through the nose bridge. The case includes a USB-C port for recharging its lithium-ion battery. An LED indicator on the back of the case signals the pairing and battery status, while a pairing button helps the pairing process with the phone. The compact, portable charging case ensures that the glasses remain powered throughout the day.
+
+
+\section{Software Specifications}
+The Ray-Ban Meta's software capabilities include features provided by the companion app, firmware updates, and device compatibility. This section introduces the software specifications that support the glasses, their usability, and some limitations. 
+
+\subsection*{Device Compatibility}
+The glasses rely on the companion app Meta View, developed by Meta Platforms. It is available for iOS (14.4 or later) and Android (10 or later). Officially compatible devices are limited to a certain selection of Apple, Google, and Samsung phone models. While the app may still function on non-supported phones, certain functionalities may not be feasible, or certain features may not work as intended. The exact limitations experienced during the thesis are detailed in the later chapters.
+
+
+\subsection*{Functional Capabilities}
+The Meta View app provides media synchronization, allowing the user to take photos and videos at any moment and sync them to the phone whenever they want, as well as customization of preferences, including audio controls, camera options, voice assistant settings, and more. The glasses include a voice assistant, activated by the phrase "Hey Meta," which is also customizable. The voice assistant supports hands-free tasks such as checking battery status, messaging, and making or receiving calls. Furthermore, the app manages firmware updates over the air (OTA), ensuring the glasses are up-to-date with the latest security patches and features. 
+
+\subsection*{Software Limitations}
+The initial experiments were performed with the companion app on a Xiaomi Redmi Note 8 running Android 14. This phone was able to perform most functions with no issues. However, live streaming did not work as the app would crash when trying to live stream with glasses. This phone model also had an extremely unstable connection, with the glasses often having problems where it could not transfer the captured media to the phone. Fixes to resolve these issues include unpairing and repairing the glasses, factory resetting the glasses, and deleting and reinstalling the app. 
+
+The decryption efforts on network traffic were made on a Xiaomi POCO X5 5G phone running Android 14 with the security update dated October 2024. The limitation of this phone was much more noticeable as a simultaneous connection of Bluetooth and the app was not possible. As a result, the user can pair the glasses with Bluetooth in Settings or connect to the app, but not both simultaneously. This limitation was much worse and impeded the ability to perform the experiments. Therefore, the final experimentation was conducted on a Samsung Galaxy S24 running Android 14.
+
+
+\section{Network Capabilities}
+The glasses have Wi-Fi 6 (802.11ax) technology, operating on both the 2.4 GHz and 5GHz frequency bands. It facilitates media transfer from the glasses to the companion app. Bluetooth 5.2, operating in the 2.4 GHz frequency bands, is used for the initial pairing and other controls such as music playback. More specifically, BLE is only used for the initial pairing of the devices, while Classic Bluetooth is used for audio streaming and other functions such as device management.
+
+
+\section{Privacy and Security}
+This section addresses the privacy risks, data-sharing practices, and security measures implemented to protect users and bystanders. The issues mentioned are only based on the physical device and are discovered from hands-on usage with the glasses.
+
+
+\subsection*{Privacy Concerns for Users}
+The glasses allow users to listen to messages, send messages, and make calls through the AI assistant. When a message is sent to the user, the glasses allow the wearer to ask the Meta AI to read it aloud directly. It is not required to receive a message to use this functionality; users can command the AI to read all recently received messages. In order to send messages or initiate calls through the AI assistant, the user only needs to know the contact's name. 
+
+By default, these functions work when the paired phone is locked. Since the glasses do not incorporate any voice authentication or verification, anyone with physical access to the glasses can exploit these functionalities. For example, an unauthorized individual could command the AI to read messages, revealing the sender's name and the content of the message. This not only exposes sensitive information but also allows the individual to reply or call the sender, posing a privacy risk to both users and others. Having recognized these concerns, Meta implemented new privacy measures in June 2024 to protect the privacy of the users, where users now have the option to turn on the restriction that requires the phone to be unlocked to use these functions. 
+
+\subsection*{Privacy Concerns for Bystanders}
+The LED indicator is intended to notify and warn bystanders during media capture. However, there are some notable issues with this bystander privacy measure. First, in a bright outdoor environment, such as under the sun, the light is not very visible, which reduces its effectiveness as a visual warning to bystanders. Additionally, there exists a method to bypass this mechanism. This privacy feature is only checked during the start of a media capture, meaning if a user covers the LED and tries to start a video recording, the glasses will refuse to record. However, if the user starts a video recording with the light left uncovered and then, during capture, obscures the LED indicator, the glasses will continue to record without interruption as if the indicator is not covered for up to three minutes. This loophole reduces the effectiveness of the LED indicator as a privacy mechanism for bystanders.
+
+\subsection*{Data Sharing and Management}
+The companion app acts as an intermediary, collecting user data such as interactions and voice commands from the AI assistant and transmitting it to Meta servers for processing. The new AI-driven features include asking the AI to identify objects, translate text, or upload captures made immediately onto Instagram or Facebook. All of which rely on cloud-based processing. This means the data is analyzed remotely, and the results are then sent back to the glasses.
+
+On the app, users can manage their data-sharing preferences. However, the selection is limited, and users can only choose to either share or not share additional data. Meta stated that any images sent to the cloud and processed with AI and the captures made and sent via the glasses onto Instagram are automatically stored on Meta servers, meaning they are not considered additional data. The company claims that these data help Meta to improve their products and train their AI models. This data sharing is particularly concerning for users in the United States (US), where opting out of such data sharing is currently not an option. In contrast, users in the UK and the European Union (EU) are theoretically allowed to opt-out, given a justification. However, Meta retains the discretion to reject these requests, which raises questions about the fairness and transparency of their data policies.
+% \url{https://www.facebook.com/privacy/policy}
+
+
+\subsection*{Security Measure}
+On a more positive note, the glasses are designed to pair with a single device, regardless of the user account. This means that even with the same user account for the companion app login, pairing the glasses with a new phone requires a factory reset before connecting to the new device. Factory resetting the glasses erases all information stored on the glasses. This is a safety measure that ensures users that if their glasses are stolen or lost, others cannot directly access locally stored data by pairing them to another device with a Meta account. When attempting to connect the glasses to a new device, the glasses require a full factory reset. This process erases all images and data locally stored in the glasses, providing a layer of security for the user. The glasses also have end-to-end encryption for secure data transmission between the glasses and the companion app on the paired phone.
+
+ 
+

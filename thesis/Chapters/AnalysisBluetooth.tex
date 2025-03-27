@@ -1,0 +1,64 @@
+\chapter{Bluetooth Analysis}
+\label{chap:bluetoothAnalysis}
+This chapter analyzes the Bluetooth communications observed between the Ray-Ban Meta glasses and the phone. The purpose of the analysis is to understand the device functionality of the Bluetooth connections of the device and to support potential decryption efforts related to the network traffic.
+
+\section{BLE Analysis}
+An initial overview of the captures reveals frequent advertising initiation (ADV\_IND) packets, reflecting periodic advertising from nearby devices, as well as Non-Connectable Advertising (ADV\_NONCONN\_IND) packets, which are the advertising packets not intended for direct connection. Although both packet types are continually present, ADV\_NONCONN\_IND packets are much more consistent, whereas ADV\_IND packets show large fluctuations. Although relatively consistent, the rest contributes a much smaller traffic volume. Occasionally, malformed packets were captured, which could be due to transmission errors, collisions, or incomplete captures.
+
+Figures \ref{fig:BP_info_patterns_traffic} and \ref{fig:BP_glasses_vs_phone_traffic} were derived from the initial pairing experiment of BLE traffic. Figure \ref{fig:BP_info_patterns_traffic} shows the total volume of traffic over time based on the Information column, whilst Figure \ref{fig:BP_glasses_vs_phone_traffic} shows the comparison of the traffic of the glasses and the phone over time, which shows that traffic from the phone shows more significant fluctuations than that from the glasses. A closer comparison of the figures indicates that the green line in Figure \ref{fig:BP_info_patterns_traffic}, representing ADV\_NONCONN\_IND packets, closely mirrors the blue line in Figure \ref{fig:BP_glasses_vs_phone_traffic}, which depicts the phone traffic. Likewise, the orange lines in both figures show that the ADV\_IND packets follow an analogous pattern to the traffic of the glasses. This observation is confirmed by examining the capture data, where most ADV\_IND packets originate from the glasses, and ADV\_NONCONN\_IND packets originate from the phone. Neither device contributes to the other category of traffic packets, which aligns with the BLE design for energy efficiency. The similarity between the traffic volume patterns further suggests that the controlled environment used for these experiments successfully isolated other sources of interference.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/BP_info_patterns_traffic.pdf}
+    \caption{Packet Count captured during the initial pairing experiment, with the traffic categorized based on their event types.}
+    \label{fig:BP_info_patterns_traffic}
+\end{figure}
+
+The vertical cyan markers in Figures \ref{fig:BP_info_patterns_traffic} and \ref{fig:BP_glasses_vs_phone_traffic} identify the start of each pairing round. The phone shows a relatively consistent traffic volume, with no considerable fluctuations in advertising traffic throughout the pairing of the devices, reflecting its role as a central device scanning and initiating connection. The glasses traffic, on the other hand, acting as a peripheral, shows notable yet consistent fluctuations that align with the timing of the rounds of pairing performed.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/BP_glasses_vs_phone_traffic.pdf}
+    \caption{Packet Count from the Glasses or Phone during the initial pairing experiment.}
+    \label{fig:BP_glasses_vs_phone_traffic}
+\end{figure}
+
+At the start of each pairing round, the overall traffic volume for both devices is similar, suggesting that their normal advertising volume announcing their availability is roughly the same. When the pairing begins, the traffic volume does not immediately increase, suggesting that pairing the devices does not introduce additional advertising or scanning activity. This behavior matches the design of BLE, where unnecessary transmissions are limited to maintain efficiency. Approximately 30 seconds into the pairing process, the traffic volume increases significantly. The timing coincides with the glasses being unpaired from the phone, potentially reflecting the protocol steps needed to terminate the previous connection and resume broadcasting ADV\_IND packets to signal their availability. Afterwards, the original traffic volume reduces to its original level, possibly due to the glasses reducing the frequency of their ADV\_IND packets designed to conserve energy while the glasses remain discoverable. 
+
+Experiments involving touch-based and voice-based commands displayed a different situation. While the phone continued to appear in the traffic capture with the same consistent traffic volume as in the pairing experiments, the glasses did not advertise nor communicate any BLE traffic once they were connected to Bluetooth and configured in the app.
+
+
+\section{Classic Bluetooth Analysis}
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/CT_avg_packet_count_traffic.pdf}
+    \caption{Average Packet Count for the phone and glasses in the two trials of touch-based commands experiment}
+    \label{fig:CT_avg_packet_count_traffic}
+\end{figure}
+
+The classic Bluetooth experiment analysis assumes that the phone acts as the master device while the glasses serve as the worker device. The average signal strength values recorded portray the stability of the experiment environment. During the touch-based commands experiment analysis, the glasses had an average SP of -23 dBm compared to -38 dBm for the phone. Meanwhile, during the voice-based command experiments, the glasses averaged -28 dBm while the phone averaged -36 dBm.
+
+Figures \ref{fig:CT_avg_packet_count_traffic} and \ref{fig:CV_avg_packet_count_traffic} illustrate the average packet count for the touch and voice commands experiments. Both figures show a pronounced spike in the first minute the glasses are powered on, where both devices send packets during pairing. This period resulted in one of the largest spikes in traffic throughout the experiments. This burst of activity then subsides, with the glasses appearing to cease further transmissions. The cease in traffic suggests that once a link is established, the glasses use the LAP (Lower Address Part) of the phone for communication rather than maintaining its own separate stream. 
+
+
+In the touch-command experiment, in Figure \ref{fig:CT_avg_packet_count_traffic}, a clear pattern arises in which commands trigger a nearly immediate packet transmission. However, no observable traffic appears during media transfer minute 3.0. This is also observed in Figure \ref{fig:CV_avg_packet_count_traffic}, at minute 9.0, confirming that these transfers occur over network traffic rather than through Bluetooth. Music playback, on the other hand, consistently generates traffic, suggesting that audio streaming relies on Classic Bluetooth.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/CV_avg_packet_count_traffic.pdf}
+    \caption{Average Packet Count for the phone and glasses in the two trials of voice-based commands experiment}
+    \label{fig:CV_avg_packet_count_traffic}
+\end{figure}
+
+There was a recurring issue during the experiments with Ubertooth One, where it would occasionally exhibit time jumps in the captured data, meaning that the timeline would sometimes advance abruptly, creating discontinuities. Although these anomalies did not appear in the final touch-based commands experiments, they are present in the voice-based commands experiments. This anomaly is evident due to the original captures in both experiment trials extending beyond fourteen minutes, whereas the actual experiment lasted only eleven and a half minutes. 
+
+Upon closer examination, both trials revealed two intervals exceeding one and a half minutes each with no recorded activity. Given that the experiment's interaction intervals were thirty seconds and the expectation that Classic Bluetooth devices typically send periodic packets for device discovery and keep-alive signals, these inactive periods were removed from the timeline. The final confirmation that these two inactive intervals were indeed the jumps in the capture was that the subsequent duration of the experiment after removing these intervals was around eleven and a half minutes, which matched the expected duration of the experiment.
+
+Excluding these anomalies, the captures show that most user commands trigger packet transmission. Two exceptions were questions about the date and time, which did not produce immediate traffic. This is presumed to be due to the glasses having this information locally and the phone sending updates only when a change occurs, or it is because this is being handled through network traffic. Continuous traffic was observed during music playback, ranging from 0 to 10 packets per second. Further commands related to timers and media capture resulted in little packet transmissions with none for the command to import media captures from the phone to the glasses. In the voice-based commands experiments, the command to transfer media capture, executed at minute 9.0, also resulted in no observable packets. Although there was some traffic during the thirty-second interval for this command, it could be from the periodic packets being sent, indicating that these commands are handled through the network traffic. The second significant spike in traffic occurred upon receiving a phone call, reflecting the involvement of audio streaming during such interactions. 
+
+Sending or receiving a text or voice message to a person produced almost no traffic, suggesting that voice recording and sending messages are mainly handled via network traffic. On the other hand, asking the AI to read out the received message aloud generated more noticeable traffic, although it was less intense than music playback. A possible reason for this traffic could be that the readout functionality is generated directly on the glasses and does not rely on the phone for processing, which would align with Meta's focus for the glasses to be more autonomous. Although this enhances privacy by reducing network dependency, the fact that the glasses are capable of processing sensitive data locally introduces other concerns. If the glasses are stolen, lost, or compromised by unauthorized access, this data could be directly exposed. Furthermore, users may not be fully aware of what information is being stored or how long it remains on the glasses after processing, raising transparency issues about data collection and retention. The message itself could also contain information about bystanders who are completely unaware of their data being handled and processed, increasing bystander privacy concerns. 
+
+In summary, these identifiable traffic patterns indicate that intercepting the Bluetooth streams could result in third parties inferring certain user interactions, such as music playback and phone calls. A determined observer could use the packet timing and volume to identify specific events or commands performed on the glasses without the need to decrypt the communication. Additionally, the potential capabilities of the glasses to process sensitive data locally create privacy risks and transparency concerns.
+
+
+

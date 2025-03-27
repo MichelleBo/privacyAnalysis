@@ -1,0 +1,71 @@
+\chapter{Related Work} 
+\label{chap:relatedWork}
+
+Privacy and security challenges in augmented reality (AR) devices have gained increasing attention in recent years, with some challenges identified by \citet{ARSec2011}. These challenges of AR technologies raise concerns about the potential misuse of data collection and sharing and the privacy of both users and bystanders. AR glasses, in particular, have the ability to continuously record and collect data, thereby blurring the lines between personal and public spaces. Prior work has explored and addressed these challenges from various angles, including user concerns and expectations about privacy, network traffic analysis, companion app analyses, and bystander implications. The following sections detail existing research to provide context for the privacy analysis of the Ray-Ban Meta glasses within the broad scope of AR privacy research.
+
+\section*{User Privacy Concerns in Augmented Reality}
+There is extensive prior research on AR privacy that explored user perceptions of privacy and data collection of AR devices. When designing effective privacy protections, it is crucial to understand user perceptions and expectations about privacy. For instance, \citet{Gallardo2023SpeculativePC} explored speculative privacy concerns regarding AR glasses data collection. Through the interviews, they found that people expressed discomfort with capturing specific data types (for example, facial images), certain subjects whose data was captured (for example, children), or having data sharing that involves advertisers or unknown third parties. \citet{ExtendedRealityPrivacy2023} broadened this scope by exploring user coping strategies in immersive extended reality, emphasizing that individuals often feel compelled to develop personal or technical measures to mitigate privacy risks when devices or services do not offer sufficient protection. Another paper, from \citet{De_Guzman_2019}, examined privacy and security challenges in mixed reality, identifying vulnerabilities such as location tracking, biometrics data exposure, and inadequate user consent mechanisms. These findings emphasize the need for secure data collection, storage, and sharing that align with user expectations of privacy in AR devices.
+
+\section*{Companion App Privacy Risks}
+Many Internet-of-Things (IoT) devices, including AR wearable devices, rely on a dedicated companion application to function fully. In the case of the Ray-Ban Meta glasses, the Meta View app is the companion app for the glasses. It plays a central role in device management, configuration, and data retrieval. These apps can introduce additional privacy risks. \citet{USENIXSecurity2023} conducted a large-scale analysis of data exposures through the companion apps of IoT devices. They found that IoT companion apps often include third-party libraries and extensive permissions that can result in unintended data sharing with advertising and analytics platforms. This concern is particularly relevant for AR glasses, where the companion app configures the glasses, controls media and data transfer, and may similarly request sensitive permissions and share data with external entities. \citet{FTCSurveillance2024} criticized major social media platforms, including Meta, for their broad surveillance practices involving collecting and retaining large amounts of user and non-user data. Such reports raise questions about how the companion app may facilitate extensive data gathering and retention. These issues are applicable to this thesis, which evaluates the Meta View app in terms of permissions usage, third-party integrations, and potential data transmission to external entities.
+
+\section*{Network Traffic and Data Exposure}
+Analyzing network traffic is a critical step in evaluating IoT device security. \citet{fereidouni2023iotmaninthemiddleattacks} provided an overview of IoT and discussed the risks posed by Man-in-the-Middle attacks in IoT systems, showing how such attacks can intercept and manipulate data exchanges. To mitigate such risks, most AR devices use encryption to keep the data unreadable to potential attackers. However, \citet{Ren2019InformationEF} demonstrated that encryption alone does not necessarily protect user privacy. They investigated information exposure through IoT device traffic and demonstrated that, encrypted or not, the traffic can leak metadata, allowing third parties to identify patterns and infer user behavior. Furthermore, \citet{Acar_2020} also revealed that even with encrypted traffic, adversaries could exploit traffic patterns, timing, and metadata to figure out user activities and behavioral patterns.
+
+Focusing on wearable IoT devices, \citet{DMello2018WearableIS} reviewed technical and policy perspectives on wearable IoT security. They accentuated that encryption, while crucial, is often inadequate on its own due to issues like improper key management and weaknesses in IoT communication standards. Therefore, concluding that encryption must be complemented by secure key management, rigorous testing for protocol weaknesses, and robust privacy policies that limit data retention. 
+
+Beyond network transmissions, many AR wearables, including the Ray-Ban Meta glasses, use Bluetooth connections for pairing or device management. Studies of Bluetooth communication, such as that by \citet{nagrare2023bleprotocoliotdevices}, focused on uncovering vulnerabilities in Classic Bluetooth and Bluetooth Low Energy (BLE), including insufficient encryption and inadequate authentication mechanisms. 
+
+The current thesis builds upon these findings by examining the security and privacy of the Ray-Ban Meta glasses' network and Bluetooth transmission. In particular, the thesis addresses how data related to user interactions may be sent through network and Bluetooth communications and the security of such communication channels.
+
+
+\section*{Bystander Privacy Implications}
+AR devices raise unique ethical and privacy concerns for bystanders, who may be inadvertently recorded, often without consent. \citet{Gallardo2023SpeculativePC} found that transparency and consent measures for bystanders remain insufficient in many commercially available AR products. Similarly, studies from \citet{Denning2014InSitu} investigated bystander reactions to AR glasses and showed that bystanders are often uncomfortable with the lack of transparency about when data is being captured or recorded in shared spaces. Insecure communication protocols increase these risks by potentially exposing captured bystander data to interception or misuse, as \citet{nagrare2023bleprotocoliotdevices} discussed in their analysis of BLE threats. These insights align with one of the goals of this thesis, which is to determine whether the Ray-Ban Meta glasses adequately protect not only the user's information but also that of bystanders whom the glasses may have recorded.
+
+\section*{Privacy in Wearable AR Devices: A Comparative Perspective}
+A paper by \citet{Kotsios2015Privacy} explored the privacy challenges in AR technologies, specifically Google Glasses, which included its ability for continuous recording, facial recognition, and data access, and the impacts on bystanders. It argued that while AR technologies have great potential, they also require a framework that protects both users and bystanders from unauthorized data collection and surveillance by governments and adversaries or external parties. Another study, by \citet{safavi2014googleglass} on Google Glasses showed that Google could not reassure its users that the data collected and stored is kept safe and therefore susceptible to unauthorized access, leading to exposure of sensitive data. However, most studies on AR privacy have taken a broader approach, where they analyze a variety of devices in order to provide a general pattern of data collection, storage, and transmission. Examples include works mentioned above by \citet{Ren2019InformationEF}, \citet{Denning2014InSitu}, and \citet{Acar_2020}, which illustrate the privacy risks in AR devices, whether it be user consent or network vulnerabilities. However, device-specific investigations remain relatively rare, potentially resulting in an incomplete understanding of that device's privacy risks. This thesis narrows the focus to the Ray-Ban Meta glasses to analyze this specific device's privacy and security considerations. In doing so, the thesis complements the broader studies by bridging the gap between general discussions of AR privacy and the in-depth exploration of privacy for a particular device.
+
+
+
+
+
+%Review prior work on IoT device privacy, focusing on AR and IoT data security.
+%
+%Discuss relevant frameworks, methodologies, or studies mentioned in the provided references.
+%
+%Identify gaps in the literature your research aims to fill.
+%
+%
+%Security and Privacy Approaches in Mixed Reality: A Literature Survey
+%Augmented reality (AR) systems and virtual reality (VR) systems are MR
+% systems but, if categorized, will lie on different points along the
+% continuum.
+%Most of the work on MR for the past two decades have been focused
+% on delivering the necessary technology to make MR a possibility.
+%A much recent work emphasized the three aspects for protection in AR
+% – input, data access, and output + include interaction and 
+%device protection
+%
+%
+%
+%Information Exposure From Consumer IoT Devices: A Multidimensional, Network-Informed Measurement Approach
+%First, IoT device ecosystems are generally closed, hence
+%ground truth about information exposure is not readily available.
+%In particular, for the vast majority of devices in our experiments, it
+%is not feasible to modify the device firmware (e.g., to conduct taint
+%tracking) and/or use man-in-the-middle techniques to decrypt TLS
+%connections (e.g., to identify personal information exposed in plain-
+%text). Hence, we focus on using inferences based on information
+%contained in (potentially encrypted) network traffic flows.
+%Types of information exposed by IoT devices: Stored, Sensor, Activity
+%Types of parties to which information is exposed: First, Support, Third
+%Privacy concerns: 
+%• any personally identifiable information (PII) contained in net-
+%work traffic and exposed to a non-first party;
+%• any recordings of users (audio/video/image) or user activity
+%(motion sensors, television viewing habits) exposed to non-first
+%parties, or exposed to a first party in a way that is neither dis-
+%closed nor expected by an average user;
+%• any collection of network traffic that allows a non-first party to
+%observe devices in a home, when they are used, and how they
+%are used (e.g., for profiling users)
